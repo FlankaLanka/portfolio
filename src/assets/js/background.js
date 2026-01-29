@@ -1,6 +1,6 @@
 /**
- * Interactive Escher-style Background
- * Impossible shapes with sketch aesthetic
+ * Eye Floater Physics Background
+ * Primitive shapes with physics, edge bouncing, and mouse repulsion
  */
 (function() {
     const canvas = document.createElement('canvas');
@@ -13,16 +13,184 @@
         height: 100%;
         z-index: -1;
         pointer-events: none;
-        opacity: 0.08;
     `;
     document.body.insertBefore(canvas, document.body.firstChild);
 
     const ctx = canvas.getContext('2d');
     let width, height;
-    let mouseX = 0, mouseY = 0;
-    let targetMouseX = 0, targetMouseY = 0;
+    let mouse = { x: -1000, y: -1000 };
     let shapes = [];
-    let time = 0;
+
+    // Physics constants
+    const FRICTION = 0.98;
+    const MOUSE_REPEL_RADIUS = 150;
+    const MOUSE_REPEL_FORCE = 0.8;
+    const DRIFT_FORCE = 0.02;
+    const MAX_SPEED = 3;
+    const BOUNCE_DAMPING = 0.7;
+
+    // Shape types
+    const SHAPE_TYPES = ['circle', 'triangle', 'square', 'hexagon', 'diamond'];
+
+    class Shape {
+        constructor() {
+            this.reset();
+        }
+
+        reset() {
+            this.x = Math.random() * width;
+            this.y = Math.random() * height;
+            this.vx = (Math.random() - 0.5) * 2;
+            this.vy = (Math.random() - 0.5) * 2;
+            this.size = 15 + Math.random() * 35;
+            this.rotation = Math.random() * Math.PI * 2;
+            this.rotationSpeed = (Math.random() - 0.5) * 0.02;
+            this.type = SHAPE_TYPES[Math.floor(Math.random() * SHAPE_TYPES.length)];
+            this.opacity = 0.04 + Math.random() * 0.06;
+            this.strokeWidth = 1 + Math.random() * 1.5;
+            
+            // Eye floater drift - each shape has its own drift direction
+            this.driftAngle = Math.random() * Math.PI * 2;
+            this.driftSpeed = Math.random() * DRIFT_FORCE;
+            this.driftPhase = Math.random() * Math.PI * 2;
+        }
+
+        update() {
+            // Eye floater drift (slow organic movement)
+            this.driftPhase += 0.005;
+            const driftX = Math.cos(this.driftAngle + Math.sin(this.driftPhase) * 0.5) * this.driftSpeed;
+            const driftY = Math.sin(this.driftAngle + Math.cos(this.driftPhase * 0.7) * 0.5) * this.driftSpeed;
+            this.vx += driftX;
+            this.vy += driftY;
+
+            // Mouse repulsion
+            const dx = this.x - mouse.x;
+            const dy = this.y - mouse.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            
+            if (dist < MOUSE_REPEL_RADIUS && dist > 0) {
+                const force = (MOUSE_REPEL_RADIUS - dist) / MOUSE_REPEL_RADIUS * MOUSE_REPEL_FORCE;
+                const angle = Math.atan2(dy, dx);
+                this.vx += Math.cos(angle) * force;
+                this.vy += Math.sin(angle) * force;
+            }
+
+            // Apply friction
+            this.vx *= FRICTION;
+            this.vy *= FRICTION;
+
+            // Clamp speed
+            const speed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+            if (speed > MAX_SPEED) {
+                this.vx = (this.vx / speed) * MAX_SPEED;
+                this.vy = (this.vy / speed) * MAX_SPEED;
+            }
+
+            // Update position
+            this.x += this.vx;
+            this.y += this.vy;
+
+            // Rotate
+            this.rotation += this.rotationSpeed;
+
+            // Bounce off edges
+            const padding = this.size;
+            
+            if (this.x < padding) {
+                this.x = padding;
+                this.vx = Math.abs(this.vx) * BOUNCE_DAMPING;
+            } else if (this.x > width - padding) {
+                this.x = width - padding;
+                this.vx = -Math.abs(this.vx) * BOUNCE_DAMPING;
+            }
+            
+            if (this.y < padding) {
+                this.y = padding;
+                this.vy = Math.abs(this.vy) * BOUNCE_DAMPING;
+            } else if (this.y > height - padding) {
+                this.y = height - padding;
+                this.vy = -Math.abs(this.vy) * BOUNCE_DAMPING;
+            }
+        }
+
+        draw() {
+            ctx.save();
+            ctx.translate(this.x, this.y);
+            ctx.rotate(this.rotation);
+            ctx.strokeStyle = `rgba(0, 0, 0, ${this.opacity})`;
+            ctx.lineWidth = this.strokeWidth;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+
+            const s = this.size;
+
+            switch(this.type) {
+                case 'circle':
+                    ctx.beginPath();
+                    ctx.arc(0, 0, s, 0, Math.PI * 2);
+                    ctx.stroke();
+                    // Inner circle for depth
+                    ctx.beginPath();
+                    ctx.arc(0, 0, s * 0.5, 0, Math.PI * 2);
+                    ctx.stroke();
+                    break;
+
+                case 'triangle':
+                    ctx.beginPath();
+                    for (let i = 0; i < 3; i++) {
+                        const angle = (i / 3) * Math.PI * 2 - Math.PI / 2;
+                        const x = Math.cos(angle) * s;
+                        const y = Math.sin(angle) * s;
+                        if (i === 0) ctx.moveTo(x, y);
+                        else ctx.lineTo(x, y);
+                    }
+                    ctx.closePath();
+                    ctx.stroke();
+                    break;
+
+                case 'square':
+                    ctx.strokeRect(-s, -s, s * 2, s * 2);
+                    // Inner square rotated
+                    ctx.save();
+                    ctx.rotate(Math.PI / 4);
+                    ctx.strokeRect(-s * 0.5, -s * 0.5, s, s);
+                    ctx.restore();
+                    break;
+
+                case 'hexagon':
+                    ctx.beginPath();
+                    for (let i = 0; i < 6; i++) {
+                        const angle = (i / 6) * Math.PI * 2;
+                        const x = Math.cos(angle) * s;
+                        const y = Math.sin(angle) * s;
+                        if (i === 0) ctx.moveTo(x, y);
+                        else ctx.lineTo(x, y);
+                    }
+                    ctx.closePath();
+                    ctx.stroke();
+                    break;
+
+                case 'diamond':
+                    ctx.beginPath();
+                    ctx.moveTo(0, -s);
+                    ctx.lineTo(s * 0.6, 0);
+                    ctx.lineTo(0, s);
+                    ctx.lineTo(-s * 0.6, 0);
+                    ctx.closePath();
+                    ctx.stroke();
+                    // Cross lines
+                    ctx.beginPath();
+                    ctx.moveTo(0, -s * 0.5);
+                    ctx.lineTo(0, s * 0.5);
+                    ctx.moveTo(-s * 0.3, 0);
+                    ctx.lineTo(s * 0.3, 0);
+                    ctx.stroke();
+                    break;
+            }
+
+            ctx.restore();
+        }
+    }
 
     function resize() {
         width = canvas.width = window.innerWidth;
@@ -30,203 +198,51 @@
         initShapes();
     }
 
-    // Sketch-style wobbly line
-    function sketchLine(x1, y1, x2, y2, wobble = 2) {
-        const dist = Math.sqrt((x2-x1)**2 + (y2-y1)**2);
-        const steps = Math.max(dist / 8, 4);
-        
-        ctx.beginPath();
-        ctx.moveTo(x1, y1);
-        
-        for (let i = 1; i <= steps; i++) {
-            const t = i / steps;
-            const x = x1 + (x2 - x1) * t + (Math.random() - 0.5) * wobble;
-            const y = y1 + (y2 - y1) * t + (Math.random() - 0.5) * wobble;
-            ctx.lineTo(x, y);
-        }
-        ctx.stroke();
-    }
-
-    // Penrose Triangle (impossible triangle)
-    function drawPenroseTriangle(cx, cy, size, rotation, phase) {
-        ctx.save();
-        ctx.translate(cx, cy);
-        ctx.rotate(rotation + Math.sin(phase) * 0.05);
-        
-        const s = size;
-        const thickness = s * 0.18;
-        
-        // Three interlocking bars creating impossible geometry
-        const angles = [0, Math.PI * 2/3, Math.PI * 4/3];
-        
-        angles.forEach((angle, i) => {
-            ctx.save();
-            ctx.rotate(angle);
-            
-            // Outer edge
-            sketchLine(-s * 0.5, s * 0.29, s * 0.5, s * 0.29);
-            sketchLine(-s * 0.5, s * 0.29, -s * 0.35, s * 0.29 - thickness);
-            sketchLine(s * 0.5, s * 0.29, s * 0.35, s * 0.29 - thickness);
-            
-            // Inner connector (creates impossible effect)
-            if (i === 0) {
-                sketchLine(-s * 0.35, s * 0.29 - thickness, s * 0.1, s * 0.29 - thickness);
-            }
-            
-            ctx.restore();
-        });
-        
-        ctx.restore();
-    }
-
-    // Impossible cube (Necker cube variant)
-    function drawImpossibleCube(cx, cy, size, rotation, phase) {
-        ctx.save();
-        ctx.translate(cx, cy);
-        ctx.rotate(rotation);
-        
-        const s = size * 0.5;
-        const offset = s * 0.4;
-        const wobblePhase = Math.sin(phase) * 2;
-        
-        // Front face
-        sketchLine(-s, -s, s, -s, 1 + wobblePhase * 0.1);
-        sketchLine(s, -s, s, s, 1 + wobblePhase * 0.1);
-        sketchLine(s, s, -s, s, 1 + wobblePhase * 0.1);
-        sketchLine(-s, s, -s, -s, 1 + wobblePhase * 0.1);
-        
-        // Back face (offset)
-        sketchLine(-s + offset, -s - offset, s + offset, -s - offset, 1);
-        sketchLine(s + offset, -s - offset, s + offset, s - offset, 1);
-        sketchLine(s + offset, s - offset, -s + offset, s - offset, 1);
-        sketchLine(-s + offset, s - offset, -s + offset, -s - offset, 1);
-        
-        // Connecting edges (some intentionally "wrong" for impossible effect)
-        sketchLine(-s, -s, -s + offset, -s - offset, 1);
-        sketchLine(s, -s, s + offset, -s - offset, 1);
-        sketchLine(s, s, s + offset, s - offset, 1);
-        // This edge creates the impossible connection
-        sketchLine(-s, s, -s + offset, -s - offset, 1);
-        
-        ctx.restore();
-    }
-
-    // Penrose stairs segment
-    function drawEscherStairs(cx, cy, size, rotation, phase) {
-        ctx.save();
-        ctx.translate(cx, cy);
-        ctx.rotate(rotation + phase * 0.02);
-        
-        const steps = 5;
-        const stepW = size / steps;
-        const stepH = size * 0.15;
-        
-        for (let i = 0; i < steps; i++) {
-            const x = -size/2 + i * stepW;
-            const yOffset = Math.sin(phase + i * 0.5) * 2;
-            
-            // Step top
-            sketchLine(x, -i * stepH + yOffset, x + stepW, -i * stepH + yOffset);
-            // Step riser
-            sketchLine(x + stepW, -i * stepH + yOffset, x + stepW, -(i+1) * stepH + yOffset);
-        }
-        
-        // Impossible return (stairs that go up but end at same level)
-        sketchLine(-size/2, 0, -size/2, -steps * stepH);
-        sketchLine(-size/2, -steps * stepH, size/2 - stepW, -steps * stepH);
-        
-        ctx.restore();
-    }
-
-    // Hexagonal tessellation
-    function drawHexPattern(cx, cy, size, rotation, phase) {
-        ctx.save();
-        ctx.translate(cx, cy);
-        ctx.rotate(rotation + Math.sin(phase * 0.5) * 0.1);
-        
-        const hexRadius = size * 0.3;
-        
-        for (let ring = 0; ring < 2; ring++) {
-            const count = ring === 0 ? 1 : 6;
-            const ringRadius = ring * hexRadius * 1.8;
-            
-            for (let i = 0; i < count; i++) {
-                const angle = (i / count) * Math.PI * 2 + phase * 0.1;
-                const hx = Math.cos(angle) * ringRadius;
-                const hy = Math.sin(angle) * ringRadius;
-                
-                // Draw hexagon
-                for (let j = 0; j < 6; j++) {
-                    const a1 = (j / 6) * Math.PI * 2;
-                    const a2 = ((j + 1) / 6) * Math.PI * 2;
-                    sketchLine(
-                        hx + Math.cos(a1) * hexRadius,
-                        hy + Math.sin(a1) * hexRadius,
-                        hx + Math.cos(a2) * hexRadius,
-                        hy + Math.sin(a2) * hexRadius,
-                        1
-                    );
-                }
-            }
-        }
-        
-        ctx.restore();
-    }
-
     function initShapes() {
         shapes = [];
-        const shapeTypes = [drawPenroseTriangle, drawImpossibleCube, drawEscherStairs, drawHexPattern];
-        const count = Math.floor((width * height) / 120000) + 5;
+        // More shapes for larger screens
+        const count = Math.floor((width * height) / 40000) + 8;
         
         for (let i = 0; i < count; i++) {
-            shapes.push({
-                x: Math.random() * width,
-                y: Math.random() * height,
-                size: 40 + Math.random() * 60,
-                rotation: Math.random() * Math.PI * 2,
-                speed: 0.2 + Math.random() * 0.5,
-                parallax: 0.02 + Math.random() * 0.04,
-                draw: shapeTypes[Math.floor(Math.random() * shapeTypes.length)],
-                phase: Math.random() * Math.PI * 2
-            });
+            shapes.push(new Shape());
         }
     }
 
     function animate() {
         ctx.clearRect(0, 0, width, height);
-        
-        // Smooth mouse following
-        mouseX += (targetMouseX - mouseX) * 0.05;
-        mouseY += (targetMouseY - mouseY) * 0.05;
-        
-        time += 0.01;
-        
-        ctx.strokeStyle = '#000';
-        ctx.lineWidth = 1.5;
-        ctx.lineCap = 'round';
-        ctx.lineJoin = 'round';
-        
+
         shapes.forEach(shape => {
-            const offsetX = (mouseX - width/2) * shape.parallax;
-            const offsetY = (mouseY - height/2) * shape.parallax;
-            
-            shape.draw(
-                shape.x + offsetX,
-                shape.y + offsetY,
-                shape.size,
-                shape.rotation + time * shape.speed * 0.1,
-                time * shape.speed + shape.phase
-            );
+            shape.update();
+            shape.draw();
         });
-        
+
         requestAnimationFrame(animate);
     }
 
     // Event listeners
     window.addEventListener('resize', resize);
+    
     document.addEventListener('mousemove', (e) => {
-        targetMouseX = e.clientX;
-        targetMouseY = e.clientY;
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+    });
+
+    document.addEventListener('mouseleave', () => {
+        mouse.x = -1000;
+        mouse.y = -1000;
+    });
+
+    // Touch support
+    document.addEventListener('touchmove', (e) => {
+        if (e.touches.length > 0) {
+            mouse.x = e.touches[0].clientX;
+            mouse.y = e.touches[0].clientY;
+        }
+    });
+
+    document.addEventListener('touchend', () => {
+        mouse.x = -1000;
+        mouse.y = -1000;
     });
 
     // Initialize
