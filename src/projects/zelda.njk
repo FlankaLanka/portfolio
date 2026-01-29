@@ -1,0 +1,122 @@
+---
+layout: project.njk
+pageTitle: ZeldaNES
+projectTitle: ZeldaNES Remake (Unity)
+role: Solo Unity Developer
+extraStyles: |
+  .project-card {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: #fafafa;
+    border: 2px solid #222;
+    padding: 1.5rem;
+    position: relative;
+  }
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 5px; left: 5px; right: -5px; bottom: -5px;
+    border: 2px solid #222;
+    z-index: -1;
+    opacity: 0.15;
+  }
+  
+  .video-frame {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    border: 1px solid #333;
+    background: #000;
+    margin-bottom: 1.5rem;
+  }
+  .video-frame iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+  }
+  
+  .project-card h3 {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed #666;
+  }
+  
+  .project-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+  
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .tech-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    background: #222;
+    color: #fff;
+    padding: 0.15rem 0.4rem;
+    text-transform: lowercase;
+  }
+  
+  .action-links {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+  }
+  
+  .action-link {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #222;
+    text-decoration: none;
+    border: 2px solid #222;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s;
+  }
+  
+  .action-link:hover {
+    background: #222;
+    color: #fff;
+    transform: translate(-2px, -2px);
+    box-shadow: 3px 3px 0 #666;
+  }
+---
+
+<div class="project-card">
+  <h3>◎ ZeldaNES Remake</h3>
+  
+  <div class="video-frame">
+    <iframe src="https://www.youtube.com/embed/Rl9SMJTZ3o4?si=fATs2uoh25EO7by2"
+      title="Zelda NES Remake" allowfullscreen></iframe>
+  </div>
+  
+  <p class="project-desc">
+    Faithful remake of the first dungeon from The Legend of Zelda (NES), plus a custom 
+    dungeon with box-pushing mechanics and new puzzle designs.
+  </p>
+  
+  <div class="tech-tags">
+    <span class="tech-tag">unity</span>
+    <span class="tech-tag">2d tilemap</span>
+    <span class="tech-tag">puzzle design</span>
+  </div>
+  
+  <div class="action-links">
+    <a href="/downloads/ZeldaNESRemake.zip" class="action-link">→ Download (Win/Mac)</a>
+    <a href="https://github.com/FlankaLanka/ZeldaNES" class="action-link">→ Code</a>
+  </div>
+</div>

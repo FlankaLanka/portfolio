@@ -1,0 +1,111 @@
+---
+layout: project.njk
+pageTitle: Monochrome
+projectTitle: Monochrome
+role: "Gameplay Engineer and Game Designer (Team size: 4)"
+extraStyles: |
+  .project-card {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: #fafafa;
+    border: 2px solid #222;
+    padding: 1.5rem;
+    position: relative;
+  }
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 5px; left: 5px; right: -5px; bottom: -5px;
+    border: 2px solid #222;
+    z-index: -1;
+    opacity: 0.15;
+  }
+  
+  .video-frame {
+    width: 100%;
+    border: 1px solid #333;
+    background: #000;
+    margin-bottom: 1.5rem;
+  }
+  
+  .project-desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #444;
+  }
+  
+  .project-card h3 {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed #666;
+  }
+  
+  .contrib-tags {
+    margin: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  
+  .contrib-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    background: #222;
+    color: #fff;
+    padding: 0.2rem 0.5rem;
+  }
+  
+  .action-links {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+  }
+  
+  .action-link {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #222;
+    text-decoration: none;
+    border: 2px solid #222;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s;
+  }
+  
+  .action-link:hover {
+    background: #222;
+    color: #fff;
+    transform: translate(-2px, -2px);
+    box-shadow: 3px 3px 0 #666;
+  }
+---
+
+<div class="project-card">
+  <h3>◎ Monochrome</h3>
+  
+  <video class="video-frame" controls>
+    <source src="/images/monochrome/monochrome_trailer.mp4" type="video/mp4">
+  </video>
+  
+  <p class="project-desc">
+    A top-down 2D puzzle game where you play as Franky the Tanky to restore the colors 
+    of the world. Navigate through puzzles using colored paintballs that alter both 
+    the environment and your abilities.
+  </p>
+  
+  <div class="contrib-tags">
+    <span class="contrib-tag">mechanics programming</span>
+    <span class="contrib-tag">puzzle design</span>
+    <span class="contrib-tag">paintball system</span>
+  </div>
+  
+  <div class="action-links">
+    <a href="https://pro-gamers.itch.io/monochrome" class="action-link">→ Play</a>
+    <a href="https://github.com/FlankaLanka/Monochrome" class="action-link">→ Code</a>
+  </div>
+</div>

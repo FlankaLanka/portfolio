@@ -1,0 +1,123 @@
+---
+layout: project.njk
+pageTitle: Kura
+projectTitle: Kura AR Demos
+role: AR Developer
+extraStyles: |
+  .project-intro {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    text-align: center;
+    font-style: italic;
+    color: #555;
+  }
+  
+  .demo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  @media (max-width: 900px) {
+    .demo-grid { grid-template-columns: 1fr; }
+  }
+  
+  .demo-card {
+    background: #fafafa;
+    border: 2px solid #222;
+    padding: 1.2rem;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .demo-card::before {
+    content: '';
+    position: absolute;
+    top: 4px; left: 4px; right: -4px; bottom: -4px;
+    border: 2px solid #222;
+    z-index: -1;
+    opacity: 0.2;
+  }
+  
+  .demo-card:first-child { transform: rotate(-0.4deg); }
+  .demo-card:last-child { transform: rotate(0.4deg); }
+  
+  .demo-card:hover {
+    transform: translate(-3px, -3px) rotate(0deg);
+    box-shadow: 5px 5px 0 #222;
+  }
+  
+  .demo-card h3 {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed #999;
+  }
+  
+  .demo-card video {
+    width: 100%;
+    border: 1px solid #333;
+    background: #000;
+  }
+  
+  .demo-card .description {
+    font-size: 0.85rem;
+    color: #555;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+    font-style: italic;
+  }
+  
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+  
+  .tech-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    background: #222;
+    color: #fff;
+    padding: 0.15rem 0.4rem;
+    text-transform: lowercase;
+  }
+---
+
+<p class="project-intro">
+  Prototyping AR experiences on custom-built headset hardware. Exploring AI integration, 
+  gesture controls, and spatial interfaces.
+</p>
+
+<div class="demo-grid">
+  <div class="demo-card">
+    <h3>◉ AI Object Recognition</h3>
+    <video controls>
+      <source src="/images/kura/object_rec.mp4" type="video/mp4">
+    </video>
+    <p class="description">AI-powered object recognition in AR. Point at things, get information.</p>
+    <div class="tech-tags">
+      <span class="tech-tag">ai segmentation</span>
+      <span class="tech-tag">hand gestures</span>
+      <span class="tech-tag">spatial ui</span>
+    </div>
+  </div>
+
+  <div class="demo-card">
+    <h3>⬡ Headset Assembly</h3>
+    <video controls>
+      <source src="/images/kura/ar_demo.mp4" type="video/mp4">
+    </video>
+    <p class="description">General use case demos after assembling the custom headset.</p>
+    <div class="tech-tags">
+      <span class="tech-tag">optics calibration</span>
+      <span class="tech-tag">ergonomics</span>
+      <span class="tech-tag">ar/vr interactions</span>
+    </div>
+  </div>
+</div>

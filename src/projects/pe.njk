@@ -1,0 +1,190 @@
+---
+layout: project.njk
+pageTitle: PrimeEngine
+projectTitle: Prime Engine
+role: Solo C++ Engineer
+extraStyles: |
+  .project-intro {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    text-align: center;
+    font-style: italic;
+    color: #555;
+  }
+  
+  .demo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  @media (max-width: 900px) {
+    .demo-grid { grid-template-columns: 1fr; }
+  }
+  
+  .demo-card {
+    background: #fafafa;
+    border: 2px solid #222;
+    padding: 1.2rem;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .demo-card::before {
+    content: '';
+    position: absolute;
+    top: 4px; left: 4px; right: -4px; bottom: -4px;
+    border: 2px solid #222;
+    z-index: -1;
+    opacity: 0.2;
+  }
+  
+  .demo-card:nth-child(odd) { transform: rotate(-0.4deg); }
+  .demo-card:nth-child(even) { transform: rotate(0.4deg); }
+  
+  .demo-card:hover {
+    transform: translate(-3px, -3px) rotate(0deg);
+    box-shadow: 5px 5px 0 #222;
+  }
+  
+  .demo-card h3 {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed #999;
+  }
+  
+  .demo-card video {
+    width: 100%;
+    border: 1px solid #333;
+    background: #000;
+  }
+  
+  .demo-card .description {
+    font-size: 0.85rem;
+    color: #555;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+    font-style: italic;
+  }
+  
+  .demo-card .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+  
+  .demo-card .tech-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    background: #222;
+    color: #fff;
+    padding: 0.15rem 0.4rem;
+    text-transform: lowercase;
+  }
+  
+  .section-divider {
+    text-align: center;
+    margin: 2.5rem 0 1.5rem;
+    position: relative;
+  }
+  .section-divider::before {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; top: 50%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #ccc, transparent);
+  }
+  .section-divider span {
+    background: #fff;
+    padding: 0 1rem;
+    position: relative;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #888;
+  }
+---
+
+<p class="project-intro">
+  Features implemented in a minimal C++ game engine. Networking, physics, audio, and performance systems.
+</p>
+
+<div class="demo-grid">
+  <div class="demo-card">
+    <h3>⬡ Networking</h3>
+    <video controls>
+      <source src="/images/prime_engine/networking_demo.mkv#t=59" type="video/mp4">
+    </video>
+    <p class="description">Server/client implementation with TCP socket programming. Real-time player transform sync.</p>
+    <div class="tech-tags">
+      <span class="tech-tag">tcp sockets</span>
+      <span class="tech-tag">transform sync</span>
+    </div>
+  </div>
+
+  <div class="demo-card">
+    <h3>◎ Frustum Culling</h3>
+    <video controls>
+      <source src="/images/prime_engine/culling_demo.mkv#t=2" type="video/mp4">
+    </video>
+    <p class="description">Camera frustum culling for performance. Visualized with shrunk frustum bounds.</p>
+    <div class="tech-tags">
+      <span class="tech-tag">optimization</span>
+      <span class="tech-tag">spatial partitioning</span>
+    </div>
+  </div>
+
+  <div class="demo-card">
+    <h3>△ Physics Collision</h3>
+    <video controls>
+      <source src="/images/prime_engine/physics_demo.mkv#t=7" type="video/mp4">
+    </video>
+    <p class="description">Sphere-plane and sphere-AABB collision detection and response.</p>
+    <div class="tech-tags">
+      <span class="tech-tag">collision detection</span>
+      <span class="tech-tag">rigid body</span>
+    </div>
+  </div>
+
+  <div class="demo-card">
+    <h3>△ Physics Extended</h3>
+    <video controls>
+      <source src="/images/prime_engine/physics_demo_2.mkv" type="video/mp4">
+    </video>
+    <p class="description">Extended collision scenarios with multiple interacting bodies.</p>
+    <div class="tech-tags">
+      <span class="tech-tag">collision response</span>
+    </div>
+  </div>
+
+  <div class="demo-card">
+    <h3>♪ 3D Audio</h3>
+    <video controls>
+      <source src="/images/prime_engine/audio_demo.mkv#t=0" type="video/mp4">
+    </video>
+    <p class="description">FMOD audio engine integration with spatial 3D sound.</p>
+    <div class="tech-tags">
+      <span class="tech-tag">fmod</span>
+      <span class="tech-tag">spatial audio</span>
+    </div>
+  </div>
+
+  <div class="demo-card">
+    <h3>⚔ Gameplay</h3>
+    <video controls>
+      <source src="/images/prime_engine/gameplay_demo.mkv#t=18" type="video/mp4">
+    </video>
+    <p class="description">NPC target tracking and movement behaviors with steering.</p>
+    <div class="tech-tags">
+      <span class="tech-tag">ai behaviors</span>
+      <span class="tech-tag">steering</span>
+    </div>
+  </div>
+</div>

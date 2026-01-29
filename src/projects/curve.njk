@@ -1,0 +1,104 @@
+---
+layout: project.njk
+pageTitle: Curve Editor
+projectTitle: Bezier Curve Editor
+role: Solo Unity Developer
+extraStyles: |
+  .project-card {
+    max-width: 700px;
+    margin: 2rem auto;
+    background: #fafafa;
+    border: 2px solid #222;
+    padding: 1.5rem;
+    position: relative;
+  }
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 5px; left: 5px; right: -5px; bottom: -5px;
+    border: 2px solid #222;
+    z-index: -1;
+    opacity: 0.15;
+  }
+  
+  .project-card h3 {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed #666;
+  }
+  
+  .video-frame {
+    width: 100%;
+    border: 1px solid #333;
+    background: #000;
+    margin-bottom: 1.5rem;
+  }
+  
+  .project-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+  
+  .concepts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 1.5rem 0;
+  }
+  
+  .concept-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    background: #222;
+    color: #fff;
+    padding: 0.2rem 0.5rem;
+  }
+  
+  .action-link {
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #222;
+    text-decoration: none;
+    border: 2px solid #222;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s;
+  }
+  
+  .action-link:hover {
+    background: #222;
+    color: #fff;
+    transform: translate(-2px, -2px);
+    box-shadow: 3px 3px 0 #666;
+  }
+---
+
+<div class="project-card">
+  <h3>◎ Bezier Curve Editor</h3>
+  
+  <video class="video-frame" controls>
+    <source src="/images/curve/curve_editor_demo.mov" type="video/mp4">
+  </video>
+  
+  <p class="project-desc">
+    A Unity editor tool for creating and editing splines from Bezier curves. Click to place 
+    control points, drag handles to shape curves, chain them into smooth paths.
+  </p>
+  
+  <div class="concepts">
+    <span class="concept-tag">bezier curves</span>
+    <span class="concept-tag">splines</span>
+    <span class="concept-tag">editor tools</span>
+  </div>
+  
+  <a href="https://github.com/FlankaLanka/CurveEditor" class="action-link">→ View Code</a>
+</div>

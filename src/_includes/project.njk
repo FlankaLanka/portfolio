@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+	{% include "partials/head.njk" %}
+
+	<style>
+	p { margin-bottom: 0; }
+	ul { margin-top: 0; }
+	{% if extraStyles %}
+	{{ extraStyles | safe }}
+	{% endif %}
+	</style>
+
+	<body class="is-preload">
+		<!-- Wrapper -->
+		<div id="wrapper">
+			{% include "partials/header.njk" %}
+			{% include "partials/menu.njk" %}
+
+			<!-- Main -->
+			<div id="main">
+				<div class="inner">
+					<header class="project-header">
+						<h1>{{ projectTitle }}</h1>
+						<p class="project-role">Role: {{ role }}</p>
+					</header>
+					
+					{{ content | safe }}
+				</div>
+			</div>
+
+			{% include "partials/footer.njk" %}
+		</div>
+
+		{% include "partials/scripts.njk" %}
+	</body>
+</html>

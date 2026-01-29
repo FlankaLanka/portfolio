@@ -1,0 +1,148 @@
+---
+layout: project.njk
+pageTitle: CopyWrong
+projectTitle: CopyWrong
+role: "Solo Developer + Designer"
+extraStyles: |
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  @media (max-width: 900px) {
+    .content-grid { grid-template-columns: 1fr; }
+  }
+  
+  .content-card {
+    background: #fafafa;
+    border: 2px solid #222;
+    padding: 1.2rem;
+    position: relative;
+  }
+  
+  .content-card::before {
+    content: '';
+    position: absolute;
+    top: 4px; left: 4px; right: -4px; bottom: -4px;
+    border: 2px solid #222;
+    z-index: -1;
+    opacity: 0.2;
+  }
+  
+  .content-card:first-child { transform: rotate(-0.3deg); }
+  .content-card:last-child { transform: rotate(0.3deg); }
+  
+  .content-card h3 {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed #999;
+  }
+  
+  .content-card .media-frame {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: 1px solid #333;
+    background: #000;
+  }
+  
+  .content-card .media-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  .card-desc {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #555;
+    margin-top: 0.8rem;
+    font-style: italic;
+  }
+  
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin: 0.8rem 0;
+  }
+  
+  .card-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    background: #222;
+    color: #fff;
+    padding: 0.15rem 0.4rem;
+    text-transform: lowercase;
+  }
+  
+  .fullscreen-note {
+    font-size: 0.75rem;
+    color: #888;
+    text-align: center;
+    margin-top: 0.5rem;
+    font-style: italic;
+  }
+  
+  .card-links {
+    margin-top: 1rem;
+  }
+  
+  .action-link {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #222;
+    text-decoration: none;
+    border: 2px solid #222;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s;
+  }
+  
+  .action-link:hover {
+    background: #222;
+    color: #fff;
+    transform: translate(-2px, -2px);
+    box-shadow: 3px 3px 0 #666;
+  }
+---
+
+<div class="content-grid">
+  <div class="content-card">
+    <h3>◎ Gameplay</h3>
+    <div class="media-frame">
+      <iframe src="https://www.youtube.com/embed/nwMOYMk2L9A?si=YtILbDRmNYlUI_tn"
+        title="CopyWrong Gameplay" allowfullscreen></iframe>
+    </div>
+    <p class="card-desc">
+      A puzzle platformer where enemy clones mirror your every move. Think ahead, or get caught.
+    </p>
+    <div class="card-tags">
+      <span class="card-tag">puzzle platformer</span>
+      <span class="card-tag">clone mechanics</span>
+    </div>
+    <div class="card-links">
+      <a href="https://maplestoryworlds.nexon.com/en/play/bfe8825e0a7345aba355ae265d1f40a5/" class="action-link">→ Play Full Game</a>
+    </div>
+  </div>
+  
+  <div class="content-card">
+    <h3>▶ Prototype</h3>
+    <div class="media-frame">
+      <iframe src="https://itch.io/embed-upload/12085962?color=333333" allowfullscreen></iframe>
+    </div>
+    <p class="card-desc">
+      Prototyped in Unity, then selected for the MapleStory Worlds Creators Program.
+    </p>
+    <p class="fullscreen-note">↗ Click fullscreen (bottom-right) for best experience</p>
+    <div class="card-links">
+      <a href="https://flankalanka.itch.io/copywrong" class="action-link">→ Play on itch.io</a>
+    </div>
+  </div>
+</div>

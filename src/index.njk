@@ -1,0 +1,403 @@
+---
+layout: base.njk
+pageTitle: Frank Yang Portfolio
+---
+
+<style>
+/* ===== HERO ===== */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin: 0 0 1rem 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero h1::after {
+  display: none;
+}
+
+.hero .accent {
+  color: #e44c65;
+}
+
+.hero .tagline {
+  font-size: 1rem;
+  color: #666;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.hero .divider {
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  color: #ccc;
+  letter-spacing: 1em;
+}
+
+/* ===== CATEGORIES ===== */
+.category {
+  margin: 3rem 0;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 2px solid #222;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.category-header:hover {
+  padding-left: 0.5rem;
+}
+
+.category-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex: 1;
+}
+
+.category-title::after {
+  display: none;
+}
+
+.cat-icon {
+  font-size: 1.1rem;
+  width: 1.5rem;
+  text-align: center;
+}
+
+.cat-count {
+  font-size: 0.7rem;
+  background: #222;
+  color: #fff;
+  padding: 0.15rem 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.cat-toggle {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 2px solid #222;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.15s;
+}
+
+.cat-toggle:hover {
+  background: #222;
+  color: #fff;
+}
+
+.cat-toggle .arrow {
+  transition: transform 0.3s;
+}
+
+.category.open .cat-toggle .arrow {
+  transform: rotate(180deg);
+}
+
+.category-body {
+  display: none;
+  padding-top: 2rem;
+}
+
+.category.open .category-body {
+  display: block;
+}
+
+.cat-desc {
+  font-size: 0.85rem;
+  color: #888;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+  border-left: 3px solid #e44c65;
+}
+
+/* ===== PROJECT CARDS (NEW DESIGN) ===== */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  position: relative;
+  background: #fff;
+  border: 2px solid #222;
+  transition: all 0.25s ease;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: -6px;
+  bottom: -6px;
+  border: 2px solid #222;
+  z-index: -1;
+  opacity: 0.15;
+  transition: all 0.25s;
+}
+
+.project-card:nth-child(odd) {
+  transform: rotate(-0.5deg);
+}
+
+.project-card:nth-child(even) {
+  transform: rotate(0.5deg);
+}
+
+.project-card:hover {
+  transform: translate(-4px, -4px) rotate(0deg);
+  box-shadow: 8px 8px 0 rgba(0,0,0,0.1);
+}
+
+.project-card:hover::before {
+  opacity: 0;
+}
+
+.card-image {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-bottom: 2px solid #222;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(20%);
+  transition: all 0.4s ease;
+}
+
+.project-card:hover .card-image img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+.card-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.4;
+  color: #222;
+}
+
+.card-title::after {
+  display: none;
+}
+
+.card-desc {
+  font-size: 0.8rem;
+  color: #666;
+  line-height: 1.5;
+  margin: 0 0 1rem 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #e44c65;
+  text-decoration: none;
+  border-bottom: 1px dashed #e44c65;
+  padding-bottom: 2px;
+  transition: all 0.2s;
+}
+
+.card-link:hover {
+  color: #222;
+  border-bottom-color: #222;
+}
+
+/* Tag on card corner */
+.card-tag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #222;
+  color: #fff;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.3rem 0.6rem;
+}
+</style>
+
+<!-- HERO -->
+<header class="hero">
+  <h1>Hi, I'm Frank Yang <span class="accent">◇</span></h1>
+  <p class="tagline">{{ site.tagline }}</p>
+  <div class="divider">✦ ✦ ✦</div>
+</header>
+
+<!-- PRODUCT -->
+<section class="category" id="cat-product">
+  <div class="category-header" onclick="toggle('cat-product')">
+    <h2 class="category-title">
+      <span class="cat-icon">◎</span>
+      Product
+      <span class="cat-count">{{ projects.product | length }}</span>
+    </h2>
+    <button class="cat-toggle"><span>View</span> <span class="arrow">↓</span></button>
+  </div>
+  <div class="category-body">
+    <p class="cat-desc">Shipped products and tools solving real problems.</p>
+    <div class="project-grid">
+      {% for p in projects.product %}
+      <a href="/projects/{{ p.slug }}/" class="project-card">
+        <div class="card-image">
+          <img src="/{{ p.thumbnail }}" alt="{{ p.title }}" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">{{ p.title }}</h3>
+          <p class="card-desc">{{ p.description }}</p>
+          <span class="card-link">View Project →</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- AI -->
+<section class="category" id="cat-ai">
+  <div class="category-header" onclick="toggle('cat-ai')">
+    <h2 class="category-title">
+      <span class="cat-icon">◈</span>
+      AI
+      <span class="cat-count">{{ projects.ai | length }}</span>
+    </h2>
+    <button class="cat-toggle"><span>View</span> <span class="arrow">↓</span></button>
+  </div>
+  <div class="category-body">
+    <p class="cat-desc">Machine learning and AI experiments.</p>
+    <div class="project-grid">
+      {% for p in projects.ai %}
+      <a href="/projects/{{ p.slug }}/" class="project-card">
+        <div class="card-image">
+          <img src="/{{ p.thumbnail }}" alt="{{ p.title }}" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">{{ p.title }}</h3>
+          <p class="card-desc">{{ p.description }}</p>
+          <span class="card-link">View Project →</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- TECH -->
+<section class="category" id="cat-tech">
+  <div class="category-header" onclick="toggle('cat-tech')">
+    <h2 class="category-title">
+      <span class="cat-icon">⬡</span>
+      Tech
+      <span class="cat-count">{{ projects.tech | length }}</span>
+    </h2>
+    <button class="cat-toggle"><span>View</span> <span class="arrow">↓</span></button>
+  </div>
+  <div class="category-body">
+    <p class="cat-desc">Engine programming, XR development, and technical explorations.</p>
+    <div class="project-grid">
+      {% for p in projects.tech %}
+      <a href="/projects/{{ p.slug }}/" class="project-card">
+        <div class="card-image">
+          <img src="/{{ p.thumbnail }}" alt="{{ p.title }}" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">{{ p.title }}</h3>
+          <p class="card-desc">{{ p.description }}</p>
+          <span class="card-link">View Project →</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- GAMES -->
+<section class="category" id="cat-games">
+  <div class="category-header" onclick="toggle('cat-games')">
+    <h2 class="category-title">
+      <span class="cat-icon">△</span>
+      Games
+      <span class="cat-count">{{ projects.games | length }}</span>
+    </h2>
+    <button class="cat-toggle"><span>View</span> <span class="arrow">↓</span></button>
+  </div>
+  <div class="category-body">
+    <p class="cat-desc">Game design experiments and polished releases.</p>
+    <div class="project-grid">
+      {% for p in projects.games %}
+      <a href="/projects/{{ p.slug }}/" class="project-card">
+        <div class="card-image">
+          <img src="/{{ p.thumbnail }}" alt="{{ p.title }}" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">{{ p.title }}</h3>
+          <p class="card-desc">{{ p.description }}</p>
+          <span class="card-link">View Project →</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script>
+function toggle(id) {
+  const el = document.getElementById(id);
+  el.classList.toggle('open');
+  const btn = el.querySelector('.cat-toggle span:first-child');
+  btn.textContent = el.classList.contains('open') ? 'Hide' : 'View';
+}
+</script>

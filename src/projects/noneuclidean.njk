@@ -1,0 +1,241 @@
+---
+layout: project.njk
+pageTitle: Non-Euclidean + Optical Illusions
+projectTitle: Non-Euclidean + Illusory Game Mechanics
+role: Solo Unity Developer
+extraStyles: |
+  .illusion-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+  
+  @media (max-width: 900px) {
+    .illusion-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .illusion-card {
+    position: relative;
+    background: #fafafa;
+    border: 2px solid #222;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Sketch-style rough borders using box-shadow layers */
+  .illusion-card::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: -4px;
+    bottom: -4px;
+    border: 2px solid #222;
+    z-index: -1;
+    opacity: 0.3;
+  }
+  
+  .illusion-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 6px 6px 0 #222;
+  }
+  
+  /* Alternate card rotations for dynamic feel */
+  .illusion-card:nth-child(odd) {
+    transform: rotate(-0.5deg);
+  }
+  .illusion-card:nth-child(even) {
+    transform: rotate(0.5deg);
+  }
+  .illusion-card:nth-child(odd):hover {
+    transform: rotate(-0.5deg) translate(-3px, -3px);
+  }
+  .illusion-card:nth-child(even):hover {
+    transform: rotate(0.5deg) translate(-3px, -3px);
+  }
+  
+  .illusion-card h3 {
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed #666;
+  }
+  
+  .illusion-card .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    margin-bottom: 1rem;
+    border: 1px solid #333;
+    background: #000;
+  }
+  
+  .illusion-card .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  .illusion-card .techniques {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 1rem 0;
+  }
+  
+  .illusion-card .technique-tag {
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    background: #222;
+    color: #fff;
+    padding: 0.2rem 0.5rem;
+    text-transform: lowercase;
+  }
+  
+  .illusion-card .description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #444;
+    font-style: italic;
+  }
+  
+  .code-link {
+    display: inline-block;
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    color: #222;
+    text-decoration: none;
+    border: 1px solid #222;
+    padding: 0.3rem 0.8rem;
+    margin-top: 0.5rem;
+    transition: all 0.2s;
+  }
+  
+  .code-link:hover {
+    background: #222;
+    color: #fff;
+  }
+  
+  .project-intro {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    text-align: center;
+    font-style: italic;
+    color: #555;
+    position: relative;
+    padding: 1rem 2rem;
+  }
+  
+  .project-intro::before,
+  .project-intro::after {
+    content: '✦';
+    position: absolute;
+    font-size: 1.5rem;
+    color: #ccc;
+  }
+  .project-intro::before { left: 0; top: 50%; transform: translateY(-50%); }
+  .project-intro::after { right: 0; top: 50%; transform: translateY(-50%); }
+  
+  .section-divider {
+    text-align: center;
+    margin: 3rem 0 2rem;
+    position: relative;
+  }
+  
+  .section-divider::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #999, transparent);
+  }
+  
+  .section-divider span {
+    background: #fff;
+    padding: 0 1rem;
+    position: relative;
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #666;
+  }
+---
+
+<p class="project-intro">
+  A collection of impossible mechanics from games that bend reality. 
+  Each recreation explores the technical wizardry behind optical illusions in game engines.
+</p>
+
+<div class="illusion-grid">
+  
+  <div class="illusion-card">
+    <h3>⬡ Viewfinder</h3>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/xLHm38amV9o?si=ktqZBqnMZv4exiK7"
+        title="Viewfinder mechanic" allowfullscreen></iframe>
+    </div>
+    <p class="description">Photos transform into 3D spaces. Point, shoot, step inside.</p>
+    <div class="techniques">
+      <span class="technique-tag">mesh slicing</span>
+      <span class="technique-tag">frustum culling</span>
+      <span class="technique-tag">perspective alignment</span>
+    </div>
+    <a href="https://github.com/FlankaLanka/illusory-game-mechanics" class="code-link">→ view code</a>
+  </div>
+
+  <div class="illusion-card">
+    <h3>◎ Portal</h3>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/EI8ls3wlgYo?si=EkjbSzKgYlz4Iyr9"
+        title="Portal mechanic" allowfullscreen></iframe>
+    </div>
+    <p class="description">Seamless teleportation. See through, walk through, physics through.</p>
+    <div class="techniques">
+      <span class="technique-tag">oblique projection</span>
+      <span class="technique-tag">recursive rendering</span>
+      <span class="technique-tag">clone handling</span>
+    </div>
+    <a href="https://github.com/FlankaLanka/illusory-game-mechanics" class="code-link">→ view code</a>
+  </div>
+
+  <div class="illusion-card">
+    <h3>△ Perspective Resize</h3>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/P2oKqAA1QXs?si=1SASmugVjQFR330g"
+        title="Superliminal resize" allowfullscreen></iframe>
+    </div>
+    <p class="description">Objects grow and shrink based on perceived size. Forced perspective as gameplay.</p>
+    <div class="techniques">
+      <span class="technique-tag">perspective alignment</span>
+      <span class="technique-tag">raycasting</span>
+    </div>
+    <a href="https://github.com/FlankaLanka/illusory-game-mechanics" class="code-link">→ view code</a>
+  </div>
+
+  <div class="illusion-card">
+    <h3>▢ Fake 3D</h3>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/obkJADxZSns?si=7DE2VogjWM79SMFK"
+        title="Fake 3D illusion" allowfullscreen></iframe>
+    </div>
+    <p class="description">2D images that trick you into walking into walls. The Ames room effect.</p>
+    <div class="techniques">
+      <span class="technique-tag">quadrilateral mapping</span>
+      <span class="technique-tag">texture projection</span>
+    </div>
+    <a href="https://github.com/FlankaLanka/illusory-game-mechanics" class="code-link">→ view code</a>
+  </div>
+
+</div>

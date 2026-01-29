@@ -1,0 +1,122 @@
+---
+layout: project.njk
+pageTitle: Sentenced
+projectTitle: Sentenced
+role: "Engineering Lead (Team size: 2)"
+extraStyles: |
+  .project-card {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: #fafafa;
+    border: 2px solid #222;
+    padding: 1.5rem;
+    position: relative;
+  }
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 5px; left: 5px; right: -5px; bottom: -5px;
+    border: 2px solid #222;
+    z-index: -1;
+    opacity: 0.15;
+  }
+  
+  .video-frame {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    border: 1px solid #333;
+    background: #000;
+    margin-bottom: 1.5rem;
+  }
+  .video-frame iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+  }
+  
+  .project-card h3 {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed #666;
+  }
+  
+  .project-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+  
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .tech-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    background: #222;
+    color: #fff;
+    padding: 0.15rem 0.4rem;
+    text-transform: lowercase;
+  }
+  
+  .action-links {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+  }
+  
+  .action-link {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #222;
+    text-decoration: none;
+    border: 2px solid #222;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s;
+  }
+  
+  .action-link:hover {
+    background: #222;
+    color: #fff;
+    transform: translate(-2px, -2px);
+    box-shadow: 3px 3px 0 #666;
+  }
+---
+
+<div class="project-card">
+  <h3>◎ Sentenced</h3>
+  
+  <div class="video-frame">
+    <iframe src="https://www.youtube.com/embed/XbSJBVssUNU?si=aEsihw0CG7s9VMaH"
+      title="Sentenced" allowfullscreen></iframe>
+  </div>
+  
+  <p class="project-desc">
+    Two brothers search for the truth behind their father's disappearance. A branching 
+    narrative visual novel with ~1hr main story and ~2.5hr for all endings.
+  </p>
+  
+  <div class="tech-tags">
+    <span class="tech-tag">visual novel</span>
+    <span class="tech-tag">branching narrative</span>
+    <span class="tech-tag">fungus engine</span>
+  </div>
+  
+  <div class="action-links">
+    <a href="/downloads/Sentenced Windows.zip" class="action-link">→ Download (Windows)</a>
+    <a href="https://github.com/FlankaLanka/Sentenced" class="action-link">→ Code</a>
+  </div>
+</div>

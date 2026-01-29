@@ -1,0 +1,116 @@
+---
+layout: project.njk
+pageTitle: ATSA Ace
+projectTitle: ATSA Ace
+role: Solo Unity Developer
+extraStyles: |
+  .project-card {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: #fafafa;
+    border: 2px solid #222;
+    padding: 1.5rem;
+    position: relative;
+  }
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 5px; left: 5px; right: -5px; bottom: -5px;
+    border: 2px solid #222;
+    z-index: -1;
+    opacity: 0.15;
+  }
+  
+  .video-frame {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    border: 1px solid #333;
+    background: #000;
+    margin-bottom: 1.5rem;
+  }
+  .video-frame iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+  }
+  
+  .project-card h3 {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed #666;
+  }
+  
+  .project-desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #444;
+  }
+  
+  .project-desc a {
+    color: #222;
+    font-weight: bold;
+    border-bottom: 1px dashed #222;
+    text-decoration: none;
+  }
+  
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 1.5rem 0;
+  }
+  
+  .feature-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    color: #444;
+    padding: 0.2rem 0.5rem;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #222;
+    background: transparent;
+    text-decoration: none;
+    border: 2px solid #222;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    transition: all 0.2s;
+  }
+  
+  .cta-button:hover {
+    background: #222;
+    color: #fff;
+    transform: translate(-2px, -2px);
+    box-shadow: 3px 3px 0 #666;
+  }
+---
+
+<div class="project-card">
+  <h3>◎ ATSA Ace</h3>
+  
+  <div class="video-frame">
+    <iframe src="https://www.youtube.com/embed/jijueB5GdDE?si=7USYoOkMKlcjshvU"
+      title="ATSA Ace" allowfullscreen></iframe>
+  </div>
+  
+  <p class="project-desc">
+    A comprehensive prep tool for aspiring air traffic controllers. Practice all 7 sections 
+    of the official exam with the closest simulation to the real test. Features in-depth 
+    stat tracking and a welcoming UI designed to make studying less intimidating.
+  </p>
+  
+  <a href="https://atsaace.com" class="cta-button" target="_blank">→ Visit atsaace.com</a>
+</div>

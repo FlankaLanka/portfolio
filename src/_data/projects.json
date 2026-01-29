@@ -1,0 +1,101 @@
+{
+  "tech": [
+    {
+      "slug": "noneuclidean",
+      "title": "Optical Illusions Playground",
+      "description": "Recreated Non-Euclidean and optical illusion mechanics. Portals, perspective tricks, impossible geometry.",
+      "thumbnail": "images/noneuclidean/noneuclidean_ai.png",
+      "style": "style1"
+    },
+    {
+      "slug": "pe",
+      "title": "Prime Engine",
+      "description": "C++ game engine features. Physics, networking, audio, and performance optimizations.",
+      "thumbnail": "images/prime_engine/pe_thumbnail.jpg",
+      "style": "style2"
+    },
+    {
+      "slug": "kura",
+      "title": "Kura AR",
+      "description": "Custom AR headset prototyping. AI object recognition, hand gestures, spatial UI.",
+      "thumbnail": "images/kura/kura_logo.jpg",
+      "style": "style3"
+    },
+    {
+      "slug": "curve",
+      "title": "Curve Editor",
+      "description": "Unity tool for creating Bezier splines.",
+      "thumbnail": "images/curve/curve_thumbnail.png",
+      "style": "style4"
+    },
+    {
+      "slug": "moon",
+      "title": "Moon Creative Lab",
+      "description": "Internship projects. Multiplayer office sim, ML agents, game juice.",
+      "thumbnail": "images/moon/moon_thumbnail.png",
+      "style": "style5"
+    }
+  ],
+  "product": [
+    {
+      "slug": "atsa",
+      "title": "ATSA Ace",
+      "description": "Air Traffic Skills Assessment exam simulator. Scored Best Qualified on the real test.",
+      "thumbnail": "images/atsa/atsa_thumbnail.png",
+      "style": "style4"
+    }
+  ],
+  "games": [
+    {
+      "slug": "monochrome",
+      "title": "Monochrome",
+      "description": "Top-down puzzle game. Restore colors using paintball mechanics.",
+      "thumbnail": "images/monochrome/monochrome_thumbnail.gif",
+      "style": "style1"
+    },
+    {
+      "slug": "copywrong",
+      "title": "CopyWrong",
+      "description": "Puzzle platformer where clones copy your moves. Published on MapleStory Worlds.",
+      "thumbnail": "images/copywrong/copywrong_discord_logo_square.png",
+      "style": "style2"
+    },
+    {
+      "slug": "sentenced",
+      "title": "Sentenced",
+      "description": "Branching narrative visual novel. Two brothers uncover family secrets.",
+      "thumbnail": "images/sentenced/sentenced_thumbnail.png",
+      "style": "style3"
+    },
+    {
+      "slug": "zelda",
+      "title": "ZeldaNES Remake",
+      "description": "Unity remake of Zelda NES first dungeon + custom puzzles.",
+      "thumbnail": "images/zelda/zelda_ai.jpg",
+      "style": "style4"
+    },
+    {
+      "slug": "castlebreaker",
+      "title": "CastleBreaker",
+      "description": "Action adventure meets RTS. Control multiple characters, swap strategically.",
+      "thumbnail": "images/castlebreaker/castlebreaker_thumbnail_square.png",
+      "style": "style5"
+    }
+  ],
+  "ai": [
+    {
+      "slug": "edtech-ai",
+      "title": "Gamified Edtech + AI",
+      "description": "AI-powered educational games and learning experiences.",
+      "thumbnail": "images/edtech-ai/koru_logo.png",
+      "style": "style1"
+    },
+    {
+      "slug": "vibecode",
+      "title": "Vibecoded Apps",
+      "description": "A collection of AI-assisted apps and tools.",
+      "thumbnail": "images/vibecode/vibecode_thumbnail.png",
+      "style": "style2"
+    }
+  ]
+}

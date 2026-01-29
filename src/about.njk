@@ -1,0 +1,247 @@
+---
+layout: base.njk
+pageTitle: About
+extraStyles: |
+  .about-header {
+    text-align: center;
+    padding: 2rem 0;
+  }
+  
+  .about-header h1 {
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+  
+  .about-header .role-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #666;
+    background: #f5f5f5;
+    border: 1px dashed #ccc;
+    padding: 0.4rem 1rem;
+    display: inline-block;
+  }
+  
+  .about-container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2.5rem;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fafafa;
+    border: 2px solid #222;
+    position: relative;
+  }
+  
+  .about-container::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid #222;
+    z-index: -1;
+    opacity: 0.15;
+  }
+  
+  .profile-frame {
+    position: relative;
+  }
+  
+  .profile-frame::before {
+    content: '◇';
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    font-size: 1.5rem;
+    color: #ccc;
+  }
+  
+  .profile-pic {
+    width: 100%;
+    height: auto;
+    border: 2px solid #222;
+    filter: grayscale(20%);
+    transition: all 0.3s;
+  }
+  
+  .profile-pic:hover {
+    filter: grayscale(0%);
+    transform: translate(-3px, -3px);
+    box-shadow: 5px 5px 0 #222;
+  }
+  
+  .about-text p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 1rem;
+  }
+  
+  .about-text p:first-letter {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #222;
+  }
+  
+  .section-divider {
+    text-align: center;
+    margin: 3rem 0 2rem;
+    position: relative;
+  }
+  
+  .section-divider::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #ccc, transparent);
+  }
+  
+  .section-divider span {
+    background: #fff;
+    padding: 0 1.5rem;
+    position: relative;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #888;
+  }
+  
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .skill-card {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: #fafafa;
+    border: 2px solid #222;
+    padding: 0.8rem 1.2rem;
+    min-width: 180px;
+    transition: all 0.2s;
+  }
+  
+  .skill-card:nth-child(odd) {
+    transform: rotate(-0.5deg);
+  }
+  .skill-card:nth-child(even) {
+    transform: rotate(0.5deg);
+  }
+  
+  .skill-card:hover {
+    transform: translate(-2px, -2px) rotate(0deg);
+    box-shadow: 4px 4px 0 #222;
+  }
+  
+  .skill-card img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    filter: grayscale(30%);
+  }
+  
+  .skill-card:hover img {
+    filter: grayscale(0%);
+  }
+  
+  .skill-card span {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #222;
+  }
+  
+  .interests {
+    max-width: 600px;
+    margin: 2rem auto 0;
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
+  .interests strong {
+    color: #222;
+    font-style: normal;
+  }
+  
+  @media (max-width: 768px) {
+    .about-container {
+      grid-template-columns: 1fr;
+    }
+    .profile-frame {
+      max-width: 250px;
+      margin: 0 auto;
+    }
+  }
+---
+
+<div class="about-header">
+	<h1>{{ site.author }}</h1>
+	<div class="role-tag">Game Developer</div>
+</div>
+
+<div class="about-container">
+	<div class="profile-frame">
+		<img src="/images/profile_pic.jpg" alt="Frank Yang" class="profile-pic">
+	</div>
+	<div class="about-text">
+		<p>
+			I'm a game developer with a Master's in Computer Science (Game Development) from USC. 
+			I love crafting immersive experiences and exploring innovative mechanics. Some of my past 
+			work focuses on prototyping game/XR mechanics, XR UX design, and game engine programming.
+		</p>
+		<p>
+			Outside of game and XR development, you can find me playing video games (obviously :D), 
+			playing and hosting escape rooms, and practicing magic tricks. Feel free to reach out – 
+			I'm always excited to connect with fellow enthusiasts and collaborators!
+		</p>
+	</div>
+</div>
+
+<div class="section-divider">
+	<span>Skills & Tools</span>
+</div>
+
+<div class="skills-grid">
+	<div class="skill-card">
+		<img src="/images/about/unity_logo.png" alt="Unity">
+		<span>Unity</span>
+	</div>
+	<div class="skill-card">
+		<img src="/images/about/csharp.png" alt="C#">
+		<span>C#</span>
+	</div>
+	<div class="skill-card">
+		<img src="/images/about/cplusplus.png" alt="C++">
+		<span>C++</span>
+	</div>
+	<div class="skill-card">
+		<img src="/images/about/3d_math.png" alt="3D Math">
+		<span>3D Math</span>
+	</div>
+	<div class="skill-card">
+		<img src="/images/about/blender_logo.png" alt="Blender">
+		<span>Blender</span>
+	</div>
+</div>
+
+<p class="interests">
+	Also into <strong>escape rooms</strong>, <strong>magic tricks</strong>, and way too many <strong>video games</strong>.
+</p>

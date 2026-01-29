@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+	{% include "partials/head.njk" %}
+
+	{% if extraStyles %}
+	<style>
+	{{ extraStyles | safe }}
+	</style>
+	{% endif %}
+
+	<body class="is-preload">
+		<!-- Wrapper -->
+		<div id="wrapper">
+			{% include "partials/header.njk" %}
+			{% include "partials/menu.njk" %}
+
+			<!-- Main -->
+			<div id="main">
+				<div class="inner">
+					{{ content | safe }}
+				</div>
+			</div>
+
+			{% include "partials/footer.njk" %}
+		</div>
+
+		{% include "partials/scripts.njk" %}
+	</body>
+</html>
