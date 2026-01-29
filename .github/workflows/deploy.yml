@@ -33,6 +33,8 @@ jobs:
 
       - name: Build with Eleventy
         run: npm run build
+        env:
+          ELEVENTY_ENV: production
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

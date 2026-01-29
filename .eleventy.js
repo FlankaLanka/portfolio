@@ -16,6 +16,7 @@ module.exports = function(eleventyConfig) {
     },
     templateFormats: ["njk", "html", "md"],
     htmlTemplateEngine: "njk",
-    markdownTemplateEngine: "njk"
+    markdownTemplateEngine: "njk",
+    pathPrefix: process.env.ELEVENTY_ENV === 'production' ? "/portfolio/" : "/"
   };
 };

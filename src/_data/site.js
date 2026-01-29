@@ -1,7 +1,7 @@
 module.exports = {
   title: "Frank Yang Portfolio",
   author: "Frank Yang",
-  baseUrl: "/portfolio",  // For GitHub Pages subdirectory
+  baseUrl: process.env.ELEVENTY_ENV === 'production' ? "/portfolio" : "",  // Empty for local, /portfolio for GitHub Pages
   tagline: "I am a developer passionate about crafting engaging experiences in games and XR.",
   year: new Date().getFullYear(),  // Dynamic year - updates at build time!
   email: "frankyang233@gmail.com",
