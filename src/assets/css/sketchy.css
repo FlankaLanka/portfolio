@@ -57,74 +57,100 @@ h2 {
   color: #333;
 }
 
-/* ===== HEADER ===== */
-#header {
-  background: transparent !important;
-  border-bottom: none !important;
-  padding: 0 !important;
-  height: auto !important;
-  min-height: 0 !important;
-  position: fixed !important;
-  top: 1rem !important;
-  right: 1rem !important;
-  left: auto !important;
-  width: auto !important;
-  z-index: 100;
+/* ===== DROPDOWN NAV ===== */
+.dropdown-nav {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  font-family: 'Space Mono', monospace;
 }
 
-#header nav ul li a {
-  font-family: 'Space Mono', monospace !important;
+.menu-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  border: 2px solid #222 !important;
-  background: #fff !important;
-  color: #222 !important;
-  transition: all 0.2s ease;
+  background: #fff;
+  border: 2px solid #222;
+  color: #222;
+  cursor: pointer;
+  transition: all 0.15s ease;
 }
 
-#header nav ul li a:hover {
-  background: #222 !important;
-  color: #fff !important;
-  transform: translate(-2px, -2px);
-  box-shadow: 4px 4px 0 #222;
+.menu-toggle:hover {
+  background: #222;
+  color: #fff;
 }
 
-/* ===== MENU ===== */
-#menu {
-  font-family: 'Space Mono', monospace !important;
-  background: #fafafa !important;
-  border-left: 3px solid #222 !important;
+.menu-toggle.active {
+  background: #222;
+  color: #fff;
 }
 
-#menu h2 {
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  border-bottom: 2px dashed #333;
-  padding-bottom: 1rem;
-}
-
-#menu ul li a {
-  font-family: 'Space Mono', monospace !important;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #222 !important;
+.hamburger {
+  width: 14px;
+  height: 2px;
+  background: currentColor;
   position: relative;
-  transition: all 0.2s;
 }
 
-#menu ul li a::before {
-  content: '→ ';
-  opacity: 0;
-  transition: opacity 0.2s;
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  left: 0;
 }
 
-#menu ul li a:hover::before {
-  opacity: 1;
+.hamburger::before { top: -5px; }
+.hamburger::after { bottom: -5px; }
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  min-width: 150px;
+  background: #fff;
+  border: 2px solid #222;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+  display: none;
+  flex-direction: column;
 }
 
-#menu ul li a:hover {
-  color: #000 !important;
-  padding-left: 0.5rem;
+.dropdown-menu.open {
+  display: flex;
+}
+
+.dropdown-menu a {
+  padding: 0.75rem 1rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #222;
+  text-decoration: none;
+  border-bottom: 1px dashed #ddd;
+  transition: all 0.1s ease;
+}
+
+.dropdown-menu a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu a:hover {
+  background: #222;
+  color: #fff;
+}
+
+/* Hide old header/menu */
+#header, #menu {
+  display: none !important;
 }
 
 /* ===== MAIN CONTENT ===== */
@@ -180,97 +206,49 @@ input[type="submit"].primary:hover {
 }
 
 /* ===== FOOTER ===== */
+/* ===== FOOTER ===== */
 #footer {
-  background: #fafafa !important;
-  border-top: 3px solid #222 !important;
-  position: relative;
+  background: transparent !important;
+  border-top: 1px dashed #ccc !important;
   text-align: center;
-  padding: 3rem 2rem 2rem !important;
+  padding: 1.5rem 1rem 1rem !important;
+  margin-top: 3rem;
 }
 
-#footer .inner {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-#footer .footer-connect {
-  margin: 0 auto 1.5rem auto !important;
-  width: 100%;
-}
-
-#footer section {
-  margin: 0 auto !important;
-  width: auto !important;
-}
-
-#footer::before {
-  content: '✦ ✦ ✦';
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #fafafa;
-  padding: 0 1rem;
-  letter-spacing: 1rem;
-  color: #999;
-  font-size: 0.6rem;
-}
-
-#footer h2 {
-  font-family: 'Space Mono', monospace !important;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 1rem !important;
-  border-bottom: 1px dashed #666;
-  padding-bottom: 0.5rem;
-  display: inline-block;
-}
-
-#footer .icons {
-  display: flex !important;
-  justify-content: center !important;
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
-  padding: 0 !important;
-  margin: 1rem 0 0 0 !important;
-  list-style: none;
+  margin-bottom: 0.75rem;
 }
 
-#footer .icons li a {
-  border: 2px solid #222 !important;
-  background: #fff !important;
-  transition: all 0.2s ease;
+.footer-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #333;
+  color: #333 !important;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.15s ease;
 }
 
-#footer .icons li a:hover {
-  background: #222 !important;
+.footer-icon:hover {
+  background: #222;
   color: #fff !important;
-  transform: translate(-2px, -2px);
-  box-shadow: 3px 3px 0 #222;
-}
-
-#footer input,
-#footer textarea {
-  font-family: 'Space Mono', monospace !important;
-  border: 2px solid #222 !important;
-  border-radius: 0 !important;
-  background: #fff !important;
-}
-
-#footer input:focus,
-#footer textarea:focus {
-  border-color: #000 !important;
-  box-shadow: 3px 3px 0 #ddd !important;
+  transform: translateY(-2px);
 }
 
 #footer .copyright {
-  font-family: 'Space Mono', monospace !important;
-  font-size: 0.7rem !important;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #666;
-  border-top: 1px dashed #ccc;
-  padding-top: 1.5rem;
-  margin-top: 2rem;
+  letter-spacing: 1px;
+  color: #888;
+  margin: 0;
 }
 
 /* ===== FORM FIELDS ===== */

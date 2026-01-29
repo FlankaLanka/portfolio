@@ -6,3 +6,22 @@
 <script src="{{ site.baseUrl }}/assets/js/main.js"></script>
 <script src="{{ site.baseUrl }}/assets/js/formhandler.js"></script>
 <script src="{{ site.baseUrl }}/assets/js/background.js"></script>
+
+<!-- Dropdown Menu Toggle -->
+<script>
+function toggleMenu() {
+  const menu = document.getElementById('dropdown-menu');
+  const btn = document.querySelector('.menu-toggle');
+  menu.classList.toggle('open');
+  btn.classList.toggle('active');
+}
+
+// Close menu when clicking outside
+document.addEventListener('click', function(e) {
+  const nav = document.querySelector('.dropdown-nav');
+  if (nav && !nav.contains(e.target)) {
+    document.getElementById('dropdown-menu')?.classList.remove('open');
+    document.querySelector('.menu-toggle')?.classList.remove('active');
+  }
+});
+</script>

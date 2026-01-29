@@ -1,11 +1,11 @@
-<!-- Header -->
-<header id="header">
-	<div class="inner">
-		<!-- Nav -->
-		<nav>
-			<ul>
-				<li><a href="#menu">Menu</a></li>
-			</ul>
-		</nav>
+<!-- Dropdown Menu -->
+<nav class="dropdown-nav">
+	<button class="menu-toggle" onclick="toggleMenu()">
+		<span class="hamburger"></span>
+		Menu
+	</button>
+	<div class="dropdown-menu" id="dropdown-menu">
+		<a href="{{ site.baseUrl }}/">Home</a>
+		<a href="{{ site.baseUrl }}/about/">About</a>
 	</div>
-</header>
+</nav>

@@ -22,12 +22,13 @@
     let shapes = [];
 
     // Physics constants
-    const FRICTION = 0.98;
+    const FRICTION = 0.999;  // Almost no friction - keep moving
     const MOUSE_REPEL_RADIUS = 150;
-    const MOUSE_REPEL_FORCE = 0.8;
-    const DRIFT_FORCE = 0.02;
-    const MAX_SPEED = 3;
-    const BOUNCE_DAMPING = 0.7;
+    const MOUSE_REPEL_FORCE = 1.0;
+    const MAX_SPEED = 2.5;
+    const MIN_SPEED = 0.8;  // Always moving at decent speed
+    const BOUNCE_DAMPING = 1.0;  // No energy loss on bounce
+    const JITTER = 0.03;  // Constant small random perturbation
 
     // Shape types
     const SHAPE_TYPES = ['circle', 'triangle', 'square', 'hexagon', 'diamond'];
@@ -40,28 +41,23 @@
         reset() {
             this.x = Math.random() * width;
             this.y = Math.random() * height;
-            this.vx = (Math.random() - 0.5) * 2;
-            this.vy = (Math.random() - 0.5) * 2;
+            // Start with random velocity at minimum speed
+            const angle = Math.random() * Math.PI * 2;
+            const speed = MIN_SPEED + Math.random() * (MAX_SPEED - MIN_SPEED);
+            this.vx = Math.cos(angle) * speed;
+            this.vy = Math.sin(angle) * speed;
             this.size = 15 + Math.random() * 35;
             this.rotation = Math.random() * Math.PI * 2;
-            this.rotationSpeed = (Math.random() - 0.5) * 0.02;
+            this.rotationSpeed = (Math.random() - 0.5) * 0.03;
             this.type = SHAPE_TYPES[Math.floor(Math.random() * SHAPE_TYPES.length)];
-            this.opacity = 0.04 + Math.random() * 0.06;
+            this.opacity = 0.05 + Math.random() * 0.07;
             this.strokeWidth = 1 + Math.random() * 1.5;
-            
-            // Eye floater drift - each shape has its own drift direction
-            this.driftAngle = Math.random() * Math.PI * 2;
-            this.driftSpeed = Math.random() * DRIFT_FORCE;
-            this.driftPhase = Math.random() * Math.PI * 2;
         }
 
         update() {
-            // Eye floater drift (slow organic movement)
-            this.driftPhase += 0.005;
-            const driftX = Math.cos(this.driftAngle + Math.sin(this.driftPhase) * 0.5) * this.driftSpeed;
-            const driftY = Math.sin(this.driftAngle + Math.cos(this.driftPhase * 0.7) * 0.5) * this.driftSpeed;
-            this.vx += driftX;
-            this.vy += driftY;
+            // Constant jitter - small random perturbation every frame
+            this.vx += (Math.random() - 0.5) * JITTER;
+            this.vy += (Math.random() - 0.5) * JITTER;
 
             // Mouse repulsion
             const dx = this.x - mouse.x;
@@ -75,12 +71,24 @@
                 this.vy += Math.sin(angle) * force;
             }
 
-            // Apply friction
+            // Apply very light friction
             this.vx *= FRICTION;
             this.vy *= FRICTION;
 
-            // Clamp speed
-            const speed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+            // Ensure minimum speed - shapes always keep moving
+            let speed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+            if (speed < MIN_SPEED) {
+                if (speed > 0) {
+                    this.vx = (this.vx / speed) * MIN_SPEED;
+                    this.vy = (this.vy / speed) * MIN_SPEED;
+                } else {
+                    const angle = Math.random() * Math.PI * 2;
+                    this.vx = Math.cos(angle) * MIN_SPEED;
+                    this.vy = Math.sin(angle) * MIN_SPEED;
+                }
+            }
+
+            // Clamp max speed
             if (speed > MAX_SPEED) {
                 this.vx = (this.vx / speed) * MAX_SPEED;
                 this.vy = (this.vy / speed) * MAX_SPEED;
@@ -93,23 +101,37 @@
             // Rotate
             this.rotation += this.rotationSpeed;
 
-            // Bounce off edges
+            // Bounce off edges with random new direction
             const padding = this.size;
+            const currentSpeed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+            const bounceSpeed = Math.max(currentSpeed * BOUNCE_DAMPING, MIN_SPEED * 1.5);
             
             if (this.x < padding) {
                 this.x = padding;
-                this.vx = Math.abs(this.vx) * BOUNCE_DAMPING;
+                // Random angle pointing right (away from left wall)
+                const angle = (Math.random() - 0.5) * Math.PI * 0.8; // -72° to +72°
+                this.vx = Math.cos(angle) * bounceSpeed;
+                this.vy = Math.sin(angle) * bounceSpeed;
             } else if (this.x > width - padding) {
                 this.x = width - padding;
-                this.vx = -Math.abs(this.vx) * BOUNCE_DAMPING;
+                // Random angle pointing left (away from right wall)
+                const angle = Math.PI + (Math.random() - 0.5) * Math.PI * 0.8;
+                this.vx = Math.cos(angle) * bounceSpeed;
+                this.vy = Math.sin(angle) * bounceSpeed;
             }
             
             if (this.y < padding) {
                 this.y = padding;
-                this.vy = Math.abs(this.vy) * BOUNCE_DAMPING;
+                // Random angle pointing down (away from top wall)
+                const angle = Math.PI / 2 + (Math.random() - 0.5) * Math.PI * 0.8;
+                this.vx = Math.cos(angle) * bounceSpeed;
+                this.vy = Math.sin(angle) * bounceSpeed;
             } else if (this.y > height - padding) {
                 this.y = height - padding;
-                this.vy = -Math.abs(this.vy) * BOUNCE_DAMPING;
+                // Random angle pointing up (away from bottom wall)
+                const angle = -Math.PI / 2 + (Math.random() - 0.5) * Math.PI * 0.8;
+                this.vx = Math.cos(angle) * bounceSpeed;
+                this.vy = Math.sin(angle) * bounceSpeed;
             }
         }
 
