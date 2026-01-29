@@ -291,9 +291,9 @@ pageTitle: Frank Yang Portfolio
     <p class="cat-desc">Shipped products and tools solving real problems.</p>
     <div class="project-grid">
       {% for p in projects.product %}
-      <a href="/projects/{{ p.slug }}/" class="project-card">
+      <a href="{{ site.baseUrl }}/projects/{{ p.slug }}/" class="project-card">
         <div class="card-image">
-          <img src="/{{ p.thumbnail }}" alt="{{ p.title }}" loading="lazy" />
+          <img src="{{ site.baseUrl }}/{{ p.thumbnail }}" alt="{{ p.title }}" loading="lazy" />
         </div>
         <div class="card-body">
           <h3 class="card-title">{{ p.title }}</h3>
@@ -320,9 +320,9 @@ pageTitle: Frank Yang Portfolio
     <p class="cat-desc">Machine learning and AI experiments.</p>
     <div class="project-grid">
       {% for p in projects.ai %}
-      <a href="/projects/{{ p.slug }}/" class="project-card">
+      <a href="{{ site.baseUrl }}/projects/{{ p.slug }}/" class="project-card">
         <div class="card-image">
-          <img src="/{{ p.thumbnail }}" alt="{{ p.title }}" loading="lazy" />
+          <img src="{{ site.baseUrl }}/{{ p.thumbnail }}" alt="{{ p.title }}" loading="lazy" />
         </div>
         <div class="card-body">
           <h3 class="card-title">{{ p.title }}</h3>
@@ -349,9 +349,9 @@ pageTitle: Frank Yang Portfolio
     <p class="cat-desc">Engine programming, XR development, and technical explorations.</p>
     <div class="project-grid">
       {% for p in projects.tech %}
-      <a href="/projects/{{ p.slug }}/" class="project-card">
+      <a href="{{ site.baseUrl }}/projects/{{ p.slug }}/" class="project-card">
         <div class="card-image">
-          <img src="/{{ p.thumbnail }}" alt="{{ p.title }}" loading="lazy" />
+          <img src="{{ site.baseUrl }}/{{ p.thumbnail }}" alt="{{ p.title }}" loading="lazy" />
         </div>
         <div class="card-body">
           <h3 class="card-title">{{ p.title }}</h3>
@@ -378,9 +378,9 @@ pageTitle: Frank Yang Portfolio
     <p class="cat-desc">Game design experiments and polished releases.</p>
     <div class="project-grid">
       {% for p in projects.games %}
-      <a href="/projects/{{ p.slug }}/" class="project-card">
+      <a href="{{ site.baseUrl }}/projects/{{ p.slug }}/" class="project-card">
         <div class="card-image">
-          <img src="/{{ p.thumbnail }}" alt="{{ p.title }}" loading="lazy" />
+          <img src="{{ site.baseUrl }}/{{ p.thumbnail }}" alt="{{ p.title }}" loading="lazy" />
         </div>
         <div class="card-body">
           <h3 class="card-title">{{ p.title }}</h3>
