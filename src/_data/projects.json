@@ -38,10 +38,10 @@
   ],
   "product": [
     {
-      "slug": "superbuilders",
-      "title": "Superbuilders",
-      "description": "Games I designed and built at Superbuilders in 2026.",
-      "thumbnail": "images/superbuilders/superbuilders_thumbnail.jpg",
+      "slug": "alpha-engineering",
+      "title": "Alpha Engineering",
+      "description": "Games I designed and built at Alpha Engineering.",
+      "thumbnail": "images/alpha-engineering/alpha-engineering_thumbnail.jpg",
       "style": "style1"
     },
     {

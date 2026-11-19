@@ -1,8 +1,8 @@
 ---
 layout: project.njk
-pageTitle: Superbuilders
-projectTitle: Superbuilders
-role: Game Developer & Designer · 2026
+pageTitle: Alpha Engineering
+projectTitle: Alpha Engineering
+role: Game Developer & Designer
 extraStyles: |
   #main > .inner { max-width: 84em; }
 
@@ -292,18 +292,18 @@ extraStyles: |
 {%- endmacro -%}
 
 <p class="sb-intro">
-  Games I designed and built at Superbuilders in 2026.
+  Games I designed and built at Alpha Engineering.
 </p>
 
 <nav class="sb-nav" aria-label="Games on this page">
-  {%- for grp in superbuilders.groups %}
+  {%- for grp in alphaEngineering.groups %}
   <p><b>{{ grp.title }}</b>
     {%- for g in grp.games %}<a href="#{{ g.id }}">{{ g.title }}</a>{% if not loop.last %} · {% endif %}{% endfor -%}
   </p>
   {%- endfor %}
 </nav>
 
-{% for grp in superbuilders.groups %}
+{% for grp in alphaEngineering.groups %}
 <section class="sb-group" id="{{ grp.id }}">
   <h2>{{ grp.title }}</h2>
   {% if grp.blurb %}<p class="sb-group-blurb">{{ grp.blurb }}</p>{% endif %}
@@ -313,7 +313,7 @@ extraStyles: |
   <article class="sb-game" id="{{ g.id }}" style="--accent: {{ g.accent }}; --gar: {{ g.ar }}">
     <header class="sb-game-head">
       <h3>{{ g.title }}</h3>
-      <p class="sb-meta"><b>{{ g.tag }}</b> · {{ g.when }}</p>
+      <p class="sb-meta"><b>{{ g.tag }}</b></p>
     </header>
     <p class="sb-role">{{ g.role }}</p>
 

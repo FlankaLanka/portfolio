@@ -9,22 +9,21 @@
         {
           "id": "candy-kart",
           "title": "Candy Kart",
-          "when": "Oct 2026",
           "tag": "3D kart racer",
           "accent": "#ff5fa2",
           "role": "Designed and built from scratch: eight tracks, items, CPU karts and online rooms.",
           "clips": [
             {
-              "src": "images/superbuilders/candy-kart/race-start.mp4",
-              "poster": "images/superbuilders/candy-kart/race-start-poster.jpg",
+              "src": "images/alpha-engineering/candy-kart/race-start.mp4",
+              "poster": "images/alpha-engineering/candy-kart/race-start-poster.jpg",
               "w": 1280,
               "h": 800,
               "cap": "Race start",
               "order": 1
             },
             {
-              "src": "images/superbuilders/candy-kart/item-boost.mp4",
-              "poster": "images/superbuilders/candy-kart/item-boost-poster.jpg",
+              "src": "images/alpha-engineering/candy-kart/item-boost.mp4",
+              "poster": "images/alpha-engineering/candy-kart/item-boost-poster.jpg",
               "w": 1280,
               "h": 800,
               "cap": "Item boost",
@@ -33,36 +32,36 @@
           ],
           "shots": [
             {
-              "full": "images/superbuilders/candy-kart/menu.jpg",
-              "thumb": "images/superbuilders/candy-kart/menu-sm.jpg",
+              "full": "images/alpha-engineering/candy-kart/menu.jpg",
+              "thumb": "images/alpha-engineering/candy-kart/menu-sm.jpg",
               "w": 1200,
               "h": 750,
               "cap": "Menu"
             },
             {
-              "full": "images/superbuilders/candy-kart/pack.jpg",
-              "thumb": "images/superbuilders/candy-kart/pack-sm.jpg",
+              "full": "images/alpha-engineering/candy-kart/pack.jpg",
+              "thumb": "images/alpha-engineering/candy-kart/pack-sm.jpg",
               "w": 1600,
               "h": 1000,
               "cap": "Mid-race"
             },
             {
-              "full": "images/superbuilders/candy-kart/starlight.jpg",
-              "thumb": "images/superbuilders/candy-kart/starlight-sm.jpg",
+              "full": "images/alpha-engineering/candy-kart/starlight.jpg",
+              "thumb": "images/alpha-engineering/candy-kart/starlight-sm.jpg",
               "w": 1600,
               "h": 1000,
               "cap": "Night track"
             },
             {
-              "full": "images/superbuilders/candy-kart/garage.jpg",
-              "thumb": "images/superbuilders/candy-kart/garage-sm.jpg",
+              "full": "images/alpha-engineering/candy-kart/garage.jpg",
+              "thumb": "images/alpha-engineering/candy-kart/garage-sm.jpg",
               "w": 960,
               "h": 600,
               "cap": "Garage"
             },
             {
-              "full": "images/superbuilders/candy-kart/shop.jpg",
-              "thumb": "images/superbuilders/candy-kart/shop-sm.jpg",
+              "full": "images/alpha-engineering/candy-kart/shop.jpg",
+              "thumb": "images/alpha-engineering/candy-kart/shop-sm.jpg",
               "w": 960,
               "h": 600,
               "cap": "Shop"
@@ -74,22 +73,21 @@
         {
           "id": "sports-mix",
           "title": "Sports Mix",
-          "when": "Oct 2026",
           "tag": "Eight sports on a 3D island",
           "accent": "#2aa7ff",
           "role": "Designed and built from scratch. Play solo or with friends.",
           "clips": [
             {
-              "src": "images/superbuilders/sports-mix/basketball-swish.mp4",
-              "poster": "images/superbuilders/sports-mix/basketball-swish-poster.jpg",
+              "src": "images/alpha-engineering/sports-mix/basketball-swish.mp4",
+              "poster": "images/alpha-engineering/sports-mix/basketball-swish-poster.jpg",
               "w": 1280,
               "h": 800,
               "cap": "Basketball",
               "order": 1
             },
             {
-              "src": "images/superbuilders/sports-mix/bowling-strike.mp4",
-              "poster": "images/superbuilders/sports-mix/bowling-strike-poster.jpg",
+              "src": "images/alpha-engineering/sports-mix/bowling-strike.mp4",
+              "poster": "images/alpha-engineering/sports-mix/bowling-strike-poster.jpg",
               "w": 1280,
               "h": 800,
               "cap": "Bowling",
@@ -98,43 +96,43 @@
           ],
           "shots": [
             {
-              "full": "images/superbuilders/sports-mix/sword-fight.jpg",
-              "thumb": "images/superbuilders/sports-mix/sword-fight-sm.jpg",
+              "full": "images/alpha-engineering/sports-mix/sword-fight.jpg",
+              "thumb": "images/alpha-engineering/sports-mix/sword-fight-sm.jpg",
               "w": 1200,
               "h": 749,
               "cap": "Sword Fight"
             },
             {
-              "full": "images/superbuilders/sports-mix/basketball.jpg",
-              "thumb": "images/superbuilders/sports-mix/basketball-sm.jpg",
+              "full": "images/alpha-engineering/sports-mix/basketball.jpg",
+              "thumb": "images/alpha-engineering/sports-mix/basketball-sm.jpg",
               "w": 1200,
               "h": 748,
               "cap": "Basketball at night"
             },
             {
-              "full": "images/superbuilders/sports-mix/bowling-pins.jpg",
-              "thumb": "images/superbuilders/sports-mix/bowling-pins-sm.jpg",
+              "full": "images/alpha-engineering/sports-mix/bowling-pins.jpg",
+              "thumb": "images/alpha-engineering/sports-mix/bowling-pins-sm.jpg",
               "w": 1600,
               "h": 1000,
               "cap": "Bowling"
             },
             {
-              "full": "images/superbuilders/sports-mix/archery.jpg",
-              "thumb": "images/superbuilders/sports-mix/archery-sm.jpg",
+              "full": "images/alpha-engineering/sports-mix/archery.jpg",
+              "thumb": "images/alpha-engineering/sports-mix/archery-sm.jpg",
               "w": 1200,
               "h": 748,
               "cap": "Archery"
             },
             {
-              "full": "images/superbuilders/sports-mix/home.jpg",
-              "thumb": "images/superbuilders/sports-mix/home-sm.jpg",
+              "full": "images/alpha-engineering/sports-mix/home.jpg",
+              "thumb": "images/alpha-engineering/sports-mix/home-sm.jpg",
               "w": 1200,
               "h": 748,
               "cap": "Home"
             },
             {
-              "full": "images/superbuilders/sports-mix/room.jpg",
-              "thumb": "images/superbuilders/sports-mix/room-sm.jpg",
+              "full": "images/alpha-engineering/sports-mix/room.jpg",
+              "thumb": "images/alpha-engineering/sports-mix/room-sm.jpg",
               "w": 1200,
               "h": 748,
               "cap": "Multiplayer room"
@@ -146,22 +144,21 @@
         {
           "id": "oddball",
           "title": "Oddball",
-          "when": "Oct 2026",
           "tag": "Hidden-role party game",
           "accent": "#ef3b3b",
           "role": "Designed and built from scratch, for 4 to 10 players or solo with bots.",
           "clips": [
             {
-              "src": "images/superbuilders/oddball/knockout.mp4",
-              "poster": "images/superbuilders/oddball/knockout-poster.jpg",
+              "src": "images/alpha-engineering/oddball/knockout.mp4",
+              "poster": "images/alpha-engineering/oddball/knockout-poster.jpg",
               "w": 1280,
               "h": 800,
               "cap": "Knockout",
               "order": 1
             },
             {
-              "src": "images/superbuilders/oddball/red-card.mp4",
-              "poster": "images/superbuilders/oddball/red-card-poster.jpg",
+              "src": "images/alpha-engineering/oddball/red-card.mp4",
+              "poster": "images/alpha-engineering/oddball/red-card-poster.jpg",
               "w": 1280,
               "h": 800,
               "cap": "The vote",
@@ -170,36 +167,36 @@
           ],
           "shots": [
             {
-              "full": "images/superbuilders/oddball/huddle.jpg",
-              "thumb": "images/superbuilders/oddball/huddle-sm.jpg",
+              "full": "images/alpha-engineering/oddball/huddle.jpg",
+              "thumb": "images/alpha-engineering/oddball/huddle-sm.jpg",
               "w": 1200,
               "h": 750,
               "cap": "The huddle"
             },
             {
-              "full": "images/superbuilders/oddball/oddballs-win.jpg",
-              "thumb": "images/superbuilders/oddball/oddballs-win-sm.jpg",
+              "full": "images/alpha-engineering/oddball/oddballs-win.jpg",
+              "thumb": "images/alpha-engineering/oddball/oddballs-win-sm.jpg",
               "w": 1200,
               "h": 750,
               "cap": "Oddballs win"
             },
             {
-              "full": "images/superbuilders/oddball/locker-room.jpg",
-              "thumb": "images/superbuilders/oddball/locker-room-sm.jpg",
+              "full": "images/alpha-engineering/oddball/locker-room.jpg",
+              "thumb": "images/alpha-engineering/oddball/locker-room-sm.jpg",
               "w": 1200,
               "h": 750,
               "cap": "Drills"
             },
             {
-              "full": "images/superbuilders/oddball/teammates-win.jpg",
-              "thumb": "images/superbuilders/oddball/teammates-win-sm.jpg",
+              "full": "images/alpha-engineering/oddball/teammates-win.jpg",
+              "thumb": "images/alpha-engineering/oddball/teammates-win-sm.jpg",
               "w": 1200,
               "h": 750,
               "cap": "Teammates win"
             },
             {
-              "full": "images/superbuilders/oddball/your-look.jpg",
-              "thumb": "images/superbuilders/oddball/your-look-sm.jpg",
+              "full": "images/alpha-engineering/oddball/your-look.jpg",
+              "thumb": "images/alpha-engineering/oddball/your-look-sm.jpg",
               "w": 960,
               "h": 600,
               "cap": "Character editor"
@@ -211,29 +208,28 @@
         {
           "id": "karaoke",
           "title": "Karaoke",
-          "when": "Oct 2026",
           "tag": "Sing together",
           "accent": "#b98cff",
           "role": "Rebuilt as its own world, with shows of up to 12.",
           "clips": [],
           "shots": [
             {
-              "full": "images/superbuilders/karaoke/show-lobby.jpg",
-              "thumb": "images/superbuilders/karaoke/show-lobby-sm.jpg",
+              "full": "images/alpha-engineering/karaoke/show-lobby.jpg",
+              "thumb": "images/alpha-engineering/karaoke/show-lobby-sm.jpg",
               "w": 960,
               "h": 600,
               "cap": "Show lobby"
             },
             {
-              "full": "images/superbuilders/karaoke/home.jpg",
-              "thumb": "images/superbuilders/karaoke/home-sm.jpg",
+              "full": "images/alpha-engineering/karaoke/home.jpg",
+              "thumb": "images/alpha-engineering/karaoke/home-sm.jpg",
               "w": 960,
               "h": 600,
               "cap": "Home"
             },
             {
-              "full": "images/superbuilders/karaoke/song-book.jpg",
-              "thumb": "images/superbuilders/karaoke/song-book-sm.jpg",
+              "full": "images/alpha-engineering/karaoke/song-book.jpg",
+              "thumb": "images/alpha-engineering/karaoke/song-book-sm.jpg",
               "w": 960,
               "h": 600,
               "cap": "Song book"
@@ -245,36 +241,35 @@
         {
           "id": "mystery-word",
           "title": "Mystery Word",
-          "when": "Nov 2026",
           "tag": "Daily word game",
           "accent": "#22c1dc",
           "role": "Designed and built from scratch. Play solo or race friends.",
           "clips": [],
           "shots": [
             {
-              "full": "images/superbuilders/mystery-word/race.jpg",
-              "thumb": "images/superbuilders/mystery-word/race-sm.jpg",
+              "full": "images/alpha-engineering/mystery-word/race.jpg",
+              "thumb": "images/alpha-engineering/mystery-word/race-sm.jpg",
               "w": 1200,
               "h": 749,
               "cap": "Race"
             },
             {
-              "full": "images/superbuilders/mystery-word/daily.jpg",
-              "thumb": "images/superbuilders/mystery-word/daily-sm.jpg",
+              "full": "images/alpha-engineering/mystery-word/daily.jpg",
+              "thumb": "images/alpha-engineering/mystery-word/daily-sm.jpg",
               "w": 1200,
               "h": 749,
               "cap": "Daily word"
             },
             {
-              "full": "images/superbuilders/mystery-word/results.jpg",
-              "thumb": "images/superbuilders/mystery-word/results-sm.jpg",
+              "full": "images/alpha-engineering/mystery-word/results.jpg",
+              "thumb": "images/alpha-engineering/mystery-word/results-sm.jpg",
               "w": 1200,
               "h": 749,
               "cap": "Results"
             },
             {
-              "full": "images/superbuilders/mystery-word/home.jpg",
-              "thumb": "images/superbuilders/mystery-word/home-sm.jpg",
+              "full": "images/alpha-engineering/mystery-word/home.jpg",
+              "thumb": "images/alpha-engineering/mystery-word/home-sm.jpg",
               "w": 1200,
               "h": 749,
               "cap": "Home"
@@ -286,50 +281,49 @@
         {
           "id": "sudoku-crossword",
           "title": "Sudoku & Crossword",
-          "when": "Oct 2026",
           "tag": "Puzzle games",
           "accent": "#f2b705",
           "role": "Built both, then added Team and Versus rooms.",
           "clips": [],
           "shots": [
             {
-              "full": "images/superbuilders/sudoku-crossword/sudoku-team.jpg",
-              "thumb": "images/superbuilders/sudoku-crossword/sudoku-team-sm.jpg",
+              "full": "images/alpha-engineering/sudoku-crossword/sudoku-team.jpg",
+              "thumb": "images/alpha-engineering/sudoku-crossword/sudoku-team-sm.jpg",
               "w": 1200,
               "h": 750,
               "cap": "Sudoku, Team"
             },
             {
-              "full": "images/superbuilders/sudoku-crossword/crossword-team.jpg",
-              "thumb": "images/superbuilders/sudoku-crossword/crossword-team-sm.jpg",
+              "full": "images/alpha-engineering/sudoku-crossword/crossword-team.jpg",
+              "thumb": "images/alpha-engineering/sudoku-crossword/crossword-team-sm.jpg",
               "w": 1200,
               "h": 750,
               "cap": "Crossword, Team"
             },
             {
-              "full": "images/superbuilders/sudoku-crossword/sudoku.jpg",
-              "thumb": "images/superbuilders/sudoku-crossword/sudoku-sm.jpg",
+              "full": "images/alpha-engineering/sudoku-crossword/sudoku.jpg",
+              "thumb": "images/alpha-engineering/sudoku-crossword/sudoku-sm.jpg",
               "w": 1200,
               "h": 750,
               "cap": "Sudoku"
             },
             {
-              "full": "images/superbuilders/sudoku-crossword/crossword-solved.jpg",
-              "thumb": "images/superbuilders/sudoku-crossword/crossword-solved-sm.jpg",
+              "full": "images/alpha-engineering/sudoku-crossword/crossword-solved.jpg",
+              "thumb": "images/alpha-engineering/sudoku-crossword/crossword-solved-sm.jpg",
               "w": 1200,
               "h": 750,
               "cap": "Crossword"
             },
             {
-              "full": "images/superbuilders/sudoku-crossword/sudoku-versus.jpg",
-              "thumb": "images/superbuilders/sudoku-crossword/sudoku-versus-sm.jpg",
+              "full": "images/alpha-engineering/sudoku-crossword/sudoku-versus.jpg",
+              "thumb": "images/alpha-engineering/sudoku-crossword/sudoku-versus-sm.jpg",
               "w": 1200,
               "h": 750,
               "cap": "Sudoku, Versus"
             },
             {
-              "full": "images/superbuilders/sudoku-crossword/versus-results.jpg",
-              "thumb": "images/superbuilders/sudoku-crossword/versus-results-sm.jpg",
+              "full": "images/alpha-engineering/sudoku-crossword/versus-results.jpg",
+              "thumb": "images/alpha-engineering/sudoku-crossword/versus-results-sm.jpg",
               "w": 1200,
               "h": 750,
               "cap": "Results"
@@ -341,29 +335,28 @@
         {
           "id": "studio",
           "title": "Studio",
-          "when": "Oct to Nov 2026",
           "tag": "Design tool",
           "accent": "#ffd23f",
           "role": "Make posters, cards and Minecraft skins.",
           "clips": [],
           "shots": [
             {
-              "full": "images/superbuilders/studio/editor.jpg",
-              "thumb": "images/superbuilders/studio/editor-sm.jpg",
+              "full": "images/alpha-engineering/studio/editor.jpg",
+              "thumb": "images/alpha-engineering/studio/editor-sm.jpg",
               "w": 1200,
               "h": 646,
               "cap": "Poster editor"
             },
             {
-              "full": "images/superbuilders/studio/skin-editor.jpg",
-              "thumb": "images/superbuilders/studio/skin-editor-sm.jpg",
+              "full": "images/alpha-engineering/studio/skin-editor.jpg",
+              "thumb": "images/alpha-engineering/studio/skin-editor-sm.jpg",
               "w": 1200,
               "h": 543,
               "cap": "Minecraft skin editor"
             },
             {
-              "full": "images/superbuilders/studio/home.jpg",
-              "thumb": "images/superbuilders/studio/home-sm.jpg",
+              "full": "images/alpha-engineering/studio/home.jpg",
+              "thumb": "images/alpha-engineering/studio/home-sm.jpg",
               "w": 1200,
               "h": 746,
               "cap": "Home"
@@ -375,92 +368,91 @@
         {
           "id": "freetime-app",
           "title": "The FreeTime app",
-          "when": "Jul to Nov 2026",
           "tag": "Launcher and social app",
           "accent": "#4b2fd6",
           "role": "Redesigned the app and built most of its social features.",
           "clips": [],
           "shots": [
             {
-              "full": "images/superbuilders/freetime-app/explore-planets.jpg",
-              "thumb": "images/superbuilders/freetime-app/explore-planets-sm.jpg",
+              "full": "images/alpha-engineering/freetime-app/explore-planets.jpg",
+              "thumb": "images/alpha-engineering/freetime-app/explore-planets-sm.jpg",
               "w": 1200,
               "h": 843,
               "cap": "Explore"
             },
             {
-              "full": "images/superbuilders/freetime-app/home-planet.jpg",
-              "thumb": "images/superbuilders/freetime-app/home-planet-sm.jpg",
+              "full": "images/alpha-engineering/freetime-app/home-planet.jpg",
+              "thumb": "images/alpha-engineering/freetime-app/home-planet-sm.jpg",
               "w": 1200,
               "h": 843,
               "cap": "Home planet"
             },
             {
-              "full": "images/superbuilders/freetime-app/home.jpg",
-              "thumb": "images/superbuilders/freetime-app/home-sm.jpg",
+              "full": "images/alpha-engineering/freetime-app/home.jpg",
+              "thumb": "images/alpha-engineering/freetime-app/home-sm.jpg",
               "w": 1200,
               "h": 947,
               "cap": "Home"
             },
             {
-              "full": "images/superbuilders/freetime-app/halloween.jpg",
-              "thumb": "images/superbuilders/freetime-app/halloween-sm.jpg",
+              "full": "images/alpha-engineering/freetime-app/halloween.jpg",
+              "thumb": "images/alpha-engineering/freetime-app/halloween-sm.jpg",
               "w": 1200,
               "h": 699,
               "cap": "Halloween event"
             },
             {
-              "full": "images/superbuilders/freetime-app/events.jpg",
-              "thumb": "images/superbuilders/freetime-app/events-sm.jpg",
+              "full": "images/alpha-engineering/freetime-app/events.jpg",
+              "thumb": "images/alpha-engineering/freetime-app/events-sm.jpg",
               "w": 1200,
               "h": 1160,
               "cap": "Events"
             },
             {
-              "full": "images/superbuilders/freetime-app/meet.jpg",
-              "thumb": "images/superbuilders/freetime-app/meet-sm.jpg",
+              "full": "images/alpha-engineering/freetime-app/meet.jpg",
+              "thumb": "images/alpha-engineering/freetime-app/meet-sm.jpg",
               "w": 1200,
               "h": 609,
               "cap": "Video calls"
             },
             {
-              "full": "images/superbuilders/freetime-app/profile.jpg",
-              "thumb": "images/superbuilders/freetime-app/profile-sm.jpg",
+              "full": "images/alpha-engineering/freetime-app/profile.jpg",
+              "thumb": "images/alpha-engineering/freetime-app/profile-sm.jpg",
               "w": 1200,
               "h": 962,
               "cap": "Profile"
             },
             {
-              "full": "images/superbuilders/freetime-app/gift.jpg",
-              "thumb": "images/superbuilders/freetime-app/gift-sm.jpg",
+              "full": "images/alpha-engineering/freetime-app/gift.jpg",
+              "thumb": "images/alpha-engineering/freetime-app/gift-sm.jpg",
               "w": 1200,
               "h": 843,
               "cap": "Gifting"
             },
             {
-              "full": "images/superbuilders/freetime-app/tbh.jpg",
-              "thumb": "images/superbuilders/freetime-app/tbh-sm.jpg",
+              "full": "images/alpha-engineering/freetime-app/tbh.jpg",
+              "thumb": "images/alpha-engineering/freetime-app/tbh-sm.jpg",
               "w": 800,
               "h": 984,
               "cap": "TBH polls"
             },
             {
-              "full": "images/superbuilders/freetime-app/achievement.jpg",
-              "thumb": "images/superbuilders/freetime-app/achievement-sm.jpg",
+              "full": "images/alpha-engineering/freetime-app/achievement.jpg",
+              "thumb": "images/alpha-engineering/freetime-app/achievement-sm.jpg",
               "w": 800,
               "h": 984,
               "cap": "Achievements"
             },
             {
-              "full": "images/superbuilders/freetime-app/lobby.jpg",
-              "thumb": "images/superbuilders/freetime-app/lobby-sm.jpg",
+              "full": "images/alpha-engineering/freetime-app/lobby.jpg",
+              "thumb": "images/alpha-engineering/freetime-app/lobby-sm.jpg",
               "w": 1200,
               "h": 750,
               "cap": "Game lobby"
             },
             {
-              "full": "images/superbuilders/freetime-app/theme.jpg",
-              "thumb": "images/superbuilders/freetime-app/theme-sm.jpg",
+              "full": "images/alpha-engineering/freetime-app/theme.jpg",
+              "thumb": "images/alpha-engineering/freetime-app/theme-sm.jpg",
               "w": 1200,
               "h": 913,
               "cap": "Themes"
@@ -480,38 +472,37 @@
         {
           "id": "math-raiders",
           "title": "Math Raiders",
-          "when": "Feb to Oct 2026",
           "tag": "Math-fact boss fights",
           "accent": "#1f6feb",
           "role": "Built most of the v2 redesign's screens.",
           "clips": [
             {
-              "src": "images/superbuilders/math-raiders/battle.mp4",
-              "poster": "images/superbuilders/math-raiders/battle-poster.jpg",
+              "src": "images/alpha-engineering/math-raiders/battle.mp4",
+              "poster": "images/alpha-engineering/math-raiders/battle-poster.jpg",
               "w": 1280,
               "h": 720,
               "cap": "Battle",
               "order": 1
             },
             {
-              "src": "images/superbuilders/math-raiders/knockout.mp4",
-              "poster": "images/superbuilders/math-raiders/knockout-poster.jpg",
+              "src": "images/alpha-engineering/math-raiders/knockout.mp4",
+              "poster": "images/alpha-engineering/math-raiders/knockout-poster.jpg",
               "w": 1280,
               "h": 720,
               "cap": "Knockout",
               "order": 2
             },
             {
-              "src": "images/superbuilders/math-raiders/vs.mp4",
-              "poster": "images/superbuilders/math-raiders/vs-poster.jpg",
+              "src": "images/alpha-engineering/math-raiders/vs.mp4",
+              "poster": "images/alpha-engineering/math-raiders/vs-poster.jpg",
               "w": 1280,
               "h": 720,
               "cap": "VS screen",
               "order": 3
             },
             {
-              "src": "images/superbuilders/math-raiders/lootbox.mp4",
-              "poster": "images/superbuilders/math-raiders/lootbox-poster.jpg",
+              "src": "images/alpha-engineering/math-raiders/lootbox.mp4",
+              "poster": "images/alpha-engineering/math-raiders/lootbox-poster.jpg",
               "w": 1280,
               "h": 720,
               "cap": "Lootbox",
@@ -520,43 +511,43 @@
           ],
           "shots": [
             {
-              "full": "images/superbuilders/math-raiders/hideout.jpg",
-              "thumb": "images/superbuilders/math-raiders/hideout-sm.jpg",
+              "full": "images/alpha-engineering/math-raiders/hideout.jpg",
+              "thumb": "images/alpha-engineering/math-raiders/hideout-sm.jpg",
               "w": 1200,
               "h": 675,
               "cap": "Hideout"
             },
             {
-              "full": "images/superbuilders/math-raiders/victory.jpg",
-              "thumb": "images/superbuilders/math-raiders/victory-sm.jpg",
+              "full": "images/alpha-engineering/math-raiders/victory.jpg",
+              "thumb": "images/alpha-engineering/math-raiders/victory-sm.jpg",
               "w": 1200,
               "h": 675,
               "cap": "Victory"
             },
             {
-              "full": "images/superbuilders/math-raiders/codex.jpg",
-              "thumb": "images/superbuilders/math-raiders/codex-sm.jpg",
+              "full": "images/alpha-engineering/math-raiders/codex.jpg",
+              "thumb": "images/alpha-engineering/math-raiders/codex-sm.jpg",
               "w": 1200,
               "h": 675,
               "cap": "Enemy Codex"
             },
             {
-              "full": "images/superbuilders/math-raiders/trophy-hall.jpg",
-              "thumb": "images/superbuilders/math-raiders/trophy-hall-sm.jpg",
+              "full": "images/alpha-engineering/math-raiders/trophy-hall.jpg",
+              "thumb": "images/alpha-engineering/math-raiders/trophy-hall-sm.jpg",
               "w": 1200,
               "h": 675,
               "cap": "Trophy Hall"
             },
             {
-              "full": "images/superbuilders/math-raiders/holo-train.jpg",
-              "thumb": "images/superbuilders/math-raiders/holo-train-sm.jpg",
+              "full": "images/alpha-engineering/math-raiders/holo-train.jpg",
+              "thumb": "images/alpha-engineering/math-raiders/holo-train-sm.jpg",
               "w": 1200,
               "h": 675,
               "cap": "Holo Train"
             },
             {
-              "full": "images/superbuilders/math-raiders/map.jpg",
-              "thumb": "images/superbuilders/math-raiders/map-sm.jpg",
+              "full": "images/alpha-engineering/math-raiders/map.jpg",
+              "thumb": "images/alpha-engineering/math-raiders/map-sm.jpg",
               "w": 1200,
               "h": 675,
               "cap": "City map"
@@ -568,22 +559,21 @@
         {
           "id": "type-raiders",
           "title": "Type Raiders",
-          "when": "Oct to Nov 2026",
           "tag": "Typing boss fights",
           "accent": "#e4572e",
           "role": "Restyled the game and built multiplayer, the codex and the hero pick.",
           "clips": [
             {
-              "src": "images/superbuilders/type-raiders/battle.mp4",
-              "poster": "images/superbuilders/type-raiders/battle-poster.jpg",
+              "src": "images/alpha-engineering/type-raiders/battle.mp4",
+              "poster": "images/alpha-engineering/type-raiders/battle-poster.jpg",
               "w": 1280,
               "h": 720,
               "cap": "Battle",
               "order": 1
             },
             {
-              "src": "images/superbuilders/type-raiders/hero-select.mp4",
-              "poster": "images/superbuilders/type-raiders/hero-select-poster.jpg",
+              "src": "images/alpha-engineering/type-raiders/hero-select.mp4",
+              "poster": "images/alpha-engineering/type-raiders/hero-select-poster.jpg",
               "w": 1280,
               "h": 720,
               "cap": "Hero pick",
@@ -592,57 +582,57 @@
           ],
           "shots": [
             {
-              "full": "images/superbuilders/type-raiders/electra.jpg",
-              "thumb": "images/superbuilders/type-raiders/electra-sm.jpg",
+              "full": "images/alpha-engineering/type-raiders/electra.jpg",
+              "thumb": "images/alpha-engineering/type-raiders/electra-sm.jpg",
               "w": 1200,
               "h": 675,
               "cap": "Electra"
             },
             {
-              "full": "images/superbuilders/type-raiders/tug-of-war.jpg",
-              "thumb": "images/superbuilders/type-raiders/tug-of-war-sm.jpg",
+              "full": "images/alpha-engineering/type-raiders/tug-of-war.jpg",
+              "thumb": "images/alpha-engineering/type-raiders/tug-of-war-sm.jpg",
               "w": 1200,
               "h": 675,
               "cap": "Tug-of-war battle"
             },
             {
-              "full": "images/superbuilders/type-raiders/squads.jpg",
-              "thumb": "images/superbuilders/type-raiders/squads-sm.jpg",
+              "full": "images/alpha-engineering/type-raiders/squads.jpg",
+              "thumb": "images/alpha-engineering/type-raiders/squads-sm.jpg",
               "w": 1200,
               "h": 675,
               "cap": "Squads"
             },
             {
-              "full": "images/superbuilders/type-raiders/boss-codex.jpg",
-              "thumb": "images/superbuilders/type-raiders/boss-codex-sm.jpg",
+              "full": "images/alpha-engineering/type-raiders/boss-codex.jpg",
+              "thumb": "images/alpha-engineering/type-raiders/boss-codex-sm.jpg",
               "w": 1200,
               "h": 675,
               "cap": "Boss Codex"
             },
             {
-              "full": "images/superbuilders/type-raiders/new-keys.jpg",
-              "thumb": "images/superbuilders/type-raiders/new-keys-sm.jpg",
+              "full": "images/alpha-engineering/type-raiders/new-keys.jpg",
+              "thumb": "images/alpha-engineering/type-raiders/new-keys-sm.jpg",
               "w": 1200,
               "h": 675,
               "cap": "New keys"
             },
             {
-              "full": "images/superbuilders/type-raiders/campaign.jpg",
-              "thumb": "images/superbuilders/type-raiders/campaign-sm.jpg",
+              "full": "images/alpha-engineering/type-raiders/campaign.jpg",
+              "thumb": "images/alpha-engineering/type-raiders/campaign-sm.jpg",
               "w": 1200,
               "h": 675,
               "cap": "Campaign"
             },
             {
-              "full": "images/superbuilders/type-raiders/squad-room.jpg",
-              "thumb": "images/superbuilders/type-raiders/squad-room-sm.jpg",
+              "full": "images/alpha-engineering/type-raiders/squad-room.jpg",
+              "thumb": "images/alpha-engineering/type-raiders/squad-room-sm.jpg",
               "w": 1200,
               "h": 675,
               "cap": "Squad room"
             },
             {
-              "full": "images/superbuilders/type-raiders/boot.jpg",
-              "thumb": "images/superbuilders/type-raiders/boot-sm.jpg",
+              "full": "images/alpha-engineering/type-raiders/boot.jpg",
+              "thumb": "images/alpha-engineering/type-raiders/boot-sm.jpg",
               "w": 1200,
               "h": 675,
               "cap": "Title"
@@ -654,38 +644,37 @@
         {
           "id": "vocabulon",
           "title": "Vocabulon",
-          "when": "Feb to Aug 2026",
           "tag": "Vocabulary creature battles",
           "accent": "#12a4b8",
           "role": "Redesigned the screens and built the map, tutorial and battle controls.",
           "clips": [
             {
-              "src": "images/superbuilders/vocabulon/capture.mp4",
-              "poster": "images/superbuilders/vocabulon/capture-poster.jpg",
+              "src": "images/alpha-engineering/vocabulon/capture.mp4",
+              "poster": "images/alpha-engineering/vocabulon/capture-poster.jpg",
               "w": 1280,
               "h": 720,
               "cap": "Capture",
               "order": 1
             },
             {
-              "src": "images/superbuilders/vocabulon/explore.mp4",
-              "poster": "images/superbuilders/vocabulon/explore-poster.jpg",
+              "src": "images/alpha-engineering/vocabulon/explore.mp4",
+              "poster": "images/alpha-engineering/vocabulon/explore-poster.jpg",
               "w": 1280,
               "h": 720,
               "cap": "Explore",
               "order": 2
             },
             {
-              "src": "images/superbuilders/vocabulon/worddex-device.mp4",
-              "poster": "images/superbuilders/vocabulon/worddex-device-poster.jpg",
+              "src": "images/alpha-engineering/vocabulon/worddex-device.mp4",
+              "poster": "images/alpha-engineering/vocabulon/worddex-device-poster.jpg",
               "w": 1280,
               "h": 720,
               "cap": "WordDex",
               "order": 3
             },
             {
-              "src": "images/superbuilders/vocabulon/summary.mp4",
-              "poster": "images/superbuilders/vocabulon/summary-poster.jpg",
+              "src": "images/alpha-engineering/vocabulon/summary.mp4",
+              "poster": "images/alpha-engineering/vocabulon/summary-poster.jpg",
               "w": 1280,
               "h": 720,
               "cap": "Summary",
@@ -694,29 +683,29 @@
           ],
           "shots": [
             {
-              "full": "images/superbuilders/vocabulon/home.jpg",
-              "thumb": "images/superbuilders/vocabulon/home-sm.jpg",
+              "full": "images/alpha-engineering/vocabulon/home.jpg",
+              "thumb": "images/alpha-engineering/vocabulon/home-sm.jpg",
               "w": 1600,
               "h": 900,
               "cap": "Home"
             },
             {
-              "full": "images/superbuilders/vocabulon/battle.jpg",
-              "thumb": "images/superbuilders/vocabulon/battle-sm.jpg",
+              "full": "images/alpha-engineering/vocabulon/battle.jpg",
+              "thumb": "images/alpha-engineering/vocabulon/battle-sm.jpg",
               "w": 1600,
               "h": 900,
               "cap": "Battle"
             },
             {
-              "full": "images/superbuilders/vocabulon/worddex-entry.jpg",
-              "thumb": "images/superbuilders/vocabulon/worddex-entry-sm.jpg",
+              "full": "images/alpha-engineering/vocabulon/worddex-entry.jpg",
+              "thumb": "images/alpha-engineering/vocabulon/worddex-entry-sm.jpg",
               "w": 1600,
               "h": 900,
               "cap": "WordDex entry"
             },
             {
-              "full": "images/superbuilders/vocabulon/word-card.jpg",
-              "thumb": "images/superbuilders/vocabulon/word-card-sm.jpg",
+              "full": "images/alpha-engineering/vocabulon/word-card.jpg",
+              "thumb": "images/alpha-engineering/vocabulon/word-card-sm.jpg",
               "w": 1600,
               "h": 900,
               "cap": "Word card"
@@ -728,30 +717,29 @@
         {
           "id": "math-cakes",
           "title": "Math Cakes",
-          "when": "Mar to May 2026",
           "tag": "Arithmetic in a pixel bakery",
           "accent": "#f28cb1",
           "role": "Gave the game its world: Coco, the story, the art and the sound.",
           "clips": [
             {
-              "src": "images/superbuilders/math-cakes/solve-and-bake.mp4",
-              "poster": "images/superbuilders/math-cakes/solve-and-bake-poster.jpg",
+              "src": "images/alpha-engineering/math-cakes/solve-and-bake.mp4",
+              "poster": "images/alpha-engineering/math-cakes/solve-and-bake-poster.jpg",
               "w": 1280,
               "h": 800,
               "cap": "Solve and bake",
               "order": 1
             },
             {
-              "src": "images/superbuilders/math-cakes/gold-upgrade.mp4",
-              "poster": "images/superbuilders/math-cakes/gold-upgrade-poster.jpg",
+              "src": "images/alpha-engineering/math-cakes/gold-upgrade.mp4",
+              "poster": "images/alpha-engineering/math-cakes/gold-upgrade-poster.jpg",
               "w": 1280,
               "h": 800,
               "cap": "Gold upgrade",
               "order": 2
             },
             {
-              "src": "images/superbuilders/math-cakes/title.mp4",
-              "poster": "images/superbuilders/math-cakes/title-poster.jpg",
+              "src": "images/alpha-engineering/math-cakes/title.mp4",
+              "poster": "images/alpha-engineering/math-cakes/title-poster.jpg",
               "w": 1280,
               "h": 800,
               "cap": "Title",
@@ -760,57 +748,57 @@
           ],
           "shots": [
             {
-              "full": "images/superbuilders/math-cakes/mastery-round.jpg",
-              "thumb": "images/superbuilders/math-cakes/mastery-round-sm.jpg",
+              "full": "images/alpha-engineering/math-cakes/mastery-round.jpg",
+              "thumb": "images/alpha-engineering/math-cakes/mastery-round-sm.jpg",
               "w": 1200,
               "h": 750,
               "cap": "Mastery round"
             },
             {
-              "full": "images/superbuilders/math-cakes/attic.jpg",
-              "thumb": "images/superbuilders/math-cakes/attic-sm.jpg",
+              "full": "images/alpha-engineering/math-cakes/attic.jpg",
+              "thumb": "images/alpha-engineering/math-cakes/attic-sm.jpg",
               "w": 1200,
               "h": 750,
               "cap": "Intro story"
             },
             {
-              "full": "images/superbuilders/math-cakes/stamp.jpg",
-              "thumb": "images/superbuilders/math-cakes/stamp-sm.jpg",
+              "full": "images/alpha-engineering/math-cakes/stamp.jpg",
+              "thumb": "images/alpha-engineering/math-cakes/stamp-sm.jpg",
               "w": 1200,
               "h": 750,
               "cap": "Coco's stamp"
             },
             {
-              "full": "images/superbuilders/math-cakes/memory.jpg",
-              "thumb": "images/superbuilders/math-cakes/memory-sm.jpg",
+              "full": "images/alpha-engineering/math-cakes/memory.jpg",
+              "thumb": "images/alpha-engineering/math-cakes/memory-sm.jpg",
               "w": 1200,
               "h": 750,
               "cap": "Grandpa's memories"
             },
             {
-              "full": "images/superbuilders/math-cakes/gallery.jpg",
-              "thumb": "images/superbuilders/math-cakes/gallery-sm.jpg",
+              "full": "images/alpha-engineering/math-cakes/gallery.jpg",
+              "thumb": "images/alpha-engineering/math-cakes/gallery-sm.jpg",
               "w": 1200,
               "h": 750,
               "cap": "Gallery"
             },
             {
-              "full": "images/superbuilders/math-cakes/tiers.jpg",
-              "thumb": "images/superbuilders/math-cakes/tiers-sm.jpg",
+              "full": "images/alpha-engineering/math-cakes/tiers.jpg",
+              "thumb": "images/alpha-engineering/math-cakes/tiers-sm.jpg",
               "w": 1200,
               "h": 750,
               "cap": "Dessert tiers"
             },
             {
-              "full": "images/superbuilders/math-cakes/recipe-book.jpg",
-              "thumb": "images/superbuilders/math-cakes/recipe-book-sm.jpg",
+              "full": "images/alpha-engineering/math-cakes/recipe-book.jpg",
+              "thumb": "images/alpha-engineering/math-cakes/recipe-book-sm.jpg",
               "w": 1200,
               "h": 750,
               "cap": "Recipe book"
             },
             {
-              "full": "images/superbuilders/math-cakes/dashboard.jpg",
-              "thumb": "images/superbuilders/math-cakes/dashboard-sm.jpg",
+              "full": "images/alpha-engineering/math-cakes/dashboard.jpg",
+              "thumb": "images/alpha-engineering/math-cakes/dashboard-sm.jpg",
               "w": 1200,
               "h": 833,
               "cap": "Teacher dashboard"
@@ -822,38 +810,37 @@
         {
           "id": "math-park",
           "title": "Math Park",
-          "when": "Jan to Nov 2026",
           "tag": "A 3D park that grows as you learn",
           "accent": "#2e9e5b",
           "role": "Started it solo. Built the park and the lesson engine.",
           "clips": [
             {
-              "src": "images/superbuilders/math-park/park-tour.mp4",
-              "poster": "images/superbuilders/math-park/park-tour-poster.jpg",
+              "src": "images/alpha-engineering/math-park/park-tour.mp4",
+              "poster": "images/alpha-engineering/math-park/park-tour-poster.jpg",
               "w": 1280,
               "h": 720,
               "cap": "The park",
               "order": 1
             },
             {
-              "src": "images/superbuilders/math-park/ride-upgrade.mp4",
-              "poster": "images/superbuilders/math-park/ride-upgrade-poster.jpg",
+              "src": "images/alpha-engineering/math-park/ride-upgrade.mp4",
+              "poster": "images/alpha-engineering/math-park/ride-upgrade-poster.jpg",
               "w": 1280,
               "h": 720,
               "cap": "Ride upgrade",
               "order": 2
             },
             {
-              "src": "images/superbuilders/math-park/word-problem.mp4",
-              "poster": "images/superbuilders/math-park/word-problem-poster.jpg",
+              "src": "images/alpha-engineering/math-park/word-problem.mp4",
+              "poster": "images/alpha-engineering/math-park/word-problem-poster.jpg",
               "w": 1280,
               "h": 720,
               "cap": "Word problem",
               "order": 3
             },
             {
-              "src": "images/superbuilders/math-park/dream-intro.mp4",
-              "poster": "images/superbuilders/math-park/dream-intro-poster.jpg",
+              "src": "images/alpha-engineering/math-park/dream-intro.mp4",
+              "poster": "images/alpha-engineering/math-park/dream-intro-poster.jpg",
               "w": 1280,
               "h": 720,
               "cap": "Intro",
@@ -862,50 +849,50 @@
           ],
           "shots": [
             {
-              "full": "images/superbuilders/math-park/park-full.jpg",
-              "thumb": "images/superbuilders/math-park/park-full-sm.jpg",
+              "full": "images/alpha-engineering/math-park/park-full.jpg",
+              "thumb": "images/alpha-engineering/math-park/park-full-sm.jpg",
               "w": 1200,
               "h": 675,
               "cap": "Finished park"
             },
             {
-              "full": "images/superbuilders/math-park/coin-lesson.jpg",
-              "thumb": "images/superbuilders/math-park/coin-lesson-sm.jpg",
+              "full": "images/alpha-engineering/math-park/coin-lesson.jpg",
+              "thumb": "images/alpha-engineering/math-park/coin-lesson-sm.jpg",
               "w": 1200,
               "h": 675,
               "cap": "Coin lesson"
             },
             {
-              "full": "images/superbuilders/math-park/park-growing.jpg",
-              "thumb": "images/superbuilders/math-park/park-growing-sm.jpg",
+              "full": "images/alpha-engineering/math-park/park-growing.jpg",
+              "thumb": "images/alpha-engineering/math-park/park-growing-sm.jpg",
               "w": 1200,
               "h": 675,
               "cap": "Park growing"
             },
             {
-              "full": "images/superbuilders/math-park/typing-lesson.jpg",
-              "thumb": "images/superbuilders/math-park/typing-lesson-sm.jpg",
+              "full": "images/alpha-engineering/math-park/typing-lesson.jpg",
+              "thumb": "images/alpha-engineering/math-park/typing-lesson-sm.jpg",
               "w": 1200,
               "h": 675,
               "cap": "Typing lesson"
             },
             {
-              "full": "images/superbuilders/math-park/diagnostic.jpg",
-              "thumb": "images/superbuilders/math-park/diagnostic-sm.jpg",
+              "full": "images/alpha-engineering/math-park/diagnostic.jpg",
+              "thumb": "images/alpha-engineering/math-park/diagnostic-sm.jpg",
               "w": 1200,
               "h": 675,
               "cap": "Placement check"
             },
             {
-              "full": "images/superbuilders/math-park/park-may.jpg",
-              "thumb": "images/superbuilders/math-park/park-may-sm.jpg",
+              "full": "images/alpha-engineering/math-park/park-may.jpg",
+              "thumb": "images/alpha-engineering/math-park/park-may-sm.jpg",
               "w": 1200,
               "h": 675,
               "cap": "May build"
             },
             {
-              "full": "images/superbuilders/math-park/january.jpg",
-              "thumb": "images/superbuilders/math-park/january-sm.jpg",
+              "full": "images/alpha-engineering/math-park/january.jpg",
+              "thumb": "images/alpha-engineering/math-park/january-sm.jpg",
               "w": 1200,
               "h": 675,
               "cap": "First build"
@@ -917,46 +904,45 @@
         {
           "id": "mathquest",
           "title": "MathQuest",
-          "when": "Feb to Nov 2026",
           "tag": "K to 1 math adventure",
           "accent": "#7a4fd6",
           "role": "Built the Crash Course and lesson interactions.",
           "clips": [
             {
-              "src": "images/superbuilders/mathquest/statue-complete.mp4",
-              "poster": "images/superbuilders/mathquest/statue-complete-poster.jpg",
+              "src": "images/alpha-engineering/mathquest/statue-complete.mp4",
+              "poster": "images/alpha-engineering/mathquest/statue-complete-poster.jpg",
               "w": 1280,
               "h": 720,
               "cap": "Griffin complete",
               "order": 1
             },
             {
-              "src": "images/superbuilders/mathquest/statue-hall.mp4",
-              "poster": "images/superbuilders/mathquest/statue-hall-poster.jpg",
+              "src": "images/alpha-engineering/mathquest/statue-hall.mp4",
+              "poster": "images/alpha-engineering/mathquest/statue-hall-poster.jpg",
               "w": 1280,
               "h": 720,
               "cap": "Statue hall",
               "order": 2
             },
             {
-              "src": "images/superbuilders/mathquest/statue-finale.mp4",
-              "poster": "images/superbuilders/mathquest/statue-finale-poster.jpg",
+              "src": "images/alpha-engineering/mathquest/statue-finale.mp4",
+              "poster": "images/alpha-engineering/mathquest/statue-finale-poster.jpg",
               "w": 1280,
               "h": 720,
               "cap": "Queen and king",
               "order": 3
             },
             {
-              "src": "images/superbuilders/mathquest/shape-sort.mp4",
-              "poster": "images/superbuilders/mathquest/shape-sort-poster.jpg",
+              "src": "images/alpha-engineering/mathquest/shape-sort.mp4",
+              "poster": "images/alpha-engineering/mathquest/shape-sort-poster.jpg",
               "w": 1280,
               "h": 720,
               "cap": "Shape sort",
               "order": 4
             },
             {
-              "src": "images/superbuilders/mathquest/map-go.mp4",
-              "poster": "images/superbuilders/mathquest/map-go-poster.jpg",
+              "src": "images/alpha-engineering/mathquest/map-go.mp4",
+              "poster": "images/alpha-engineering/mathquest/map-go-poster.jpg",
               "w": 1280,
               "h": 720,
               "cap": "Map",
@@ -965,29 +951,29 @@
           ],
           "shots": [
             {
-              "full": "images/superbuilders/mathquest/statue-hall-2.jpg",
-              "thumb": "images/superbuilders/mathquest/statue-hall-2-sm.jpg",
+              "full": "images/alpha-engineering/mathquest/statue-hall-2.jpg",
+              "thumb": "images/alpha-engineering/mathquest/statue-hall-2-sm.jpg",
               "w": 1600,
               "h": 900,
               "cap": "Second hall"
             },
             {
-              "full": "images/superbuilders/mathquest/statue-hall-1.jpg",
-              "thumb": "images/superbuilders/mathquest/statue-hall-1-sm.jpg",
+              "full": "images/alpha-engineering/mathquest/statue-hall-1.jpg",
+              "thumb": "images/alpha-engineering/mathquest/statue-hall-1-sm.jpg",
               "w": 1600,
               "h": 900,
               "cap": "First hall"
             },
             {
-              "full": "images/superbuilders/mathquest/aquarium.jpg",
-              "thumb": "images/superbuilders/mathquest/aquarium-sm.jpg",
+              "full": "images/alpha-engineering/mathquest/aquarium.jpg",
+              "thumb": "images/alpha-engineering/mathquest/aquarium-sm.jpg",
               "w": 1600,
               "h": 900,
               "cap": "Aquarium"
             },
             {
-              "full": "images/superbuilders/mathquest/title.jpg",
-              "thumb": "images/superbuilders/mathquest/title-sm.jpg",
+              "full": "images/alpha-engineering/mathquest/title.jpg",
+              "thumb": "images/alpha-engineering/mathquest/title-sm.jpg",
               "w": 1600,
               "h": 900,
               "cap": "Title"
@@ -1007,36 +993,35 @@
         {
           "id": "playcademy-landing",
           "title": "Playcademy landing page",
-          "when": "Apr to Sep 2026",
           "tag": "Marketing site",
           "accent": "#1e2a3a",
           "role": "Did most of the visual work on the redesign.",
           "clips": [],
           "shots": [
             {
-              "full": "images/superbuilders/playcademy-landing/hub-math-raiders.jpg",
-              "thumb": "images/superbuilders/playcademy-landing/hub-math-raiders-sm.jpg",
+              "full": "images/alpha-engineering/playcademy-landing/hub-math-raiders.jpg",
+              "thumb": "images/alpha-engineering/playcademy-landing/hub-math-raiders-sm.jpg",
               "w": 1200,
               "h": 675,
               "cap": "Games hub"
             },
             {
-              "full": "images/superbuilders/playcademy-landing/hub-vocabulon.jpg",
-              "thumb": "images/superbuilders/playcademy-landing/hub-vocabulon-sm.jpg",
+              "full": "images/alpha-engineering/playcademy-landing/hub-vocabulon.jpg",
+              "thumb": "images/alpha-engineering/playcademy-landing/hub-vocabulon-sm.jpg",
               "w": 1200,
               "h": 675,
               "cap": "Vocabulon"
             },
             {
-              "full": "images/superbuilders/playcademy-landing/parents.jpg",
-              "thumb": "images/superbuilders/playcademy-landing/parents-sm.jpg",
+              "full": "images/alpha-engineering/playcademy-landing/parents.jpg",
+              "thumb": "images/alpha-engineering/playcademy-landing/parents-sm.jpg",
               "w": 1200,
               "h": 675,
               "cap": "Parents page"
             },
             {
-              "full": "images/superbuilders/playcademy-landing/phone.jpg",
-              "thumb": "images/superbuilders/playcademy-landing/phone-sm.jpg",
+              "full": "images/alpha-engineering/playcademy-landing/phone.jpg",
+              "thumb": "images/alpha-engineering/playcademy-landing/phone-sm.jpg",
               "w": 554,
               "h": 1200,
               "cap": "Phone"
