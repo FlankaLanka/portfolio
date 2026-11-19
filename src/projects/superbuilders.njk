@@ -1,0 +1,425 @@
+---
+layout: project.njk
+pageTitle: Superbuilders
+projectTitle: Superbuilders
+role: Game Developer & Designer · 2026
+extraStyles: |
+  #main > .inner { max-width: 84em; }
+
+  .sb-intro {
+    max-width: 760px;
+    margin: 0 auto 1.5rem;
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #444;
+  }
+
+  /* Jump nav */
+  .sb-nav {
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 0.75rem;
+    line-height: 2;
+    color: #999;
+  }
+  .sb-nav p { margin: 0; }
+  .sb-nav b {
+    margin-right: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #222;
+  }
+  .sb-nav a {
+    color: #555;
+    text-decoration: none;
+    border-bottom: 1px dashed #bbb;
+  }
+  .sb-nav a:hover { color: #e44c65; border-bottom-color: #e44c65; }
+
+  /* Group heading */
+  .sb-group {
+    margin: 5rem 0 0;
+    padding: 1.5rem 0 0;
+    border-top: 2px solid #222;
+  }
+  .sb-group h2 {
+    font-size: 2.2rem !important;
+    letter-spacing: 0.12em;
+    margin: 0 0 0.6rem;
+    color: #222;
+  }
+  .sb-group-blurb {
+    max-width: 720px;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #555;
+    margin: 0;
+  }
+
+  /* One game */
+  .sb-game {
+    margin: 3.5rem 0 0;
+    scroll-margin-top: 1.5rem;
+  }
+  .sb-game-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 1rem;
+    margin-bottom: 0.8rem;
+  }
+  .sb-game h3 {
+    font-size: 1.5rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0;
+    color: #222;
+  }
+  .sb-meta {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #666;
+    margin: 0;
+  }
+  .sb-meta b { color: #222; }
+  .sb-role {
+    max-width: 860px;
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: #444;
+    margin: 0 0 1.5rem;
+    padding-left: 1rem;
+    border-left: 4px solid var(--accent);
+  }
+
+  /* Media frames */
+  .sb-shot {
+    position: relative;
+    margin: 0;
+  }
+  .sb-frame {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    background: #111;
+    border: 2px solid #222 !important;
+    box-shadow: none !important;
+    cursor: zoom-in;
+    overflow: hidden;
+    line-height: 0;
+    height: auto;
+    transform: none !important;
+  }
+  .sb-frame img,
+  .sb-frame video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.35s ease;
+  }
+  .sb-shot:hover .sb-frame img,
+  .sb-shot:hover .sb-frame video { transform: scale(1.025); }
+  .sb-shot::before {
+    content: '';
+    position: absolute;
+    top: 6px; left: 6px; right: -6px;
+    border: 2px solid #222;
+    opacity: 0.15;
+    z-index: -1;
+    aspect-ratio: var(--ar, 16 / 10);
+  }
+  .sb-shot figcaption {
+    margin-top: 0.6rem;
+    font-size: 0.72rem;
+    line-height: 1.55;
+    color: #555;
+  }
+  .sb-tag {
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 2;
+    padding: 0.25rem 0.55rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    line-height: 1.4;
+    color: #fff;
+    background: #e44c65;
+    pointer-events: none;
+  }
+
+  .sb-hero { margin: 0 auto 1.6rem; max-width: 1000px; }
+  .sb-hero .sb-frame { aspect-ratio: var(--ar, 16 / 10); }
+  .sb-hero figcaption { font-size: 0.8rem; }
+
+  .sb-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.6rem 1.4rem;
+  }
+  .sb-grid .sb-frame { aspect-ratio: var(--gar, 16 / 10); }
+  .sb-grid .sb-shot { --ar: var(--gar, 16 / 10); }
+
+  /* Hero beside a column of two when the game has enough shots */
+  .sb-lead {
+    display: grid;
+    grid-template-columns: minmax(0, 2.27fr) minmax(0, 1fr);
+    gap: 1.4rem;
+    align-items: start;
+    margin-bottom: 1.6rem;
+  }
+  .sb-lead .sb-hero { margin: 0; }
+  .sb-side { display: grid; gap: 1.4rem; }
+  .sb-side .sb-frame { aspect-ratio: var(--gar, 16 / 10); }
+  .sb-side .sb-shot { --ar: var(--gar, 16 / 10); }
+
+  @media (max-width: 980px) {
+    .sb-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .sb-lead { grid-template-columns: 1fr; }
+    .sb-side { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 600px) {
+    .project-header { max-width: 100%; padding-top: 4.5rem; }
+    .project-header h1 { font-size: 1.35rem !important; letter-spacing: 2px; }
+    .sb-grid, .sb-side { grid-template-columns: minmax(0, 1fr); }
+    .sb-group h2 { font-size: 1.6rem !important; }
+    .sb-game h3 { font-size: 1.2rem; }
+  }
+
+  .sb-note {
+    max-width: 760px;
+    margin: 5rem auto 0;
+    padding: 1.2rem 1.5rem;
+    background: #f5f5f5;
+    border: 1px dashed #bbb;
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: #666;
+    text-align: center;
+  }
+
+  /* Lightbox */
+  .sb-lightbox {
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: rgba(12, 12, 14, 0.94);
+    color: #eee;
+  }
+  .sb-lightbox::backdrop { background: rgba(12, 12, 14, 0.94); }
+  .sb-lightbox[open] {
+    display: grid;
+    grid-template-rows: 1fr auto;
+  }
+  .sb-lb-stage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+    padding: 3.2rem 4rem 0.5rem;
+  }
+  .sb-lb-stage img,
+  .sb-lb-stage video {
+    max-width: 100%;
+    max-height: 100%;
+    border: 2px solid #fff;
+    background: #000;
+  }
+  .sb-lb-cap {
+    margin: 0;
+    padding: 0.8rem 4rem 1.4rem;
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: #ddd;
+  }
+  .sb-lb-cap b { color: #fff; letter-spacing: 0.1em; text-transform: uppercase; }
+  .sb-lb-cap span { color: #999; margin-left: 0.6rem; }
+  .sb-lightbox button {
+    position: absolute;
+    z-index: 3;
+    min-width: 2.6rem;
+    height: 2.6rem;
+    padding: 0 0.7rem;
+    font-size: 0.8rem;
+    line-height: 1;
+    background: #111 !important;
+    color: #fff !important;
+    border: 2px solid #fff !important;
+  }
+  .sb-lightbox button:hover {
+    background: #fff !important;
+    color: #111 !important;
+    transform: none;
+    box-shadow: none !important;
+  }
+  .sb-lb-close { top: 0.8rem; right: 0.8rem; }
+  .sb-lb-prev { left: 0.8rem; top: 50%; margin-top: -1.3rem; }
+  .sb-lb-next { right: 0.8rem; top: 50%; margin-top: -1.3rem; }
+  @media (max-width: 600px) {
+    .sb-lb-stage { padding: 3.6rem 0.5rem 0.5rem; }
+    .sb-lb-cap { padding: 0.8rem 1rem 1.2rem; }
+    .sb-lb-prev, .sb-lb-next { top: auto; bottom: 0.8rem; margin: 0; }
+  }
+---
+
+{%- macro media(m, game, big) -%}
+<figure class="sb-shot{% if big %} sb-hero{% endif %}"{% if big %} style="--ar: {{ m.w }} / {{ m.h }}"{% endif %}>
+  {%- if m.src %}
+  <button type="button" class="sb-frame" data-lb data-game="{{ game.title }}" data-cap="{{ m.cap }}" data-video="{{ site.baseUrl }}/{{ m.src }}" data-poster="{{ site.baseUrl }}/{{ m.poster }}" aria-label="Play larger: {{ m.cap }}">
+    <span class="sb-tag">▶ Gameplay</span>
+    <video muted loop playsinline preload="none" poster="{{ site.baseUrl }}/{{ m.poster }}" width="{{ m.w }}" height="{{ m.h }}" data-autoplay>
+      <source src="{{ site.baseUrl }}/{{ m.src }}" type="video/mp4">
+    </video>
+  </button>
+  {%- else %}
+  <button type="button" class="sb-frame" data-lb data-game="{{ game.title }}" data-cap="{{ m.cap }}" data-full="{{ site.baseUrl }}/{{ m.full }}" aria-label="View larger: {{ m.cap }}">
+    <img src="{{ site.baseUrl }}/{% if big %}{{ m.full }}{% else %}{{ m.thumb }}{% endif %}" width="{{ m.w }}" height="{{ m.h }}" alt="{{ game.title }}: {{ m.cap }}" loading="lazy" decoding="async">
+  </button>
+  {%- endif %}
+  <figcaption>{{ m.cap }}</figcaption>
+</figure>
+{%- endmacro -%}
+
+<p class="sb-intro">
+  Games I designed and built at Superbuilders in 2026.
+</p>
+
+<nav class="sb-nav" aria-label="Games on this page">
+  {%- for grp in superbuilders.groups %}
+  <p><b>{{ grp.title }}</b>
+    {%- for g in grp.games %}<a href="#{{ g.id }}">{{ g.title }}</a>{% if not loop.last %} · {% endif %}{% endfor -%}
+  </p>
+  {%- endfor %}
+</nav>
+
+{% for grp in superbuilders.groups %}
+<section class="sb-group" id="{{ grp.id }}">
+  <h2>{{ grp.title }}</h2>
+  {% if grp.blurb %}<p class="sb-group-blurb">{{ grp.blurb }}</p>{% endif %}
+
+  {% for g in grp.games %}
+  {%- set items = g.clips.concat(g.shots) -%}
+  <article class="sb-game" id="{{ g.id }}" style="--accent: {{ g.accent }}; --gar: {{ g.ar }}">
+    <header class="sb-game-head">
+      <h3>{{ g.title }}</h3>
+      <p class="sb-meta"><b>{{ g.tag }}</b> · {{ g.when }}</p>
+    </header>
+    <p class="sb-role">{{ g.role }}</p>
+
+    {% if items.length >= 3 %}
+    <div class="sb-lead">
+      {{ media(items[0], g, true) }}
+      <div class="sb-side">
+        {{ media(items[1], g, false) }}
+        {{ media(items[2], g, false) }}
+      </div>
+    </div>
+    <div class="sb-grid">
+      {% for m in items.slice(3) %}{{ media(m, g, false) }}{% endfor %}
+    </div>
+    {% else %}
+    {{ media(items[0], g, true) }}
+    <div class="sb-grid">
+      {% for m in items.slice(1) %}{{ media(m, g, false) }}{% endfor %}
+    </div>
+    {% endif %}
+  </article>
+  {% endfor %}
+</section>
+{% endfor %}
+
+<p class="sb-note">
+  Team projects. Some of the art shown is by teammates.
+</p>
+
+<dialog class="sb-lightbox" aria-label="Larger view">
+  <button type="button" class="sb-lb-close" aria-label="Close">✕</button>
+  <button type="button" class="sb-lb-prev" aria-label="Previous">←</button>
+  <div class="sb-lb-stage"></div>
+  <p class="sb-lb-cap"><b></b> <i></i><span></span></p>
+  <button type="button" class="sb-lb-next" aria-label="Next">→</button>
+</dialog>
+
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Play gameplay clips only while they are on screen.
+  var vids = Array.prototype.slice.call(document.querySelectorAll('video[data-autoplay]'));
+  if (reduce || !('IntersectionObserver' in window)) {
+    vids.forEach(function (v) { v.controls = true; });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var v = e.target;
+        if (e.isIntersecting && e.intersectionRatio >= 0.5) {
+          var p = v.play();
+          if (p && p.catch) p.catch(function () {});
+        } else {
+          v.pause();
+        }
+      });
+    }, { threshold: [0, 0.5, 1] });
+    vids.forEach(function (v) { io.observe(v); });
+  }
+
+  // Lightbox
+  var lb = document.querySelector('.sb-lightbox');
+  var stage = lb.querySelector('.sb-lb-stage');
+  var capGame = lb.querySelector('.sb-lb-cap b');
+  var capText = lb.querySelector('.sb-lb-cap i');
+  var capCount = lb.querySelector('.sb-lb-cap span');
+  var items = Array.prototype.slice.call(document.querySelectorAll('[data-lb]'));
+  var at = 0;
+
+  function show(i) {
+    at = (i + items.length) % items.length;
+    var b = items[at];
+    stage.textContent = '';
+    var el;
+    if (b.dataset.video) {
+      el = document.createElement('video');
+      el.src = b.dataset.video;
+      el.poster = b.dataset.poster;
+      el.muted = true; el.loop = true; el.playsInline = true; el.controls = true;
+      if (!reduce) el.autoplay = true;
+    } else {
+      el = document.createElement('img');
+      el.src = b.dataset.full;
+      el.alt = b.dataset.cap;
+    }
+    stage.appendChild(el);
+    capGame.textContent = b.dataset.game;
+    capText.textContent = b.dataset.cap;
+    capCount.textContent = (at + 1) + ' / ' + items.length;
+  }
+
+  items.forEach(function (b, i) {
+    b.addEventListener('click', function () {
+      show(i);
+      if (lb.showModal) lb.showModal(); else lb.setAttribute('open', '');
+    });
+  });
+  function close() { stage.textContent = ''; if (lb.close) lb.close(); else lb.removeAttribute('open'); }
+  lb.querySelector('.sb-lb-close').addEventListener('click', close);
+  lb.querySelector('.sb-lb-prev').addEventListener('click', function () { show(at - 1); });
+  lb.querySelector('.sb-lb-next').addEventListener('click', function () { show(at + 1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb || e.target === stage) close(); });
+  lb.addEventListener('close', function () { stage.textContent = ''; });
+  lb.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') show(at - 1);
+    if (e.key === 'ArrowRight') show(at + 1);
+  });
+})();
+</script>

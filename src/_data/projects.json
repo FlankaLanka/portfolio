@@ -38,6 +38,13 @@
   ],
   "product": [
     {
+      "slug": "superbuilders",
+      "title": "Superbuilders",
+      "description": "Games I designed and built at Superbuilders in 2026.",
+      "thumbnail": "images/superbuilders/superbuilders_thumbnail.jpg",
+      "style": "style1"
+    },
+    {
       "slug": "atsa",
       "title": "ATSA Ace",
       "description": "The best Air Traffic Skills Assessment exam simulator. Developed after I scored Best Qualified on the real test.",
