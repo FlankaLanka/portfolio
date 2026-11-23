@@ -124,6 +124,20 @@ module.exports = function(eleventyConfig) {
   // Watch for changes in assets
   eleventyConfig.addWatchTarget("src/assets/");
 
+  // Bundle the 3D home page (cover/) into one minified module
+  eleventyConfig.addWatchTarget("./cover/");
+  eleventyConfig.on("eleventy.after", async () => {
+    await require("esbuild").build({
+      entryPoints: ["cover/main.js"],
+      bundle: true,
+      minify: true,
+      format: "esm",
+      target: "es2020",
+      outfile: "_site/assets/js/cover.js",
+      logLevel: "warning"
+    });
+  });
+
   return {
     dir: {
       input: "src",
