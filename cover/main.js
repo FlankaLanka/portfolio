@@ -517,7 +517,7 @@ async function boot() {
         href: `mailto:${data.email}`, action: 'Email Frank',
       });
     } else {
-      ui.hud.card({ img: e.thumb, kicker: e.zone.label, title: e.title, desc: e.desc, href: e.href, action: 'Open project' });
+      ui.hud.card({ img: e.thumb, kicker: e.zone.label, title: e.title, desc: e.desc, href: e.href, action: 'Learn more' });
     }
     app.modal = true;
     route = [];

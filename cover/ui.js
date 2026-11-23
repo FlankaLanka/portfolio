@@ -28,7 +28,7 @@ export function createUI(data, catalog, on) {
         <a class="insp-thumb" style="--c:${e.zone.css}" href="${e.href}"><img src="${e.thumb}" alt="${esc(e.title)}"></a>
         <section class="comp"><h3>Project</h3><div class="comp-body">
           <p>${esc(e.desc)}</p>
-          <a class="btn primary" href="${e.href}">Open project</a>
+          <a class="btn primary" href="${e.href}">Learn more</a>
           <button class="btn" type="button" data-act="focus">Focus</button>
         </div></section>${transform()}`;
     }
