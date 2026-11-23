@@ -190,7 +190,7 @@ async function boot() {
 
   // Little shards for pickups and celebrations.
   const shardGeo = new THREE.OctahedronGeometry(0.11);
-  const shardMats = [C.accent, C.product, C.tech, C.ai].map((color) => new THREE.MeshBasicMaterial({ color }));
+  const shardMats = [C.accent, C.work, C.tech, C.apps].map((color) => new THREE.MeshBasicMaterial({ color }));
   const shards = Array.from({ length: 48 }, (_, i) => {
     const m = new THREE.Mesh(shardGeo, shardMats[i % 4]);
     m.visible = false;
