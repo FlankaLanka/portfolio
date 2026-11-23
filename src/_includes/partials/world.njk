@@ -1,0 +1,7 @@
+<!-- A live window into the 3D world from the home page -->
+<div class="world-hero" data-focus="{{ worldFocus }}">
+	<canvas aria-hidden="true"></canvas>
+	<a class="world-back" href="{{ worldHref }}">&larr; Back to the world</a>
+</div>
+<script id="cover-data" type="application/json">{{ { "base": site.baseUrl, "projects": projects } | dump | safe }}</script>
+<script type="module" src="{{ site.baseUrl }}/assets/js/cover/page.js"></script>
