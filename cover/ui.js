@@ -52,7 +52,7 @@ export function createUI(data, catalog, on) {
     if (e.kind === 'chest') {
       const body = info.complete
         ? `<p>Open. Thanks for playing the whole thing.</p><a class="btn primary" href="mailto:${data.email}">Email Frank</a>`
-        : '<p>Locked. Finish the three quests in Play mode to open it.</p><button class="btn primary" type="button" data-act="play">Play</button>';
+        : '<p>Locked. Find every gem and visit every island to open it.</p><button class="btn primary" type="button" data-act="play">Play</button>';
       return `
         <div class="insp-head"><span class="insp-cube" style="--c:var(--product)"></span>
           <div><strong>Treasure Chest</strong><small>${info.complete ? 'Unlocked' : 'Locked'}</small></div></div>
@@ -118,16 +118,19 @@ export function createUI(data, catalog, on) {
   function setMode(mode) {
     const playing = mode === 'play';
     document.body.dataset.mode = mode;
-    $('#btn-play').setAttribute('aria-pressed', String(playing));
-    $('#btn-play .play-label').textContent = playing ? 'Stop' : 'Play';
     $('#tab-scene').classList.toggle('off', playing);
     $('#tab-game').classList.toggle('off', !playing);
-    $('#view-note').textContent = playing
-      ? 'Playing · Esc to stop'
-      : 'Drag to orbit · Scroll to zoom · Click to inspect';
   }
 
-  const showTitle = (show) => $('#title').classList.toggle('is-away', !show);
+  // The hello note and the controls hint both leave once the visitor starts moving.
+  const showIntro = (show) => {
+    $('#title').classList.toggle('is-away', !show);
+    $('#help').classList.toggle('is-away', !show);
+  };
+  const sheet = (open) => {
+    $('#sheet').hidden = !open;
+    if (open) $('#sheet-close').focus({ preventScroll: true });
+  };
 
   function setLoading(frac, done) {
     $('#loading-bar').style.width = `${Math.round(frac * 100)}%`;
@@ -147,21 +150,11 @@ export function createUI(data, catalog, on) {
   }
 
   // ---- Play HUD ----
-  const quest = (id, n, total) => {
-    const li = $(`#${id}`);
-    li.querySelector('em').textContent = `${Math.min(n, total)}/${total}`;
-    li.classList.toggle('is-done', n >= total);
-  };
   const hud = {
-    quests(q) {
-      quest('q-zones', q.zones, 4);
-      quest('q-gems', q.gems, q.gemTotal);
-      quest('q-projects', q.projects, 3);
-    },
-    xp(level, rank, frac) {
-      $('#hud-lv').textContent = `LV ${level}`;
-      $('#hud-rank').textContent = rank;
-      $('#hud-xp').style.width = `${Math.round(frac * 100)}%`;
+    // The gem counter only appears once the first gem is found.
+    progress(gems, total) {
+      $('#progress').hidden = gems === 0;
+      $('#p-gems').textContent = `${gems}/${total}`;
     },
     toast(html) {
       const box = $('#toasts');
@@ -238,14 +231,17 @@ export function createUI(data, catalog, on) {
     input.value = '';
   });
 
-  $('#btn-play').addEventListener('click', () => on.toggle());
-  $('#btn-cta').addEventListener('click', () => on.play());
+  $('#btn-play').addEventListener('click', () => on.play());
   $('#tab-game').addEventListener('click', () => on.play());
   $('#tab-scene').addEventListener('click', () => on.stop());
-  $('#btn-stop').addEventListener('click', () => on.stop());
+  $('#btn-edit').addEventListener('click', () => on.stop());
+  $('#btn-projects').addEventListener('click', () => on.sheet(true));
+  $('#btn-list').addEventListener('click', () => on.sheet(true));
+  $('#sheet-close').addEventListener('click', () => on.sheet(false));
+  $('#sheet').addEventListener('click', (e) => { if (e.target.id === 'sheet') on.sheet(false); });
   $('#prompt').addEventListener('click', () => on.interact());
   $('#card-close').addEventListener('click', () => on.closeCard());
   $('#level-card').addEventListener('click', (e) => { if (e.target.id === 'level-card') on.closeCard(); });
 
-  return { setSelection, setTransform, setHover, log, clearLog, setMode, showTitle, setLoading, setFps, tooltip, hud };
+  return { setSelection, setTransform, setHover, log, clearLog, setMode, showIntro, sheet, setLoading, setFps, tooltip, hud };
 }

@@ -15,6 +15,9 @@
 		<div id="wrapper">
 			{% include "partials/header.njk" %}
 			{% include "partials/menu.njk" %}
+			{% set worldFocus = "project:" + page.fileSlug %}
+			{% set worldHref = site.baseUrl + "/#" + page.fileSlug %}
+			{% include "partials/world.njk" %}
 
 			<!-- Main -->
 			<div id="main">

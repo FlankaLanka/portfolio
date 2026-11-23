@@ -13,11 +13,9 @@ const canvas = document.getElementById('scene');
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const clamp = THREE.MathUtils.clamp;
 
-const RANKS = [[0, 'Visitor'], [100, 'Playtester'], [250, 'QA Lead'], [450, 'Producer'], [650, 'Hiring Manager']];
-const XP = { gem: 10, zone: 50, project: 30 };
-
-const app = { mode: 'edit', selected: 'player', hovered: null, modal: false, interacted: false, played: false };
-const quest = { zones: new Set(), gems: 0, projects: new Set(), xp: 0, level: 1, complete: false };
+// The page opens straight into the game. "edit" is the optional editor view.
+const app = { mode: 'play', selected: 'player', hovered: null, modal: false, sheet: false, interacted: false, intro: true };
+const quest = { zones: new Set(), gems: 0, complete: false };
 let G = null; // everything 3D; stays null when WebGL is unavailable
 
 const questInfo = () => ({ complete: quest.complete });
@@ -28,7 +26,7 @@ const ui = createUI(data, catalog, {
   open: (id) => openEntity(id),
   play: () => setMode('play'),
   stop: () => setMode('edit'),
-  toggle: () => setMode(app.mode === 'play' ? 'edit' : 'play'),
+  sheet: (open) => toggleSheet(open),
   act: (name) => act(name),
   command: (text) => command(text),
   interact: () => interact(),
@@ -125,14 +123,14 @@ function command(text) {
 async function boot() {
   ui.setSelection(catalog.get('player'), questInfo());
   ui.log('Scene "portfolio" loaded: 14 projects on 4 islands.'.replace('14', String([...catalog.values()].filter((e) => e.kind === 'project').length)));
-  ui.log('Press Play (or Space) to walk around. Type help for commands.');
+  ui.log('Press Play to go back to the game. Type help for commands.');
 
   let renderer;
   try {
     renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
   } catch (err) {
     document.body.classList.add('no-webgl');
-    ui.log('WebGL is not available, so the 3D view is off. The project list still works.', 'warn');
+    ui.sheet(true);
     return;
   }
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
@@ -217,7 +215,7 @@ async function boot() {
   const cam = {
     target: new THREE.Vector3(0, 2.4, 0), az: -Math.PI / 4, pol: 0.98, dist: 60,
     gTarget: new THREE.Vector3(0, 2.4, 0), gAz: -Math.PI / 4, gPol: 0.98, gDist: 50,
-    overview: true, fit: 1, shift: 1, vw: 1, vh: 1,
+    overview: true, fit: 1,
   };
   const clampDist = (d) => clamp(d, 6, 95);
   const overviewDist = () => {
@@ -234,14 +232,12 @@ async function boot() {
     cam.gTarget.set(0, 2.4, 0);
     cam.gDist = overviewDist();
     cam.gPol = 0.98;
-    ui.showTitle(app.mode === 'edit');
   }
 
   function focusOn(e) {
     if (!e || app.mode !== 'edit') return;
     app.interacted = true;
     cam.overview = false;
-    ui.showTitle(false);
     if (e.kind === 'player') {
       cam.gTarget.set(player.root.position.x, 1.0, player.root.position.z);
       cam.gDist = 10 * cam.fit;
@@ -265,13 +261,11 @@ async function boot() {
     if (!w || !h) return;
     sizeDirty = false;
     renderer.setSize(w, h, false);
-    cam.vw = w;
-    cam.vh = h;
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
     cam.fit = clamp(1.3 / camera.aspect, 1, 1.7);
     if (cam.overview) cam.gDist = overviewDist();
-    if (app.mode === 'play') cam.gDist = 15 * cam.fit;
+    if (app.mode === 'play') cam.gDist = 21 * cam.fit;
   }
 
   // ---- picking ----
@@ -367,6 +361,7 @@ async function boot() {
       if (!found) return;
       target = found;
     }
+    dismissIntro();
     route = planRoute({ x: p.x, z: p.z }, target);
     player.state.target = route.shift();
     pending = entityId;
@@ -468,9 +463,9 @@ async function boot() {
     if (e.target.closest && e.target.closest('input, textarea')) return;
     const k = e.key.toLowerCase();
     if (app.mode === 'play') {
-      if (k === 'escape') { e.preventDefault(); if (app.modal) closeCard(); else setMode('edit'); return; }
+      if (k === 'escape') { e.preventDefault(); if (app.sheet) toggleSheet(false); else closeCard(); return; }
       if (app.modal) return;
-      if (['arrowup', 'arrowdown', 'arrowleft', 'arrowright', 'w', 'a', 's', 'd'].includes(k)) { e.preventDefault(); keys.add(k); return; }
+      if (['arrowup', 'arrowdown', 'arrowleft', 'arrowright', 'w', 'a', 's', 'd'].includes(k)) { e.preventDefault(); keys.add(k); dismissIntro(); return; }
       if (isControl(e.target)) return;
       if (k === ' ') { e.preventDefault(); player.jump(); }
       if (k === 'e' || k === 'enter') { e.preventDefault(); interact(); }
@@ -491,51 +486,38 @@ async function boot() {
   };
   const still = { x: 0, z: 0 };
 
-  // ---- quests ----
+  // ---- progress: find the gems and the islands, and the chest opens ----
   const gemTotal = world.gems.length;
-  const refreshHud = () => {
-    ui.hud.quests({ zones: quest.zones.size, gems: quest.gems, gemTotal, projects: quest.projects.size });
-    let level = 1;
-    RANKS.forEach(([min], i) => { if (quest.xp >= min) level = i + 1; });
-    const floor = RANKS[level - 1][0];
-    const ceil = level < RANKS.length ? RANKS[level][0] : floor + 100;
-    ui.hud.xp(level, RANKS[level - 1][1], clamp((quest.xp - floor) / (ceil - floor), 0, 1));
-    if (level > quest.level) {
-      quest.level = level;
-      ui.hud.toast(`Level up: <b>LV ${level} ${RANKS[level - 1][1]}</b>`);
-      ui.log(`Level up: LV ${level} ${RANKS[level - 1][1]}.`, 'good');
-    }
+  const dismissIntro = () => {
+    if (!app.intro) return;
+    app.intro = false;
+    ui.showIntro(false);
   };
+  const refreshHud = () => ui.hud.progress(quest.gems, gemTotal);
   const checkComplete = () => {
-    if (quest.complete || quest.zones.size < ZONES.length || quest.gems < gemTotal || quest.projects.size < 3) return;
+    if (quest.complete || quest.zones.size < ZONES.length || quest.gems < gemTotal) return;
     quest.complete = true;
     world.chestState.unlocked = true;
     const c = catalog.get('chest').anchor;
     burst(c.x, 1.2, c.z, 40, true);
-    ui.hud.toast('All quests done. <b>The chest by the signpost is open.</b>');
-    ui.log('All quests complete. The treasure chest is open.', 'good');
+    ui.hud.toast('You found everything. <b>The chest in the middle is open.</b>');
+    ui.log('Everything found. The treasure chest is open.', 'good');
     if (app.selected === 'chest') ui.setSelection(catalog.get('chest'), questInfo());
   };
-  const award = (n) => { quest.xp += n; refreshHud(); checkComplete(); };
   refreshHud();
 
   function openCard(id) {
     const e = catalog.get(id);
     if (!e) return;
     if (e.kind === 'chest') {
-      if (!quest.complete) { ui.hud.toast('Locked. Finish the quests first.'); return; }
+      if (!quest.complete) { ui.hud.toast('Locked. Find every gem and island first.'); return; }
       ui.hud.card({
         img: null, kicker: 'Quest complete', title: 'You found everything',
         desc: 'Thanks for playing. That was the whole tour. If you liked it, I would love to hear from you.',
         href: `mailto:${data.email}`, action: 'Email Frank',
       });
     } else {
-      ui.hud.card({ img: e.thumb, kicker: `${e.zone.label} Island`, title: e.title, desc: e.desc, href: e.href, action: 'Open project' });
-      if (!quest.projects.has(id)) {
-        quest.projects.add(id);
-        ui.log(`Inspected ${esc(e.title)}. +${XP.project} XP`);
-        award(XP.project);
-      }
+      ui.hud.card({ img: e.thumb, kicker: e.zone.label, title: e.title, desc: e.desc, href: e.href, action: 'Open project' });
     }
     app.modal = true;
     route = [];
@@ -567,9 +549,8 @@ async function boot() {
       if (Math.hypot(p.x - zn.dir[0] * ZONE_D, p.z - zn.dir[1] * ZONE_D) < ZONE_R - 0.4) {
         quest.zones.add(zn.id);
         const n = catalog.get(`zone:${zn.id}`).children.length;
-        ui.hud.toast(`Discovered <b>${zn.label} Island</b> · ${n} project${n === 1 ? '' : 's'}`);
-        ui.log(`Discovered ${zn.label} Island. +${XP.zone} XP`);
-        award(XP.zone);
+        ui.hud.toast(`<b>${zn.label}</b> · ${n} project${n === 1 ? '' : 's'}`);
+        checkComplete();
       }
     }
     // Gems
@@ -580,8 +561,8 @@ async function boot() {
         g.pop = 1;
         quest.gems += 1;
         burst(g.x, 1, g.z, 8, false);
-        award(XP.gem);
-        if (quest.gems === gemTotal) ui.log(`All ${gemTotal} gems collected.`, 'good');
+        refreshHud();
+        checkComplete();
       }
     }
     // What is close enough to interact with?
@@ -595,8 +576,8 @@ async function boot() {
     if (id !== nearId) {
       nearId = id;
       if (!best) ui.hud.prompt(null);
-      else if (best.kind === 'chest') ui.hud.prompt(quest.complete ? 'Open the chest' : 'Locked: finish the quests');
-      else ui.hud.prompt(`Inspect ${best.title}`);
+      else if (best.kind === 'chest') ui.hud.prompt(quest.complete ? 'Open the chest' : 'Locked chest');
+      else ui.hud.prompt(best.title);
     }
     // Walk the planned route, then open whatever was clicked.
     if (!player.state.target && route.length) player.state.target = route.shift();
@@ -617,19 +598,13 @@ async function boot() {
     if (mode === 'play') {
       setHover(null);
       ui.tooltip(null);
-      ui.showTitle(false);
       canvas.classList.remove('is-point');
       cam.overview = false;
-      cam.gDist = 15 * cam.fit;
-      cam.gPol = 0.93;
+      cam.gDist = 21 * cam.fit;
+      cam.gPol = 0.9;
       nearId = null;
       ui.hud.prompt(null);
       canvas.focus({ preventScroll: true });
-      ui.log('Entered play mode.', 'good');
-      if (!app.played) {
-        app.played = true;
-        ui.hud.toast('Explore the islands. Walk up to a card to inspect it.');
-      }
     } else {
       closeCardNow();
       keys.clear();
@@ -639,9 +614,15 @@ async function boot() {
       marker.visible = false;
       goal.visible = false;
       resetView();
-      ui.log('Stopped. Back in the editor.');
+      ui.log('Editor view. Click things to inspect them.');
     }
     sizeDirty = true;
+  };
+  G.onSheet = (open) => {
+    app.sheet = open;
+    app.modal = open;
+    if (open) { route = []; pending = null; player.state.target = null; keys.clear(); }
+    else canvas.focus({ preventScroll: true });
   };
 
   // ---- frame loop ----
@@ -720,12 +701,6 @@ async function boot() {
       cam.target.z + cam.dist * sp * Math.cos(cam.az),
     );
     camera.lookAt(cam.target);
-    // In the overview, slide the picture aside so the title has clear paper to sit on.
-    cam.shift += ((cam.overview && !playing ? 1 : 0) - cam.shift) * k;
-    if (cam.shift > 0.003) {
-      const wide = cam.vw > 700;
-      camera.setViewOffset(cam.vw, cam.vh, wide ? -cam.vw * 0.09 * cam.shift : 0, -cam.vh * (wide ? 0.02 : 0.13) * cam.shift, cam.vw, cam.vh);
-    } else if (camera.view) camera.clearViewOffset();
 
     // Gizmo (editor) and marker (play)
     const sel = catalog.get(app.selected);
@@ -774,14 +749,26 @@ async function boot() {
   if (new URLSearchParams(location.search).has('debug')) {
     let clock = 0;
     window.__cover = {
-      app, quest, cam, player, world, catalog, camera, walkTo,
+      app, quest, cam, player, world, catalog, camera, walkTo, setMode,
       run(seconds, dt = 1 / 30) { for (let i = 0; i < seconds / dt; i++) { clock += dt; step(dt, clock); } },
     };
   }
 
   resize();
-  cam.dist = cam.gDist * 1.35; // ease in from a little further out
   select('player', { focus: false });
+  G.setMode('play');
+  // Coming back from a project page (/#slug) drops you next to that project's picture.
+  const from = catalog.get(`project:${decodeURIComponent(location.hash.slice(1))}`);
+  if (from && from.stand) {
+    player.teleport(from.stand.x, from.stand.z);
+    player.state.facing = Math.atan2(from.anchor.x - from.stand.x, from.anchor.z - from.stand.z);
+    cam.az = cam.gAz = from.focusAz;
+    cam.target.set(from.stand.x, 1.1, from.stand.z);
+    quest.zones.add(from.zone.id);
+    dismissIntro();
+  } else {
+    cam.dist = cam.gDist * 3; // swoop in from above on first load
+  }
   requestAnimationFrame(frame);
 }
 
@@ -790,6 +777,7 @@ function resetView() { if (G) G.resetView(); }
 function focusOn(e) { if (G) G.focusOn(e); }
 function setMode(mode) { if (G && mode !== app.mode) G.setMode(mode); }
 function closeCard() { if (G) G.closeCard(); }
+function toggleSheet(open) { ui.sheet(open); if (G) G.onSheet(open); else app.sheet = open; }
 function interact() { if (G) G.interact(); }
 
 boot();

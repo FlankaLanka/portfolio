@@ -98,9 +98,9 @@
       "style": "style1"
     },
     {
-      "slug": "vibecode",
-      "title": "Vibecoded Apps",
-      "description": "A collection of AI-assisted apps and tools.",
+      "slug": "ai-engineering",
+      "title": "AI Engineering",
+      "description": "Apps and tools I built with AI.",
       "thumbnail": "images/vibecode/vibecode_thumbnail.png",
       "style": "style2"
     }

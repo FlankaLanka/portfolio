@@ -19,7 +19,7 @@ permalink: /
 	<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="{{ site.baseUrl }}/assets/css/cover.css">
 </head>
-<body data-mode="edit">
+<body data-mode="play">
 <div class="ed" id="editor">
 
 	<!-- Toolbar -->
@@ -73,39 +73,35 @@ permalink: /
 		<div class="tabs">
 			<button type="button" class="tab" id="tab-scene">Scene</button>
 			<button type="button" class="tab off" id="tab-game">Game</button>
-			<span class="tabs-note" id="view-note">Drag to orbit · Scroll to zoom · Click to inspect</span>
+			<span class="tabs-note">Drag to orbit · Scroll to zoom · Click to inspect</span>
 		</div>
 		<div class="stage" id="stage">
 			<canvas id="scene" tabindex="0" aria-label="3D scene of Frank Yang's projects. The same projects are listed in the Project panel."></canvas>
 
-			<div class="title" id="title">
-				<p class="title-kicker">Hi, I'm</p>
-				<h1>{{ site.author }}</h1>
-				<p class="title-tag">I make games. This portfolio is one: press Play and walk through my work.</p>
-				<button class="cta" id="btn-cta" type="button"><span class="play-icon" aria-hidden="true"></span>Press Play</button>
-			</div>
-
-			<div class="loading" id="loading"><span id="loading-text">Importing assets</span><i><b id="loading-bar"></b></i></div>
+			<div class="loading" id="loading"><span id="loading-text">Loading</span><i><b id="loading-bar"></b></i></div>
 			<div class="tooltip" id="tooltip" hidden></div>
 			<div class="nogl">
-				<p><strong>The 3D view needs WebGL.</strong><br>Everything is still here: pick a project below.</p>
+				<p><strong>The 3D world needs WebGL.</strong><br>Everything is still here in the list.</p>
 			</div>
 
-			<!-- Play mode HUD -->
+			<!-- Game HUD: kept to the bare minimum -->
 			<div class="hud" id="hud">
-				<div class="hud-quests">
-					<div class="hud-lv"><b id="hud-lv">LV 1</b><span id="hud-rank">Visitor</span></div>
-					<div class="hud-xp"><i id="hud-xp"></i></div>
-					<ul>
-						<li id="q-zones"><span class="box"></span>Visit every island<em>0/4</em></li>
-						<li id="q-gems"><span class="box"></span>Collect the gems<em>0/12</em></li>
-						<li id="q-projects"><span class="box"></span>Inspect 3 projects<em>0/3</em></li>
-					</ul>
+				<a class="hud-brand" href="{{ site.baseUrl }}/"><span class="brand-mark" aria-hidden="true"></span>{{ site.author }}</a>
+				<nav class="hud-nav" aria-label="Site">
+					<button type="button" id="btn-projects">Projects</button>
+					<a href="{{ site.baseUrl }}/about/">About</a>
+					<a href="mailto:{{ site.email }}">Contact</a>
+				</nav>
+				<div class="title" id="title">
+					<h1>Hi, I'm Frank</h1>
+					<p class="title-tag">I make games. Walk up to a picture to see a project.</p>
+					<button class="title-skip" id="btn-list" type="button">Or just show me the list</button>
 				</div>
-				<button class="hud-stop" id="btn-stop" type="button"><span class="stop-icon" aria-hidden="true"></span>Stop <kbd>Esc</kbd></button>
+				<p class="hud-progress" id="progress" hidden><span id="p-gems">0/12</span> gems</p>
+				<button class="hud-edit" id="btn-edit" type="button" title="See how the level is built">Editor</button>
 				<div class="hud-toasts" id="toasts" aria-live="polite"></div>
 				<button class="hud-prompt" id="prompt" type="button" hidden><kbd>E</kbd><span></span></button>
-				<p class="hud-help"><span class="keys">WASD or arrows to move · Space to jump · Click to walk · Drag to look</span><span class="touch">Tap to walk · Drag to look around</span></p>
+				<p class="hud-help" id="help"><span class="keys">Move with WASD or arrow keys, or click where you want to go</span><span class="touch">Tap where you want to go</span></p>
 			</div>
 
 			<div class="card" id="level-card" role="dialog" aria-modal="true" aria-labelledby="card-title" hidden>
@@ -120,6 +116,26 @@ permalink: /
 							<button class="btn" id="card-close" type="button">Keep exploring</button>
 						</div>
 					</div>
+				</div>
+			</div>
+
+			<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title" hidden>
+				<div class="sheet-box">
+					<div class="sheet-head">
+						<h2 id="sheet-title">Projects</h2>
+						<button type="button" id="sheet-close" aria-label="Close">Close</button>
+					</div>
+					{%- for z in zones %}
+					<h3 class="z-{{ z.id }}"><i></i>{{ z.label }}</h3>
+					<div class="sheet-grid">
+						{%- for p in projects[z.id] %}
+						<a href="{{ site.baseUrl }}/projects/{{ p.slug }}/" class="z-{{ z.id }}">
+							<img src="{{ site.baseUrl }}/images/cover/{{ p.slug }}.jpg" alt="" loading="lazy" width="160" height="160">
+							<span>{{ p.title }}</span>
+						</a>
+						{%- endfor %}
+					</div>
+					{%- endfor %}
 				</div>
 			</div>
 		</div>
@@ -177,6 +193,7 @@ permalink: /
 </div>
 
 <script id="cover-data" type="application/json">{{ { "base": site.baseUrl, "projects": projects, "author": site.author, "tagline": site.tagline, "email": site.email, "github": site.github, "linkedin": site.linkedin, "twitter": site.twitter } | dump | safe }}</script>
-<script type="module" src="{{ site.baseUrl }}/assets/js/cover.js"></script>
+<noscript><style>#sheet[hidden]{display:block!important}#sheet-close,.loading,.hud{display:none!important}</style></noscript>
+<script type="module" src="{{ site.baseUrl }}/assets/js/cover/home.js"></script>
 </body>
 </html>

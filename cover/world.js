@@ -473,7 +473,7 @@ export function buildWorld({ scene, catalog, data, manager }) {
       colliders.push({ x: px, z: pz, r: 0.95 });
       bind(`project:${p.slug}`, root, {
         anchor: new THREE.Vector3(px, 1.5, pz), focusDist: 10.5, focusAz: face + (a < 0 ? -0.62 : 0.62), markerY: 3.5,
-        float, near: 2.7,
+        float, face, near: 2.7,
         stand: new THREE.Vector3(px + Math.sin(face) * 1.7, 0, pz + Math.cos(face) * 1.7),
       });
     });

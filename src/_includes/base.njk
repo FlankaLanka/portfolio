@@ -13,6 +13,9 @@
 		<div id="wrapper">
 			{% include "partials/header.njk" %}
 			{% include "partials/menu.njk" %}
+			{% set worldFocus = "player" %}
+			{% set worldHref = site.baseUrl + "/" %}
+			{% include "partials/world.njk" %}
 
 			<!-- Main -->
 			<div id="main">
