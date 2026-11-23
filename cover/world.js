@@ -72,11 +72,11 @@ function arcade() {
   deck.position.set(0, 1.12, 0.8);
   const stick = ink(new THREE.CylinderGeometry(0.04, 0.04, 0.3, 6), C.dark, { outline: 0.02 });
   stick.position.set(-0.42, 1.34, 0.82);
-  const knob = ink(new THREE.SphereGeometry(0.1, 10, 8), C.product, { outline: 0.03 });
+  const knob = ink(new THREE.SphereGeometry(0.1, 10, 8), C.work, { outline: 0.03 });
   knob.position.set(-0.42, 1.52, 0.82);
   const b1 = ink(new THREE.CylinderGeometry(0.09, 0.09, 0.07, 10), C.tech, { outline: 0.025 });
   b1.position.set(0.18, 1.23, 0.84);
-  const b2 = ink(new THREE.CylinderGeometry(0.09, 0.09, 0.07, 10), C.ai, { outline: 0.025 });
+  const b2 = ink(new THREE.CylinderGeometry(0.09, 0.09, 0.07, 10), C.apps, { outline: 0.025 });
   b2.position.set(0.46, 1.23, 0.78);
   group.add(body, top, marquee, bezel, screen, deck, stick, knob, b1, b2);
 
@@ -118,7 +118,7 @@ function gears() {
   post.position.set(1.36, 0.7, -0.1);
   const big = ink(gearGeometry(12, 1.36, 1.06, 0.3), C.tech, { outline: 0.05 });
   big.position.set(-0.45, 2.35, 0.3);
-  const small = ink(gearGeometry(8, 0.94, 0.66, 0.2), C.product, { outline: 0.05 });
+  const small = ink(gearGeometry(8, 0.94, 0.66, 0.2), C.work, { outline: 0.05 });
   small.position.set(1.36, 1.5, 0.3);
   const hubCap = ink(new THREE.CylinderGeometry(0.2, 0.2, 0.5, 10), C.dark, { outline: 0.03 });
   hubCap.rotation.x = Math.PI / 2;
@@ -134,46 +134,65 @@ function gears() {
   return { group, radius: 1.75, update };
 }
 
-function rocket() {
+function office() {
   const group = new THREE.Group();
-  const pad = ink(facet(new THREE.CylinderGeometry(1.25, 1.4, 0.24, 10)), C.stone, { outline: 0.05 });
-  pad.position.y = 0.12;
-  const ship = new THREE.Group();
-  const body = ink(new THREE.CylinderGeometry(0.56, 0.62, 1.9, 16), C.paper, { outline: 0.055 });
-  body.position.y = 1.5;
-  const nose = ink(new THREE.ConeGeometry(0.56, 1.0, 16), C.product, { outline: 0.055 });
-  nose.position.y = 2.95;
-  const band = ink(new THREE.CylinderGeometry(0.6, 0.6, 0.2, 16), C.product, { outline: 0.03 });
-  band.position.y = 0.95;
-  const nozzle = ink(new THREE.CylinderGeometry(0.3, 0.44, 0.34, 12), C.dark, { outline: 0.04 });
-  nozzle.position.y = 0.4;
-  const porthole = ink(new THREE.CylinderGeometry(0.24, 0.24, 0.12, 14), C.tech, { outline: 0.05 });
-  porthole.rotation.x = Math.PI / 2;
-  porthole.position.set(0, 1.85, 0.54);
-  ship.add(body, nose, band, nozzle, porthole);
-  for (let i = 0; i < 3; i++) {
-    const fin = ink(new THREE.BoxGeometry(0.12, 0.9, 0.62), C.accent, { outline: 0.045 });
-    const a = (i / 3) * Math.PI * 2 + Math.PI / 3;
-    fin.position.set(Math.sin(a) * 0.78, 0.85, Math.cos(a) * 0.78);
-    fin.rotation.y = a;
-    ship.add(fin);
-  }
-  const flame = new THREE.Mesh(facet(new THREE.ConeGeometry(0.3, 0.95, 7)), basic({ color: C.accent }));
-  flame.rotation.x = Math.PI;
-  flame.position.y = -0.2;
-  const flame2 = new THREE.Mesh(facet(new THREE.ConeGeometry(0.17, 0.6, 7)), basic({ color: 0xffe08a }));
-  flame2.rotation.x = Math.PI;
-  flame2.position.y = -0.06;
-  ship.add(flame, flame2);
-  group.add(pad, ship);
-  const update = (t) => {
-    ship.position.y = 0.75 + Math.sin(t * 1.5) * 0.14;
-    ship.rotation.y = Math.sin(t * 0.4) * 0.25;
-    const f = 0.85 + Math.sin(t * 23) * 0.12 + Math.sin(t * 37) * 0.08;
-    flame.scale.set(1, f, 1);
-    flame2.scale.set(1, 0.9 + Math.sin(t * 31) * 0.18, 1);
+  const plinth = ink(new THREE.BoxGeometry(2.5, 0.2, 2.1), C.stone, { outline: 0.05 });
+  plinth.position.y = 0.1;
+  const tower = ink(new THREE.BoxGeometry(1.7, 3.3, 1.4), C.paper, { outline: 0.06 });
+  tower.position.y = 1.85;
+  const roof = ink(new THREE.BoxGeometry(1.9, 0.2, 1.6), C.work, { outline: 0.05 });
+  roof.position.y = 3.6;
+  const vent = ink(new THREE.BoxGeometry(0.5, 0.3, 0.5), C.stone, { outline: 0.04 });
+  vent.position.set(-0.42, 3.85, -0.2);
+  const mast = ink(new THREE.CylinderGeometry(0.035, 0.035, 0.8, 6), C.dark, { outline: 0.02 });
+  mast.position.set(0.5, 4.1, 0.25);
+  const bulb = ink(new THREE.SphereGeometry(0.12, 12, 8), C.accent, { outline: 0.035 });
+  bulb.position.set(0.5, 4.56, 0.25);
+  const door = ink(new THREE.BoxGeometry(0.5, 0.68, 0.08), C.dark, { outline: 0.035 });
+  door.position.set(0, 0.54, 0.71);
+  const awning = ink(new THREE.BoxGeometry(0.86, 0.1, 0.34), C.accent, { outline: 0.04 });
+  awning.position.set(0, 0.98, 0.84);
+  group.add(plinth, tower, roof, vent, mast, bulb, door, awning);
+
+  // Windows are one small canvas shared by all four walls; they switch on and off.
+  const COLS = 3, ROWS = 4, CELL = 48;
+  const cv = document.createElement('canvas');
+  cv.width = COLS * CELL; cv.height = ROWS * CELL;
+  const g = cv.getContext('2d');
+  const tex = new THREE.CanvasTexture(cv);
+  tex.generateMipmaps = false;
+  tex.minFilter = THREE.LinearFilter;
+  tex.colorSpace = THREE.SRGBColorSpace;
+  const lit = Array.from({ length: COLS * ROWS }, (_, i) => i % 3 !== 1);
+  const draw = () => {
+    g.clearRect(0, 0, cv.width, cv.height);
+    lit.forEach((on, i) => {
+      const x = (i % COLS) * CELL + 9, y = Math.floor(i / COLS) * CELL + 9;
+      g.fillStyle = '#222222'; g.fillRect(x, y, CELL - 18, CELL - 18);
+      g.fillStyle = on ? '#f5b83d' : '#dfe5e8'; g.fillRect(x + 4, y + 4, CELL - 26, CELL - 26);
+    });
+    tex.needsUpdate = true;
   };
-  return { group, radius: 1.4, update };
+  draw();
+  const glass = basic({ map: tex, transparent: true });
+  [[0, 0.706, 0, 1.5], [0, -0.706, Math.PI, 1.5], [0.856, 0, Math.PI / 2, 1.2], [-0.856, 0, -Math.PI / 2, 1.2]].forEach(([x, z, ry, w]) => {
+    const wall = new THREE.Mesh(new THREE.PlaneGeometry(w, 2.0), glass);
+    wall.position.set(x, 2.35, z);
+    wall.rotation.y = ry;
+    group.add(wall);
+  });
+
+  let acc = 0;
+  const update = (t, dt) => {
+    bulb.scale.setScalar(1 + Math.max(0, Math.sin(t * 3)) * 0.25);
+    acc += dt;
+    if (acc < 0.8) return;
+    acc = 0;
+    const i = Math.floor(Math.random() * lit.length);
+    lit[i] = !lit[i];
+    draw();
+  };
+  return { group, radius: 1.5, tagY: 5.4, update };
 }
 
 function robot() {
@@ -182,7 +201,7 @@ function robot() {
   neck.position.y = 0.4;
   const head = new THREE.Group();
   head.position.y = 1.65;
-  const skull = ink(new THREE.BoxGeometry(2.0, 1.56, 1.5), C.ai, { outline: 0.06 });
+  const skull = ink(new THREE.BoxGeometry(2.0, 1.56, 1.5), C.apps, { outline: 0.06 });
   const face = ink(new THREE.BoxGeometry(1.56, 0.96, 0.1), C.paper, { outline: 0.035 });
   face.position.set(0, 0.02, 0.76);
   const eyes = [-0.38, 0.38].map((x) => {
@@ -193,7 +212,7 @@ function robot() {
   });
   const mouth = new THREE.Mesh(new THREE.BoxGeometry(0.52, 0.08, 0.04), basic({ color: C.ink }));
   mouth.position.set(0, -0.24, 0.82);
-  const earL = ink(new THREE.CylinderGeometry(0.24, 0.24, 0.2, 10), C.product, { outline: 0.04 });
+  const earL = ink(new THREE.CylinderGeometry(0.24, 0.24, 0.2, 10), C.work, { outline: 0.04 });
   earL.rotation.z = Math.PI / 2;
   earL.position.set(-1.1, 0, 0);
   const earR = earL.clone();
@@ -222,7 +241,7 @@ function robot() {
   return { group, radius: 1.45, update };
 }
 
-const LANDMARKS = { games: arcade, tech: gears, product: rocket, ai: robot };
+const LANDMARKS = { games: arcade, tech: gears, work: office, apps: robot };
 
 // ---- Small props ----
 
@@ -334,7 +353,7 @@ export function buildWorld({ scene, catalog, data, manager }) {
   chestBase.position.y = 0.28;
   const lidPivot = new THREE.Group();
   lidPivot.position.set(0, 0.56, -0.38);
-  const lid = ink(new THREE.BoxGeometry(1.14, 0.3, 0.8), C.product, { outline: 0.05 });
+  const lid = ink(new THREE.BoxGeometry(1.14, 0.3, 0.8), C.work, { outline: 0.05 });
   lid.position.set(0, 0.15, 0.38);
   const lock = ink(new THREE.BoxGeometry(0.2, 0.26, 0.08), C.dark, { outline: 0.03 });
   lock.position.set(0, 0.5, 0.41);
@@ -421,7 +440,7 @@ export function buildWorld({ scene, catalog, data, manager }) {
       }),
     }));
     tag.scale.set(3.4, 0.85, 1);
-    tag.position.y = zone.id === 'product' ? 5.3 : 4.3;
+    tag.position.y = lm.tagY || 4.3;
     lm.group.add(tag);
     bind(`zone:${zone.id}`, lm.group, {
       anchor: new THREE.Vector3(cx, 1.6, cz), focusDist: 21, focusAz: Math.atan2(-dx, -dz), markerY: tag.position.y + 0.9, cx, cz,

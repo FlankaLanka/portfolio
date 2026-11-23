@@ -7,8 +7,8 @@
 	--line: #cdc6b4;
 	--muted: #77736a;
 	--accent: #e44c65;
-	--product: #f5b83d;
-	--ai: #8e6fe0;
+	--work: #f5b83d;
+	--apps: #8e6fe0;
 	--tech: #4a90d9;
 	--games: #e44c65;
 	--shadow: 4px 4px 0 rgba(34, 34, 34, .14);
@@ -33,8 +33,8 @@ kbd {
 	border: 2px solid currentColor; padding: 0 5px; background: var(--paper); color: var(--ink);
 }
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
-.z-product { --c: var(--product); }
-.z-ai { --c: var(--ai); }
+.z-work { --c: var(--work); }
+.z-apps { --c: var(--apps); }
 .z-tech { --c: var(--tech); }
 .z-games { --c: var(--games); }
 
@@ -270,7 +270,7 @@ kbd {
 .ico-fold { height: 9px; border-top-width: 4px; background: var(--c, var(--paper)); border-color: var(--ink); }
 .ico-player { background: var(--accent); transform: rotate(45deg) scale(.85); border-color: var(--ink); }
 .ico-cam { border-radius: 50%; }
-.ico-chest { background: var(--product); border-color: var(--ink); border-top-width: 4px; }
+.ico-chest { background: var(--work); border-color: var(--ink); border-top-width: 4px; }
 .sel .ico, .on .ico { border-color: var(--paper); }
 
 .insp-head { display: flex; align-items: center; gap: 12px; padding: 12px; }

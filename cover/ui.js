@@ -54,7 +54,7 @@ export function createUI(data, catalog, on) {
         ? `<p>Open. Thanks for playing the whole thing.</p><a class="btn primary" href="mailto:${data.email}">Email Frank</a>`
         : '<p>Locked. Find every gem and visit every island to open it.</p><button class="btn primary" type="button" data-act="play">Play</button>';
       return `
-        <div class="insp-head"><span class="insp-cube" style="--c:var(--product)"></span>
+        <div class="insp-head"><span class="insp-cube" style="--c:var(--work)"></span>
           <div><strong>Treasure Chest</strong><small>${info.complete ? 'Unlocked' : 'Locked'}</small></div></div>
         <section class="comp"><h3>Reward</h3><div class="comp-body">${body}</div></section>${transform()}`;
     }

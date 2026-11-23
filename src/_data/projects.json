@@ -1,4 +1,50 @@
 {
+  "work": [
+    {
+      "slug": "alpha-engineering",
+      "title": "Alpha Engineering",
+      "description": "Games I designed and built at Alpha Engineering.",
+      "thumbnail": "images/alpha-engineering/alpha-engineering_thumbnail.jpg",
+      "style": "style1"
+    },
+    {
+      "slug": "kura",
+      "title": "Kura AR",
+      "description": "Custom AR headset prototyping. AI object recognition, hand gestures, spatial UI.",
+      "thumbnail": "images/kura/kura_logo.jpg",
+      "style": "style3"
+    },
+    {
+      "slug": "moon",
+      "title": "Moon Creative Lab",
+      "description": "Internship projects. Multiplayer office sim, ML agents, game juice.",
+      "thumbnail": "images/moon/moon_thumbnail.png",
+      "style": "style5"
+    }
+  ],
+  "apps": [
+    {
+      "slug": "atsa",
+      "title": "ATSA Ace",
+      "description": "The best Air Traffic Skills Assessment exam simulator. Developed after I scored Best Qualified on the real test.",
+      "thumbnail": "images/atsa/atsa_thumbnail.jpg",
+      "style": "style4"
+    },
+    {
+      "slug": "edtech-ai",
+      "title": "Gamified Edtech + AI",
+      "description": "AI-powered educational games and learning experiences.",
+      "thumbnail": "images/edtech-ai/edtech-ai_thumbnail.jpg",
+      "style": "style1"
+    },
+    {
+      "slug": "ai-engineering",
+      "title": "AI Engineering",
+      "description": "Apps and tools I built with AI.",
+      "thumbnail": "images/ai-engineering/ai-engineering_thumbnail.jpg",
+      "style": "style2"
+    }
+  ],
   "tech": [
     {
       "slug": "noneuclidean",
@@ -15,40 +61,10 @@
       "style": "style2"
     },
     {
-      "slug": "kura",
-      "title": "Kura AR",
-      "description": "Custom AR headset prototyping. AI object recognition, hand gestures, spatial UI.",
-      "thumbnail": "images/kura/kura_logo.jpg",
-      "style": "style3"
-    },
-    {
       "slug": "curve",
       "title": "Curve Editor",
       "description": "Unity tool for creating Bezier splines.",
       "thumbnail": "images/curve/curve_thumbnail.png",
-      "style": "style4"
-    },
-    {
-      "slug": "moon",
-      "title": "Moon Creative Lab",
-      "description": "Internship projects. Multiplayer office sim, ML agents, game juice.",
-      "thumbnail": "images/moon/moon_thumbnail.png",
-      "style": "style5"
-    }
-  ],
-  "product": [
-    {
-      "slug": "alpha-engineering",
-      "title": "Alpha Engineering",
-      "description": "Games I designed and built at Alpha Engineering.",
-      "thumbnail": "images/alpha-engineering/alpha-engineering_thumbnail.jpg",
-      "style": "style1"
-    },
-    {
-      "slug": "atsa",
-      "title": "ATSA Ace",
-      "description": "The best Air Traffic Skills Assessment exam simulator. Developed after I scored Best Qualified on the real test.",
-      "thumbnail": "images/atsa/atsa_thumbnail.jpg",
       "style": "style4"
     }
   ],
@@ -87,22 +103,6 @@
       "description": "Action adventure meets RTS. Control multiple characters, swap strategically.",
       "thumbnail": "images/castlebreaker/castlebreaker_thumbnail_square.png",
       "style": "style5"
-    }
-  ],
-  "ai": [
-    {
-      "slug": "edtech-ai",
-      "title": "Gamified Edtech + AI",
-      "description": "AI-powered educational games and learning experiences.",
-      "thumbnail": "images/edtech-ai/edtech-ai_thumbnail.jpg",
-      "style": "style1"
-    },
-    {
-      "slug": "ai-engineering",
-      "title": "AI Engineering",
-      "description": "Apps and tools I built with AI.",
-      "thumbnail": "images/ai-engineering/ai-engineering_thumbnail.jpg",
-      "style": "style2"
     }
   ]
 }
