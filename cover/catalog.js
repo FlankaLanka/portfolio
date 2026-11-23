@@ -5,9 +5,9 @@ const hex = (n) => `#${n.toString(16).padStart(6, '0')}`;
 
 // dir is the island's direction from the hub on the ground plane: [x, z].
 export const ZONES = [
-  { id: 'work', label: 'Work', color: C.work, dir: [-1, 0], blurb: 'Games and tech I built on teams at companies.' },
+  { id: 'work', label: 'Work', color: C.work, dir: [1, 0], blurb: 'Games and tech I built on teams at companies.' },
   { id: 'apps', label: 'Apps', color: C.apps, dir: [0, -1], blurb: 'Apps and learning tools, most built with AI.' },
-  { id: 'tech', label: 'Tech', color: C.tech, dir: [1, 0], blurb: 'Engines, tools and mechanic prototypes.' },
+  { id: 'tech', label: 'Tech', color: C.tech, dir: [-1, 0], blurb: 'Engines, tools and mechanic prototypes.' },
   { id: 'games', label: 'Games', color: C.games, dir: [0, 1], blurb: 'Games I designed and built.' },
 ].map((z) => ({ ...z, css: hex(z.color) }));
 
