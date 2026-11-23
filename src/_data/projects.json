@@ -4,7 +4,7 @@
       "slug": "noneuclidean",
       "title": "Optical Illusions Playground",
       "description": "Recreated Non-Euclidean and optical illusion mechanics. Portals, perspective tricks, impossible geometry.",
-      "thumbnail": "images/noneuclidean/noneuclidean_ai.png",
+      "thumbnail": "images/noneuclidean/noneuclidean_thumbnail.jpg",
       "style": "style1"
     },
     {
@@ -48,7 +48,7 @@
       "slug": "atsa",
       "title": "ATSA Ace",
       "description": "The best Air Traffic Skills Assessment exam simulator. Developed after I scored Best Qualified on the real test.",
-      "thumbnail": "images/atsa/atsa_thumbnail.png",
+      "thumbnail": "images/atsa/atsa_thumbnail.jpg",
       "style": "style4"
     }
   ],
@@ -64,7 +64,7 @@
       "slug": "copywrong",
       "title": "CopyWrong",
       "description": "Puzzle platformer where clones copy your moves. Published on MapleStory Worlds.",
-      "thumbnail": "images/copywrong/copywrong_discord_logo_square.png",
+      "thumbnail": "images/copywrong/copywrong_thumbnail.jpg",
       "style": "style2"
     },
     {
@@ -78,7 +78,7 @@
       "slug": "zelda",
       "title": "ZeldaNES Remake",
       "description": "Unity remake of Zelda NES first dungeon + custom puzzles.",
-      "thumbnail": "images/zelda/zelda_ai.jpg",
+      "thumbnail": "images/zelda/ZeldaThumbnail.png",
       "style": "style4"
     },
     {
@@ -94,14 +94,14 @@
       "slug": "edtech-ai",
       "title": "Gamified Edtech + AI",
       "description": "AI-powered educational games and learning experiences.",
-      "thumbnail": "images/edtech-ai/koru_logo.png",
+      "thumbnail": "images/edtech-ai/edtech-ai_thumbnail.jpg",
       "style": "style1"
     },
     {
       "slug": "ai-engineering",
       "title": "AI Engineering",
       "description": "Apps and tools I built with AI.",
-      "thumbnail": "images/vibecode/vibecode_thumbnail.png",
+      "thumbnail": "images/ai-engineering/ai-engineering_thumbnail.jpg",
       "style": "style2"
     }
   ]
