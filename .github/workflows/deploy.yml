@@ -35,7 +35,6 @@ jobs:
         run: npm run build
         env:
           ELEVENTY_ENV: production
-          PAGE_PASSWORD: ${{ secrets.PAGE_PASSWORD }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
