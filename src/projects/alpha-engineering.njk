@@ -68,7 +68,7 @@ extraStyles: |
     flex-wrap: wrap;
     align-items: baseline;
     gap: 0.5rem 1rem;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1.2rem;
   }
   .sb-game h3 {
     font-size: 1.5rem;
@@ -85,15 +85,6 @@ extraStyles: |
     margin: 0;
   }
   .sb-meta b { color: #222; }
-  .sb-role {
-    max-width: 860px;
-    font-size: 0.88rem;
-    line-height: 1.75;
-    color: #444;
-    margin: 0 0 1.5rem;
-    padding-left: 1rem;
-    border-left: 4px solid var(--accent);
-  }
 
   /* Media frames */
   .sb-shot {
@@ -332,7 +323,6 @@ extraStyles: |
       <h3>{{ g.title }}</h3>
       <p class="sb-meta"><b>{{ g.tag }}</b></p>
     </header>
-    <p class="sb-role">{{ g.role }}</p>
 
     {% if items.length >= 3 %}
     <div class="sb-lead">
