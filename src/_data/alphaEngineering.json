@@ -1,6 +1,521 @@
 {
   "groups": [
     {
+      "id": "playcademy",
+      "title": "Playcademy",
+      "kicker": "Learning games for elementary school",
+      "blurb": "Learning games for elementary school.",
+      "games": [
+        {
+          "id": "math-raiders",
+          "title": "Math Raiders",
+          "tag": "Math-fact boss fights",
+          "accent": "#1f6feb",
+          "clips": [
+            {
+              "src": "images/alpha-engineering/math-raiders/battle.mp4",
+              "poster": "images/alpha-engineering/math-raiders/battle-poster.jpg",
+              "w": 1280,
+              "h": 720,
+              "cap": "Battle",
+              "order": 1
+            },
+            {
+              "src": "images/alpha-engineering/math-raiders/knockout.mp4",
+              "poster": "images/alpha-engineering/math-raiders/knockout-poster.jpg",
+              "w": 1280,
+              "h": 720,
+              "cap": "Knockout",
+              "order": 2
+            },
+            {
+              "src": "images/alpha-engineering/math-raiders/vs.mp4",
+              "poster": "images/alpha-engineering/math-raiders/vs-poster.jpg",
+              "w": 1280,
+              "h": 720,
+              "cap": "VS screen",
+              "order": 3
+            },
+            {
+              "src": "images/alpha-engineering/math-raiders/lootbox.mp4",
+              "poster": "images/alpha-engineering/math-raiders/lootbox-poster.jpg",
+              "w": 1280,
+              "h": 720,
+              "cap": "Lootbox",
+              "order": 4
+            }
+          ],
+          "shots": [
+            {
+              "full": "images/alpha-engineering/math-raiders/hideout.jpg",
+              "thumb": "images/alpha-engineering/math-raiders/hideout-sm.jpg",
+              "w": 1200,
+              "h": 675,
+              "cap": "Hideout"
+            },
+            {
+              "full": "images/alpha-engineering/math-raiders/victory.jpg",
+              "thumb": "images/alpha-engineering/math-raiders/victory-sm.jpg",
+              "w": 1200,
+              "h": 675,
+              "cap": "Victory"
+            },
+            {
+              "full": "images/alpha-engineering/math-raiders/codex.jpg",
+              "thumb": "images/alpha-engineering/math-raiders/codex-sm.jpg",
+              "w": 1200,
+              "h": 675,
+              "cap": "Enemy Codex"
+            },
+            {
+              "full": "images/alpha-engineering/math-raiders/trophy-hall.jpg",
+              "thumb": "images/alpha-engineering/math-raiders/trophy-hall-sm.jpg",
+              "w": 1200,
+              "h": 675,
+              "cap": "Trophy Hall"
+            },
+            {
+              "full": "images/alpha-engineering/math-raiders/holo-train.jpg",
+              "thumb": "images/alpha-engineering/math-raiders/holo-train-sm.jpg",
+              "w": 1200,
+              "h": 675,
+              "cap": "Holo Train"
+            },
+            {
+              "full": "images/alpha-engineering/math-raiders/map.jpg",
+              "thumb": "images/alpha-engineering/math-raiders/map-sm.jpg",
+              "w": 1200,
+              "h": 675,
+              "cap": "City map"
+            }
+          ],
+          "no": "01",
+          "ar": "16 / 9"
+        },
+        {
+          "id": "type-raiders",
+          "title": "Type Raiders",
+          "tag": "Typing boss fights",
+          "accent": "#e4572e",
+          "clips": [
+            {
+              "src": "images/alpha-engineering/type-raiders/battle.mp4",
+              "poster": "images/alpha-engineering/type-raiders/battle-poster.jpg",
+              "w": 1280,
+              "h": 720,
+              "cap": "Battle",
+              "order": 1
+            },
+            {
+              "src": "images/alpha-engineering/type-raiders/hero-select.mp4",
+              "poster": "images/alpha-engineering/type-raiders/hero-select-poster.jpg",
+              "w": 1280,
+              "h": 720,
+              "cap": "Hero pick",
+              "order": 2
+            }
+          ],
+          "shots": [
+            {
+              "full": "images/alpha-engineering/type-raiders/electra.jpg",
+              "thumb": "images/alpha-engineering/type-raiders/electra-sm.jpg",
+              "w": 1200,
+              "h": 675,
+              "cap": "Electra"
+            },
+            {
+              "full": "images/alpha-engineering/type-raiders/tug-of-war.jpg",
+              "thumb": "images/alpha-engineering/type-raiders/tug-of-war-sm.jpg",
+              "w": 1200,
+              "h": 675,
+              "cap": "Tug-of-war battle"
+            },
+            {
+              "full": "images/alpha-engineering/type-raiders/squads.jpg",
+              "thumb": "images/alpha-engineering/type-raiders/squads-sm.jpg",
+              "w": 1200,
+              "h": 675,
+              "cap": "Squads"
+            },
+            {
+              "full": "images/alpha-engineering/type-raiders/collection.jpg",
+              "thumb": "images/alpha-engineering/type-raiders/collection-sm.jpg",
+              "w": 1200,
+              "h": 675,
+              "cap": "Collection"
+            },
+            {
+              "full": "images/alpha-engineering/type-raiders/new-keys.jpg",
+              "thumb": "images/alpha-engineering/type-raiders/new-keys-sm.jpg",
+              "w": 1200,
+              "h": 675,
+              "cap": "New keys"
+            },
+            {
+              "full": "images/alpha-engineering/type-raiders/campaign.jpg",
+              "thumb": "images/alpha-engineering/type-raiders/campaign-sm.jpg",
+              "w": 1200,
+              "h": 675,
+              "cap": "Campaign"
+            },
+            {
+              "full": "images/alpha-engineering/type-raiders/squad-room.jpg",
+              "thumb": "images/alpha-engineering/type-raiders/squad-room-sm.jpg",
+              "w": 1200,
+              "h": 675,
+              "cap": "Squad room"
+            },
+            {
+              "full": "images/alpha-engineering/type-raiders/boot.jpg",
+              "thumb": "images/alpha-engineering/type-raiders/boot-sm.jpg",
+              "w": 1200,
+              "h": 675,
+              "cap": "Title"
+            }
+          ],
+          "no": "02",
+          "ar": "16 / 9"
+        },
+        {
+          "id": "vocabulon",
+          "title": "Vocabulon",
+          "tag": "Vocabulary creature battles",
+          "accent": "#12a4b8",
+          "clips": [
+            {
+              "src": "images/alpha-engineering/vocabulon/capture.mp4",
+              "poster": "images/alpha-engineering/vocabulon/capture-poster.jpg",
+              "w": 1280,
+              "h": 720,
+              "cap": "Capture",
+              "order": 1
+            },
+            {
+              "src": "images/alpha-engineering/vocabulon/explore.mp4",
+              "poster": "images/alpha-engineering/vocabulon/explore-poster.jpg",
+              "w": 1280,
+              "h": 720,
+              "cap": "Explore",
+              "order": 2
+            },
+            {
+              "src": "images/alpha-engineering/vocabulon/worddex-device.mp4",
+              "poster": "images/alpha-engineering/vocabulon/worddex-device-poster.jpg",
+              "w": 1280,
+              "h": 720,
+              "cap": "WordDex",
+              "order": 3
+            },
+            {
+              "src": "images/alpha-engineering/vocabulon/summary.mp4",
+              "poster": "images/alpha-engineering/vocabulon/summary-poster.jpg",
+              "w": 1280,
+              "h": 720,
+              "cap": "Summary",
+              "order": 4
+            }
+          ],
+          "shots": [
+            {
+              "full": "images/alpha-engineering/vocabulon/home.jpg",
+              "thumb": "images/alpha-engineering/vocabulon/home-sm.jpg",
+              "w": 1600,
+              "h": 900,
+              "cap": "Home"
+            },
+            {
+              "full": "images/alpha-engineering/vocabulon/battle.jpg",
+              "thumb": "images/alpha-engineering/vocabulon/battle-sm.jpg",
+              "w": 1600,
+              "h": 900,
+              "cap": "Battle"
+            },
+            {
+              "full": "images/alpha-engineering/vocabulon/worddex-entry.jpg",
+              "thumb": "images/alpha-engineering/vocabulon/worddex-entry-sm.jpg",
+              "w": 1600,
+              "h": 900,
+              "cap": "WordDex entry"
+            },
+            {
+              "full": "images/alpha-engineering/vocabulon/word-card.jpg",
+              "thumb": "images/alpha-engineering/vocabulon/word-card-sm.jpg",
+              "w": 1600,
+              "h": 900,
+              "cap": "Word card"
+            }
+          ],
+          "no": "03",
+          "ar": "16 / 9"
+        },
+        {
+          "id": "math-cakes",
+          "title": "Math Cakes",
+          "tag": "Arithmetic in a pixel bakery",
+          "accent": "#f28cb1",
+          "clips": [
+            {
+              "src": "images/alpha-engineering/math-cakes/solve-and-bake.mp4",
+              "poster": "images/alpha-engineering/math-cakes/solve-and-bake-poster.jpg",
+              "w": 1280,
+              "h": 800,
+              "cap": "Solve and bake",
+              "order": 1
+            },
+            {
+              "src": "images/alpha-engineering/math-cakes/gold-upgrade.mp4",
+              "poster": "images/alpha-engineering/math-cakes/gold-upgrade-poster.jpg",
+              "w": 1280,
+              "h": 800,
+              "cap": "Gold upgrade",
+              "order": 2
+            },
+            {
+              "src": "images/alpha-engineering/math-cakes/title.mp4",
+              "poster": "images/alpha-engineering/math-cakes/title-poster.jpg",
+              "w": 1280,
+              "h": 800,
+              "cap": "Title",
+              "order": 3
+            }
+          ],
+          "shots": [
+            {
+              "full": "images/alpha-engineering/math-cakes/mastery-round.jpg",
+              "thumb": "images/alpha-engineering/math-cakes/mastery-round-sm.jpg",
+              "w": 1200,
+              "h": 750,
+              "cap": "Mastery round"
+            },
+            {
+              "full": "images/alpha-engineering/math-cakes/attic.jpg",
+              "thumb": "images/alpha-engineering/math-cakes/attic-sm.jpg",
+              "w": 1200,
+              "h": 750,
+              "cap": "Intro story"
+            },
+            {
+              "full": "images/alpha-engineering/math-cakes/stamp.jpg",
+              "thumb": "images/alpha-engineering/math-cakes/stamp-sm.jpg",
+              "w": 1200,
+              "h": 750,
+              "cap": "Coco's stamp"
+            },
+            {
+              "full": "images/alpha-engineering/math-cakes/memory.jpg",
+              "thumb": "images/alpha-engineering/math-cakes/memory-sm.jpg",
+              "w": 1200,
+              "h": 750,
+              "cap": "Grandpa's memories"
+            },
+            {
+              "full": "images/alpha-engineering/math-cakes/gallery.jpg",
+              "thumb": "images/alpha-engineering/math-cakes/gallery-sm.jpg",
+              "w": 1200,
+              "h": 750,
+              "cap": "Gallery"
+            },
+            {
+              "full": "images/alpha-engineering/math-cakes/tiers.jpg",
+              "thumb": "images/alpha-engineering/math-cakes/tiers-sm.jpg",
+              "w": 1200,
+              "h": 750,
+              "cap": "Dessert tiers"
+            },
+            {
+              "full": "images/alpha-engineering/math-cakes/recipe-book.jpg",
+              "thumb": "images/alpha-engineering/math-cakes/recipe-book-sm.jpg",
+              "w": 1200,
+              "h": 750,
+              "cap": "Recipe book"
+            },
+            {
+              "full": "images/alpha-engineering/math-cakes/dashboard.jpg",
+              "thumb": "images/alpha-engineering/math-cakes/dashboard-sm.jpg",
+              "w": 1200,
+              "h": 833,
+              "cap": "Teacher dashboard"
+            }
+          ],
+          "no": "04",
+          "ar": "16 / 10"
+        },
+        {
+          "id": "mathquest",
+          "title": "MathQuest",
+          "tag": "K to 1 math adventure",
+          "accent": "#7a4fd6",
+          "clips": [
+            {
+              "src": "images/alpha-engineering/mathquest/statue-complete.mp4",
+              "poster": "images/alpha-engineering/mathquest/statue-complete-poster.jpg",
+              "w": 1280,
+              "h": 720,
+              "cap": "Griffin complete",
+              "order": 1
+            },
+            {
+              "src": "images/alpha-engineering/mathquest/statue-hall.mp4",
+              "poster": "images/alpha-engineering/mathquest/statue-hall-poster.jpg",
+              "w": 1280,
+              "h": 720,
+              "cap": "Statue hall",
+              "order": 2
+            },
+            {
+              "src": "images/alpha-engineering/mathquest/statue-finale.mp4",
+              "poster": "images/alpha-engineering/mathquest/statue-finale-poster.jpg",
+              "w": 1280,
+              "h": 720,
+              "cap": "Queen and king",
+              "order": 3
+            },
+            {
+              "src": "images/alpha-engineering/mathquest/shape-sort.mp4",
+              "poster": "images/alpha-engineering/mathquest/shape-sort-poster.jpg",
+              "w": 1280,
+              "h": 720,
+              "cap": "Shape sort",
+              "order": 4
+            },
+            {
+              "src": "images/alpha-engineering/mathquest/map-go.mp4",
+              "poster": "images/alpha-engineering/mathquest/map-go-poster.jpg",
+              "w": 1280,
+              "h": 720,
+              "cap": "Map",
+              "order": 5
+            }
+          ],
+          "shots": [
+            {
+              "full": "images/alpha-engineering/mathquest/statue-hall-2.jpg",
+              "thumb": "images/alpha-engineering/mathquest/statue-hall-2-sm.jpg",
+              "w": 1600,
+              "h": 900,
+              "cap": "Second hall"
+            },
+            {
+              "full": "images/alpha-engineering/mathquest/statue-hall-1.jpg",
+              "thumb": "images/alpha-engineering/mathquest/statue-hall-1-sm.jpg",
+              "w": 1600,
+              "h": 900,
+              "cap": "First hall"
+            },
+            {
+              "full": "images/alpha-engineering/mathquest/aquarium.jpg",
+              "thumb": "images/alpha-engineering/mathquest/aquarium-sm.jpg",
+              "w": 1600,
+              "h": 900,
+              "cap": "Aquarium"
+            },
+            {
+              "full": "images/alpha-engineering/mathquest/title.jpg",
+              "thumb": "images/alpha-engineering/mathquest/title-sm.jpg",
+              "w": 1600,
+              "h": 900,
+              "cap": "Title"
+            }
+          ],
+          "no": "05",
+          "ar": "16 / 9"
+        },
+        {
+          "id": "math-park",
+          "title": "Math Park",
+          "tag": "A 3D park that grows as you learn",
+          "accent": "#2e9e5b",
+          "clips": [
+            {
+              "src": "images/alpha-engineering/math-park/park-tour.mp4",
+              "poster": "images/alpha-engineering/math-park/park-tour-poster.jpg",
+              "w": 1280,
+              "h": 720,
+              "cap": "The park",
+              "order": 1
+            },
+            {
+              "src": "images/alpha-engineering/math-park/ride-upgrade.mp4",
+              "poster": "images/alpha-engineering/math-park/ride-upgrade-poster.jpg",
+              "w": 1280,
+              "h": 720,
+              "cap": "Ride upgrade",
+              "order": 2
+            },
+            {
+              "src": "images/alpha-engineering/math-park/word-problem.mp4",
+              "poster": "images/alpha-engineering/math-park/word-problem-poster.jpg",
+              "w": 1280,
+              "h": 720,
+              "cap": "Word problem",
+              "order": 3
+            },
+            {
+              "src": "images/alpha-engineering/math-park/dream-intro.mp4",
+              "poster": "images/alpha-engineering/math-park/dream-intro-poster.jpg",
+              "w": 1280,
+              "h": 720,
+              "cap": "Intro",
+              "order": 4
+            }
+          ],
+          "shots": [
+            {
+              "full": "images/alpha-engineering/math-park/park-full.jpg",
+              "thumb": "images/alpha-engineering/math-park/park-full-sm.jpg",
+              "w": 1200,
+              "h": 675,
+              "cap": "Finished park"
+            },
+            {
+              "full": "images/alpha-engineering/math-park/coin-lesson.jpg",
+              "thumb": "images/alpha-engineering/math-park/coin-lesson-sm.jpg",
+              "w": 1200,
+              "h": 675,
+              "cap": "Coin lesson"
+            },
+            {
+              "full": "images/alpha-engineering/math-park/park-growing.jpg",
+              "thumb": "images/alpha-engineering/math-park/park-growing-sm.jpg",
+              "w": 1200,
+              "h": 675,
+              "cap": "Park growing"
+            },
+            {
+              "full": "images/alpha-engineering/math-park/typing-lesson.jpg",
+              "thumb": "images/alpha-engineering/math-park/typing-lesson-sm.jpg",
+              "w": 1200,
+              "h": 675,
+              "cap": "Typing lesson"
+            },
+            {
+              "full": "images/alpha-engineering/math-park/diagnostic.jpg",
+              "thumb": "images/alpha-engineering/math-park/diagnostic-sm.jpg",
+              "w": 1200,
+              "h": 675,
+              "cap": "Placement check"
+            },
+            {
+              "full": "images/alpha-engineering/math-park/park-may.jpg",
+              "thumb": "images/alpha-engineering/math-park/park-may-sm.jpg",
+              "w": 1200,
+              "h": 675,
+              "cap": "May build"
+            },
+            {
+              "full": "images/alpha-engineering/math-park/january.jpg",
+              "thumb": "images/alpha-engineering/math-park/january-sm.jpg",
+              "w": 1200,
+              "h": 675,
+              "cap": "First build"
+            }
+          ],
+          "no": "06",
+          "ar": "16 / 9"
+        }
+      ]
+    },
+    {
       "id": "freetime",
       "title": "FreeTime",
       "kicker": "A school arcade and social app",
@@ -11,7 +526,6 @@
           "title": "Candy Kart",
           "tag": "3D kart racer",
           "accent": "#ff5fa2",
-          "role": "Designed and built from scratch: eight tracks, items, CPU karts and online rooms.",
           "clips": [
             {
               "src": "images/alpha-engineering/candy-kart/race-start.mp4",
@@ -67,7 +581,7 @@
               "cap": "Shop"
             }
           ],
-          "no": "01",
+          "no": "07",
           "ar": "16 / 10"
         },
         {
@@ -75,7 +589,6 @@
           "title": "Sports Mix",
           "tag": "Eight sports on a 3D island",
           "accent": "#2aa7ff",
-          "role": "Designed and built from scratch. Play solo or with friends.",
           "clips": [
             {
               "src": "images/alpha-engineering/sports-mix/basketball-swish.mp4",
@@ -138,7 +651,7 @@
               "cap": "Multiplayer room"
             }
           ],
-          "no": "02",
+          "no": "08",
           "ar": "16 / 10"
         },
         {
@@ -146,7 +659,6 @@
           "title": "Oddball",
           "tag": "Hidden-role party game",
           "accent": "#ef3b3b",
-          "role": "Designed and built from scratch, for 4 to 10 players or solo with bots.",
           "clips": [
             {
               "src": "images/alpha-engineering/oddball/knockout.mp4",
@@ -202,7 +714,7 @@
               "cap": "Character editor"
             }
           ],
-          "no": "03",
+          "no": "09",
           "ar": "16 / 10"
         },
         {
@@ -210,7 +722,6 @@
           "title": "Karaoke",
           "tag": "Sing together",
           "accent": "#b98cff",
-          "role": "Rebuilt as its own world, with shows of up to 12.",
           "clips": [],
           "shots": [
             {
@@ -235,7 +746,7 @@
               "cap": "Song book"
             }
           ],
-          "no": "04",
+          "no": "10",
           "ar": "16 / 10"
         },
         {
@@ -243,7 +754,6 @@
           "title": "Mystery Word",
           "tag": "Daily word game",
           "accent": "#22c1dc",
-          "role": "Designed and built from scratch. Play solo or race friends.",
           "clips": [],
           "shots": [
             {
@@ -275,7 +785,7 @@
               "cap": "Home"
             }
           ],
-          "no": "05",
+          "no": "11",
           "ar": "16 / 10"
         },
         {
@@ -283,7 +793,6 @@
           "title": "Sudoku & Crossword",
           "tag": "Puzzle games",
           "accent": "#f2b705",
-          "role": "Built both, then added Team and Versus rooms.",
           "clips": [],
           "shots": [
             {
@@ -329,7 +838,7 @@
               "cap": "Results"
             }
           ],
-          "no": "06",
+          "no": "12",
           "ar": "16 / 10"
         },
         {
@@ -337,7 +846,6 @@
           "title": "Studio",
           "tag": "Design tool",
           "accent": "#ffd23f",
-          "role": "Make posters, cards and Minecraft skins.",
           "clips": [],
           "shots": [
             {
@@ -362,7 +870,7 @@
               "cap": "Home"
             }
           ],
-          "no": "07",
+          "no": "13",
           "ar": "16 / 9"
         },
         {
@@ -370,7 +878,6 @@
           "title": "The FreeTime app",
           "tag": "Launcher and social app",
           "accent": "#4b2fd6",
-          "role": "Redesigned the app and built most of its social features.",
           "clips": [],
           "shots": [
             {
@@ -458,577 +965,8 @@
               "cap": "Themes"
             }
           ],
-          "no": "08",
-          "ar": "16 / 10"
-        }
-      ]
-    },
-    {
-      "id": "playcademy",
-      "title": "Playcademy",
-      "kicker": "Learning games for elementary school",
-      "blurb": "Learning games for elementary school.",
-      "games": [
-        {
-          "id": "math-raiders",
-          "title": "Math Raiders",
-          "tag": "Math-fact boss fights",
-          "accent": "#1f6feb",
-          "role": "Built most of the v2 redesign's screens.",
-          "clips": [
-            {
-              "src": "images/alpha-engineering/math-raiders/battle.mp4",
-              "poster": "images/alpha-engineering/math-raiders/battle-poster.jpg",
-              "w": 1280,
-              "h": 720,
-              "cap": "Battle",
-              "order": 1
-            },
-            {
-              "src": "images/alpha-engineering/math-raiders/knockout.mp4",
-              "poster": "images/alpha-engineering/math-raiders/knockout-poster.jpg",
-              "w": 1280,
-              "h": 720,
-              "cap": "Knockout",
-              "order": 2
-            },
-            {
-              "src": "images/alpha-engineering/math-raiders/vs.mp4",
-              "poster": "images/alpha-engineering/math-raiders/vs-poster.jpg",
-              "w": 1280,
-              "h": 720,
-              "cap": "VS screen",
-              "order": 3
-            },
-            {
-              "src": "images/alpha-engineering/math-raiders/lootbox.mp4",
-              "poster": "images/alpha-engineering/math-raiders/lootbox-poster.jpg",
-              "w": 1280,
-              "h": 720,
-              "cap": "Lootbox",
-              "order": 4
-            }
-          ],
-          "shots": [
-            {
-              "full": "images/alpha-engineering/math-raiders/hideout.jpg",
-              "thumb": "images/alpha-engineering/math-raiders/hideout-sm.jpg",
-              "w": 1200,
-              "h": 675,
-              "cap": "Hideout"
-            },
-            {
-              "full": "images/alpha-engineering/math-raiders/victory.jpg",
-              "thumb": "images/alpha-engineering/math-raiders/victory-sm.jpg",
-              "w": 1200,
-              "h": 675,
-              "cap": "Victory"
-            },
-            {
-              "full": "images/alpha-engineering/math-raiders/codex.jpg",
-              "thumb": "images/alpha-engineering/math-raiders/codex-sm.jpg",
-              "w": 1200,
-              "h": 675,
-              "cap": "Enemy Codex"
-            },
-            {
-              "full": "images/alpha-engineering/math-raiders/trophy-hall.jpg",
-              "thumb": "images/alpha-engineering/math-raiders/trophy-hall-sm.jpg",
-              "w": 1200,
-              "h": 675,
-              "cap": "Trophy Hall"
-            },
-            {
-              "full": "images/alpha-engineering/math-raiders/holo-train.jpg",
-              "thumb": "images/alpha-engineering/math-raiders/holo-train-sm.jpg",
-              "w": 1200,
-              "h": 675,
-              "cap": "Holo Train"
-            },
-            {
-              "full": "images/alpha-engineering/math-raiders/map.jpg",
-              "thumb": "images/alpha-engineering/math-raiders/map-sm.jpg",
-              "w": 1200,
-              "h": 675,
-              "cap": "City map"
-            }
-          ],
-          "no": "09",
-          "ar": "16 / 9"
-        },
-        {
-          "id": "type-raiders",
-          "title": "Type Raiders",
-          "tag": "Typing boss fights",
-          "accent": "#e4572e",
-          "role": "Restyled the game and built multiplayer, the codex and the hero pick.",
-          "clips": [
-            {
-              "src": "images/alpha-engineering/type-raiders/battle.mp4",
-              "poster": "images/alpha-engineering/type-raiders/battle-poster.jpg",
-              "w": 1280,
-              "h": 720,
-              "cap": "Battle",
-              "order": 1
-            },
-            {
-              "src": "images/alpha-engineering/type-raiders/hero-select.mp4",
-              "poster": "images/alpha-engineering/type-raiders/hero-select-poster.jpg",
-              "w": 1280,
-              "h": 720,
-              "cap": "Hero pick",
-              "order": 2
-            }
-          ],
-          "shots": [
-            {
-              "full": "images/alpha-engineering/type-raiders/electra.jpg",
-              "thumb": "images/alpha-engineering/type-raiders/electra-sm.jpg",
-              "w": 1200,
-              "h": 675,
-              "cap": "Electra"
-            },
-            {
-              "full": "images/alpha-engineering/type-raiders/tug-of-war.jpg",
-              "thumb": "images/alpha-engineering/type-raiders/tug-of-war-sm.jpg",
-              "w": 1200,
-              "h": 675,
-              "cap": "Tug-of-war battle"
-            },
-            {
-              "full": "images/alpha-engineering/type-raiders/squads.jpg",
-              "thumb": "images/alpha-engineering/type-raiders/squads-sm.jpg",
-              "w": 1200,
-              "h": 675,
-              "cap": "Squads"
-            },
-            {
-              "full": "images/alpha-engineering/type-raiders/boss-codex.jpg",
-              "thumb": "images/alpha-engineering/type-raiders/boss-codex-sm.jpg",
-              "w": 1200,
-              "h": 675,
-              "cap": "Boss Codex"
-            },
-            {
-              "full": "images/alpha-engineering/type-raiders/new-keys.jpg",
-              "thumb": "images/alpha-engineering/type-raiders/new-keys-sm.jpg",
-              "w": 1200,
-              "h": 675,
-              "cap": "New keys"
-            },
-            {
-              "full": "images/alpha-engineering/type-raiders/campaign.jpg",
-              "thumb": "images/alpha-engineering/type-raiders/campaign-sm.jpg",
-              "w": 1200,
-              "h": 675,
-              "cap": "Campaign"
-            },
-            {
-              "full": "images/alpha-engineering/type-raiders/squad-room.jpg",
-              "thumb": "images/alpha-engineering/type-raiders/squad-room-sm.jpg",
-              "w": 1200,
-              "h": 675,
-              "cap": "Squad room"
-            },
-            {
-              "full": "images/alpha-engineering/type-raiders/boot.jpg",
-              "thumb": "images/alpha-engineering/type-raiders/boot-sm.jpg",
-              "w": 1200,
-              "h": 675,
-              "cap": "Title"
-            }
-          ],
-          "no": "10",
-          "ar": "16 / 9"
-        },
-        {
-          "id": "vocabulon",
-          "title": "Vocabulon",
-          "tag": "Vocabulary creature battles",
-          "accent": "#12a4b8",
-          "role": "Redesigned the screens and built the map, tutorial and battle controls.",
-          "clips": [
-            {
-              "src": "images/alpha-engineering/vocabulon/capture.mp4",
-              "poster": "images/alpha-engineering/vocabulon/capture-poster.jpg",
-              "w": 1280,
-              "h": 720,
-              "cap": "Capture",
-              "order": 1
-            },
-            {
-              "src": "images/alpha-engineering/vocabulon/explore.mp4",
-              "poster": "images/alpha-engineering/vocabulon/explore-poster.jpg",
-              "w": 1280,
-              "h": 720,
-              "cap": "Explore",
-              "order": 2
-            },
-            {
-              "src": "images/alpha-engineering/vocabulon/worddex-device.mp4",
-              "poster": "images/alpha-engineering/vocabulon/worddex-device-poster.jpg",
-              "w": 1280,
-              "h": 720,
-              "cap": "WordDex",
-              "order": 3
-            },
-            {
-              "src": "images/alpha-engineering/vocabulon/summary.mp4",
-              "poster": "images/alpha-engineering/vocabulon/summary-poster.jpg",
-              "w": 1280,
-              "h": 720,
-              "cap": "Summary",
-              "order": 4
-            }
-          ],
-          "shots": [
-            {
-              "full": "images/alpha-engineering/vocabulon/home.jpg",
-              "thumb": "images/alpha-engineering/vocabulon/home-sm.jpg",
-              "w": 1600,
-              "h": 900,
-              "cap": "Home"
-            },
-            {
-              "full": "images/alpha-engineering/vocabulon/battle.jpg",
-              "thumb": "images/alpha-engineering/vocabulon/battle-sm.jpg",
-              "w": 1600,
-              "h": 900,
-              "cap": "Battle"
-            },
-            {
-              "full": "images/alpha-engineering/vocabulon/worddex-entry.jpg",
-              "thumb": "images/alpha-engineering/vocabulon/worddex-entry-sm.jpg",
-              "w": 1600,
-              "h": 900,
-              "cap": "WordDex entry"
-            },
-            {
-              "full": "images/alpha-engineering/vocabulon/word-card.jpg",
-              "thumb": "images/alpha-engineering/vocabulon/word-card-sm.jpg",
-              "w": 1600,
-              "h": 900,
-              "cap": "Word card"
-            }
-          ],
-          "no": "11",
-          "ar": "16 / 9"
-        },
-        {
-          "id": "math-cakes",
-          "title": "Math Cakes",
-          "tag": "Arithmetic in a pixel bakery",
-          "accent": "#f28cb1",
-          "role": "Gave the game its world: Coco, the story, the art and the sound.",
-          "clips": [
-            {
-              "src": "images/alpha-engineering/math-cakes/solve-and-bake.mp4",
-              "poster": "images/alpha-engineering/math-cakes/solve-and-bake-poster.jpg",
-              "w": 1280,
-              "h": 800,
-              "cap": "Solve and bake",
-              "order": 1
-            },
-            {
-              "src": "images/alpha-engineering/math-cakes/gold-upgrade.mp4",
-              "poster": "images/alpha-engineering/math-cakes/gold-upgrade-poster.jpg",
-              "w": 1280,
-              "h": 800,
-              "cap": "Gold upgrade",
-              "order": 2
-            },
-            {
-              "src": "images/alpha-engineering/math-cakes/title.mp4",
-              "poster": "images/alpha-engineering/math-cakes/title-poster.jpg",
-              "w": 1280,
-              "h": 800,
-              "cap": "Title",
-              "order": 3
-            }
-          ],
-          "shots": [
-            {
-              "full": "images/alpha-engineering/math-cakes/mastery-round.jpg",
-              "thumb": "images/alpha-engineering/math-cakes/mastery-round-sm.jpg",
-              "w": 1200,
-              "h": 750,
-              "cap": "Mastery round"
-            },
-            {
-              "full": "images/alpha-engineering/math-cakes/attic.jpg",
-              "thumb": "images/alpha-engineering/math-cakes/attic-sm.jpg",
-              "w": 1200,
-              "h": 750,
-              "cap": "Intro story"
-            },
-            {
-              "full": "images/alpha-engineering/math-cakes/stamp.jpg",
-              "thumb": "images/alpha-engineering/math-cakes/stamp-sm.jpg",
-              "w": 1200,
-              "h": 750,
-              "cap": "Coco's stamp"
-            },
-            {
-              "full": "images/alpha-engineering/math-cakes/memory.jpg",
-              "thumb": "images/alpha-engineering/math-cakes/memory-sm.jpg",
-              "w": 1200,
-              "h": 750,
-              "cap": "Grandpa's memories"
-            },
-            {
-              "full": "images/alpha-engineering/math-cakes/gallery.jpg",
-              "thumb": "images/alpha-engineering/math-cakes/gallery-sm.jpg",
-              "w": 1200,
-              "h": 750,
-              "cap": "Gallery"
-            },
-            {
-              "full": "images/alpha-engineering/math-cakes/tiers.jpg",
-              "thumb": "images/alpha-engineering/math-cakes/tiers-sm.jpg",
-              "w": 1200,
-              "h": 750,
-              "cap": "Dessert tiers"
-            },
-            {
-              "full": "images/alpha-engineering/math-cakes/recipe-book.jpg",
-              "thumb": "images/alpha-engineering/math-cakes/recipe-book-sm.jpg",
-              "w": 1200,
-              "h": 750,
-              "cap": "Recipe book"
-            },
-            {
-              "full": "images/alpha-engineering/math-cakes/dashboard.jpg",
-              "thumb": "images/alpha-engineering/math-cakes/dashboard-sm.jpg",
-              "w": 1200,
-              "h": 833,
-              "cap": "Teacher dashboard"
-            }
-          ],
-          "no": "12",
-          "ar": "16 / 10"
-        },
-        {
-          "id": "math-park",
-          "title": "Math Park",
-          "tag": "A 3D park that grows as you learn",
-          "accent": "#2e9e5b",
-          "role": "Started it solo. Built the park and the lesson engine.",
-          "clips": [
-            {
-              "src": "images/alpha-engineering/math-park/park-tour.mp4",
-              "poster": "images/alpha-engineering/math-park/park-tour-poster.jpg",
-              "w": 1280,
-              "h": 720,
-              "cap": "The park",
-              "order": 1
-            },
-            {
-              "src": "images/alpha-engineering/math-park/ride-upgrade.mp4",
-              "poster": "images/alpha-engineering/math-park/ride-upgrade-poster.jpg",
-              "w": 1280,
-              "h": 720,
-              "cap": "Ride upgrade",
-              "order": 2
-            },
-            {
-              "src": "images/alpha-engineering/math-park/word-problem.mp4",
-              "poster": "images/alpha-engineering/math-park/word-problem-poster.jpg",
-              "w": 1280,
-              "h": 720,
-              "cap": "Word problem",
-              "order": 3
-            },
-            {
-              "src": "images/alpha-engineering/math-park/dream-intro.mp4",
-              "poster": "images/alpha-engineering/math-park/dream-intro-poster.jpg",
-              "w": 1280,
-              "h": 720,
-              "cap": "Intro",
-              "order": 4
-            }
-          ],
-          "shots": [
-            {
-              "full": "images/alpha-engineering/math-park/park-full.jpg",
-              "thumb": "images/alpha-engineering/math-park/park-full-sm.jpg",
-              "w": 1200,
-              "h": 675,
-              "cap": "Finished park"
-            },
-            {
-              "full": "images/alpha-engineering/math-park/coin-lesson.jpg",
-              "thumb": "images/alpha-engineering/math-park/coin-lesson-sm.jpg",
-              "w": 1200,
-              "h": 675,
-              "cap": "Coin lesson"
-            },
-            {
-              "full": "images/alpha-engineering/math-park/park-growing.jpg",
-              "thumb": "images/alpha-engineering/math-park/park-growing-sm.jpg",
-              "w": 1200,
-              "h": 675,
-              "cap": "Park growing"
-            },
-            {
-              "full": "images/alpha-engineering/math-park/typing-lesson.jpg",
-              "thumb": "images/alpha-engineering/math-park/typing-lesson-sm.jpg",
-              "w": 1200,
-              "h": 675,
-              "cap": "Typing lesson"
-            },
-            {
-              "full": "images/alpha-engineering/math-park/diagnostic.jpg",
-              "thumb": "images/alpha-engineering/math-park/diagnostic-sm.jpg",
-              "w": 1200,
-              "h": 675,
-              "cap": "Placement check"
-            },
-            {
-              "full": "images/alpha-engineering/math-park/park-may.jpg",
-              "thumb": "images/alpha-engineering/math-park/park-may-sm.jpg",
-              "w": 1200,
-              "h": 675,
-              "cap": "May build"
-            },
-            {
-              "full": "images/alpha-engineering/math-park/january.jpg",
-              "thumb": "images/alpha-engineering/math-park/january-sm.jpg",
-              "w": 1200,
-              "h": 675,
-              "cap": "First build"
-            }
-          ],
-          "no": "13",
-          "ar": "16 / 9"
-        },
-        {
-          "id": "mathquest",
-          "title": "MathQuest",
-          "tag": "K to 1 math adventure",
-          "accent": "#7a4fd6",
-          "role": "Built the Crash Course and lesson interactions.",
-          "clips": [
-            {
-              "src": "images/alpha-engineering/mathquest/statue-complete.mp4",
-              "poster": "images/alpha-engineering/mathquest/statue-complete-poster.jpg",
-              "w": 1280,
-              "h": 720,
-              "cap": "Griffin complete",
-              "order": 1
-            },
-            {
-              "src": "images/alpha-engineering/mathquest/statue-hall.mp4",
-              "poster": "images/alpha-engineering/mathquest/statue-hall-poster.jpg",
-              "w": 1280,
-              "h": 720,
-              "cap": "Statue hall",
-              "order": 2
-            },
-            {
-              "src": "images/alpha-engineering/mathquest/statue-finale.mp4",
-              "poster": "images/alpha-engineering/mathquest/statue-finale-poster.jpg",
-              "w": 1280,
-              "h": 720,
-              "cap": "Queen and king",
-              "order": 3
-            },
-            {
-              "src": "images/alpha-engineering/mathquest/shape-sort.mp4",
-              "poster": "images/alpha-engineering/mathquest/shape-sort-poster.jpg",
-              "w": 1280,
-              "h": 720,
-              "cap": "Shape sort",
-              "order": 4
-            },
-            {
-              "src": "images/alpha-engineering/mathquest/map-go.mp4",
-              "poster": "images/alpha-engineering/mathquest/map-go-poster.jpg",
-              "w": 1280,
-              "h": 720,
-              "cap": "Map",
-              "order": 5
-            }
-          ],
-          "shots": [
-            {
-              "full": "images/alpha-engineering/mathquest/statue-hall-2.jpg",
-              "thumb": "images/alpha-engineering/mathquest/statue-hall-2-sm.jpg",
-              "w": 1600,
-              "h": 900,
-              "cap": "Second hall"
-            },
-            {
-              "full": "images/alpha-engineering/mathquest/statue-hall-1.jpg",
-              "thumb": "images/alpha-engineering/mathquest/statue-hall-1-sm.jpg",
-              "w": 1600,
-              "h": 900,
-              "cap": "First hall"
-            },
-            {
-              "full": "images/alpha-engineering/mathquest/aquarium.jpg",
-              "thumb": "images/alpha-engineering/mathquest/aquarium-sm.jpg",
-              "w": 1600,
-              "h": 900,
-              "cap": "Aquarium"
-            },
-            {
-              "full": "images/alpha-engineering/mathquest/title.jpg",
-              "thumb": "images/alpha-engineering/mathquest/title-sm.jpg",
-              "w": 1600,
-              "h": 900,
-              "cap": "Title"
-            }
-          ],
           "no": "14",
-          "ar": "16 / 9"
-        }
-      ]
-    },
-    {
-      "id": "web",
-      "title": "Website",
-      "kicker": "The site that sells them",
-      "blurb": "",
-      "games": [
-        {
-          "id": "playcademy-landing",
-          "title": "Playcademy landing page",
-          "tag": "Marketing site",
-          "accent": "#1e2a3a",
-          "role": "Did most of the visual work on the redesign.",
-          "clips": [],
-          "shots": [
-            {
-              "full": "images/alpha-engineering/playcademy-landing/hub-math-raiders.jpg",
-              "thumb": "images/alpha-engineering/playcademy-landing/hub-math-raiders-sm.jpg",
-              "w": 1200,
-              "h": 675,
-              "cap": "Games hub"
-            },
-            {
-              "full": "images/alpha-engineering/playcademy-landing/hub-vocabulon.jpg",
-              "thumb": "images/alpha-engineering/playcademy-landing/hub-vocabulon-sm.jpg",
-              "w": 1200,
-              "h": 675,
-              "cap": "Vocabulon"
-            },
-            {
-              "full": "images/alpha-engineering/playcademy-landing/parents.jpg",
-              "thumb": "images/alpha-engineering/playcademy-landing/parents-sm.jpg",
-              "w": 1200,
-              "h": 675,
-              "cap": "Parents page"
-            },
-            {
-              "full": "images/alpha-engineering/playcademy-landing/phone.jpg",
-              "thumb": "images/alpha-engineering/playcademy-landing/phone-sm.jpg",
-              "w": 554,
-              "h": 1200,
-              "cap": "Phone"
-            }
-          ],
-          "no": "15",
-          "ar": "16 / 9"
+          "ar": "16 / 10"
         }
       ]
     }
